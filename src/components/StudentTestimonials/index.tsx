@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { Quote, Star } from 'lucide-react';
+import Image from 'next/image';
 
 const StudentTestimonials = () => {
   const testimonials = [
@@ -58,7 +59,7 @@ const StudentTestimonials = () => {
 
                 {/* Profile Image */}
                 <div className="relative w-20 h-20 mb-4">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="rounded-full object-cover border-4 border-white shadow-md group-hover:border-blue-50 transition-all duration-300"

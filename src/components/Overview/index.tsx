@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { BookOpen, LineChart, Monitor, Target, Gem } from 'lucide-react';
+import Image from 'next/image';
 
 const Overview = () => {
   const features = [
@@ -76,7 +77,7 @@ const Overview = () => {
       className="group relative w-full md:w-[calc(50%-16px)] lg:w-[calc(33.33%-16px)"
     >
       <div className="aspect-[4/3] overflow-hidden rounded-lg mb-4">
-        <img
+        <Image
           src={feature.imageUrl}
           alt={feature.title}
           className="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-110"

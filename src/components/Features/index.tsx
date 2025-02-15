@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
 import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
@@ -63,7 +64,7 @@ const Features = () => {
           >
             {/* Image with zoom effect */}
             <div className="absolute inset-0 w-full h-full">
-              <img
+              <Image
                 src={card.imageUrl}
                 alt={card.title}
                 className="w-full h-full object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-110 grayscale hover:grayscale-0"

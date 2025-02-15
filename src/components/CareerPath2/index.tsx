@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { Building2, TrendingUp, PieChart, Shield, BarChart2, Settings } from 'lucide-react';
+import Image from 'next/image';
 
 const CareerPath2 = () => {
   const careerPaths = [
@@ -76,7 +77,7 @@ const CareerPath2 = () => {
             >
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={career.imageUrl}
                   alt={career.title}
                   className="w-full h-full object-cover grayscale transform group-hover:scale-110 transition-transform duration-500"

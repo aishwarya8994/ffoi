@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
 
 const Alumni = () => {
   const careers = [
@@ -118,7 +119,7 @@ const Alumni = () => {
           {careers.map((career, index) => (
             <div key={index} className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border ">
               <div className="relative h-64">
-                <img 
+                <Image 
                   src={career.image} 
                   alt={career.name}
                   className="w-full h-full object-cover grayscale hover:grayscale-0"

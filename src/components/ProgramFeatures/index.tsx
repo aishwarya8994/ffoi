@@ -6,6 +6,7 @@ import {
   Building2,
   BarChart3,
 } from "lucide-react";
+import Image from "next/image";
 
 const ProgramFeatures = () => {
   const features = [
@@ -91,7 +92,7 @@ const ProgramFeatures = () => {
               {/* Image Section - Moved to top */}
               {feature.image && (
                 <div className="relative">
-                  <img
+                  <Image
                     src={feature.image}
                     alt={feature.title}
                     className="h-55 w-full rounded-md object-cover "

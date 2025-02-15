@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 const Leaders = () => {
@@ -124,7 +125,7 @@ const Leaders = () => {
         className="border border-gray-600 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
       >
         <div className="relative">
-          <img
+          <Image
             src={leader.image}
             alt={leader.name}
             className="w-full h-[400px] object-cover rounded-lg grayscale"
@@ -152,7 +153,7 @@ const Leaders = () => {
         className="border border-gray-600 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
       >
         <div className="relative">
-          <img
+          <Image
             src={leader.image}
             alt={leader.name}
             className="w-full h-[400px] object-cover rounded-lg grayscale"

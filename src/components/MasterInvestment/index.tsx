@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, TrendingUp, FileText, Users, Briefcase } from 'lucide-react';
+import Image from 'next/image';
 
 const MasterInvestment = () => {
   // const features = [
@@ -94,7 +95,7 @@ const MasterInvestment = () => {
             className="relative h-96 group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >
             {/* Background Image */}
-            <img
+            <Image
               src={feature.imageUrl}
               alt={feature.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale"
@@ -124,7 +125,7 @@ const MasterInvestment = () => {
             className="relative h-96  w-full md:w-[calc(33.33%-16px)] lg:w-[calc(33.33%-16px) group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >
             {/* Background Image */}
-            <img
+            <Image
               src={feature.imageUrl}
               alt={feature.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale"
