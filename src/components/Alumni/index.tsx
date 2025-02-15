@@ -119,10 +119,11 @@ const Alumni = () => {
           {careers.map((career, index) => (
             <div key={index} className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border ">
               <div className="relative h-64">
-                <Image 
+                <img  
                   src={career.image} 
                   alt={career.name}
                   className="w-full h-full object-cover grayscale hover:grayscale-0"
+                 
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <h3 className="font-bold text-xl text-white">{career.name}</h3>

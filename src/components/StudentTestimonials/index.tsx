@@ -59,10 +59,11 @@ const StudentTestimonials = () => {
 
                 {/* Profile Image */}
                 <div className="relative w-20 h-20 mb-4">
-                  <Image
+                  <img 
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="rounded-full object-cover border-4 border-white shadow-md group-hover:border-blue-50 transition-all duration-300"
+                    
                   />
                   <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center group-hover:bg-blue-700 transition-colors duration-300">
                     {testimonial.id}

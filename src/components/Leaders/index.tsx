@@ -125,10 +125,11 @@ const Leaders = () => {
         className="border border-gray-600 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
       >
         <div className="relative">
-          <Image
+          <img 
             src={leader.image}
             alt={leader.name}
             className="w-full h-[400px] object-cover rounded-lg grayscale"
+           
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
@@ -153,10 +154,12 @@ const Leaders = () => {
         className="border border-gray-600 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
       >
         <div className="relative">
-          <Image
+          <img 
             src={leader.image}
             alt={leader.name}
             className="w-full h-[400px] object-cover rounded-lg grayscale"
+            
+            
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>

@@ -47,7 +47,7 @@ const Video = () => {
               data-wow-delay=".15s"
             >
               <div className="relative aspect-[77/40] items-center justify-center">
-                <Image src="/images/video/video.jpg" alt="video image" fill />
+                <img  src="/images/video/video.jpg" alt="video image" fill />
                 <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
                   <button
                     aria-label="video play button"
@@ -158,10 +158,12 @@ const Video = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           
            <div className="bg-white/70 p-5 rounded-md align-center">
-           <img src="images/hero/TGBS Logo-01.png" alt="Terna" className="grayscale" />
+           <img  src="images/hero/TGBS Logo-01.png" alt="Terna" className="grayscale"  
+          />
            </div>
            <div className="bg-white/70 p-5 rounded-md">
-           <img src="images/hero/osb.png" alt="Terna"  className="grayscale" />
+           <img  src="images/hero/osb.png" alt="Terna"  className="grayscale" 
+          />
            </div>
            </div>
          

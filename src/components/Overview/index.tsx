@@ -77,11 +77,13 @@ const Overview = () => {
       className="group relative w-full md:w-[calc(50%-16px)] lg:w-[calc(33.33%-16px)"
     >
       <div className="aspect-[4/3] overflow-hidden rounded-lg mb-4">
-        <Image
+        <img 
           src={feature.imageUrl}
           alt={feature.title}
           className="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-110"
-        />
+          
+          
+       />
       </div>
       <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm p-3 rounded-full shadow-lg">
         {React.cloneElement(feature.icon, { className: "text-white" })}

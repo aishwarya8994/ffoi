@@ -128,14 +128,16 @@ const CurriculumSection = () => {
        </div>
        <div className='img-section'>
        <div className="mt-10">
-           <Image src="/images/hero/5252.jpg" className="mb-2 h-[600px] object-cover rounded-lg grayscale" alt='' />
+           <img  src="/images/hero/5252.jpg" className="mb-2 h-[600px] object-cover rounded-lg grayscale" alt='' 
+          />
            </div>
        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div className='img-section'>
        <div className="mt-5">
-           <Image src="/images/hero/13765.jpg" className="mb-2 h-[600px] object-cover rounded-lg grayscale" alt='' />
+           <img  src="/images/hero/13765.jpg" className="mb-2 h-[600px] object-cover rounded-lg grayscale" alt=''  
+          />
            </div>
        </div>
        <div>

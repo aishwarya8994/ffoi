@@ -31,6 +31,8 @@ const BlogDetailsPage = () => {
                             src="/images/blog/author-02.png"
                             alt="author"
                             fill
+                            width="0"
+    height="0"
                           />
                         </div>
                       </div>
@@ -115,6 +117,8 @@ const BlogDetailsPage = () => {
                         alt="image"
                         fill
                         className="object-cover object-center"
+                        width="0"
+    height="0"
                       />
                     </div>
                   </div>

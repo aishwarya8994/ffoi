@@ -77,11 +77,12 @@ const CareerPath2 = () => {
             >
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
-                <Image
+                <img 
                   src={career.imageUrl}
                   alt={career.title}
                   className="w-full h-full object-cover grayscale transform group-hover:scale-110 transition-transform duration-500"
-                />
+                 
+               />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white flex items-center">
                   <div className="p-2 bg-primary rounded-lg mr-3">

@@ -92,10 +92,11 @@ const ProgramFeatures = () => {
               {/* Image Section - Moved to top */}
               {feature.image && (
                 <div className="relative">
-                  <Image
+                  <img 
                     src={feature.image}
                     alt={feature.title}
                     className="h-55 w-full rounded-md object-cover "
+                    
                   />
                 </div>
               )}

@@ -283,7 +283,7 @@ const Hero = () => {
       </section> */}
       <section
         id="home"
-      className="relative z-10 overflow-hidden bg-[position:50%_6%] bg-[url('/images/hero/FFOI-WEB-BANNER.jpg')] bg-cover bg-center bg-no-repeat pb-16 pt-[140px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+      className="relative z-10 overflow-hidden bg-[position:50%_5%] bg-[url('/images/hero/FFOI-WEB-BANNER.jpg')] bg-cover bg-center bg-no-repeat pb-16 pt-[140px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">

@@ -95,11 +95,12 @@ const MasterInvestment = () => {
             className="relative h-96 group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >
             {/* Background Image */}
-            <Image
+            <img 
               src={feature.imageUrl}
               alt={feature.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale"
-            />
+             
+           />
 
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
@@ -125,11 +126,12 @@ const MasterInvestment = () => {
             className="relative h-96  w-full md:w-[calc(33.33%-16px)] lg:w-[calc(33.33%-16px) group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >
             {/* Background Image */}
-            <Image
+            <img 
               src={feature.imageUrl}
               alt={feature.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale"
-            />
+             
+           />
 
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />

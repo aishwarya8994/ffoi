@@ -194,11 +194,12 @@ const HiringPartnersAlt = () => {
             className="group relative bg-gradient-to-br from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 grayscale hover:grayscale-0"
           >
             <div className="h-24 flex items-center justify-center mb-6">
-              <Image
+              <img 
                 src={bank.logo}
                 alt={`${bank.name} logo`}
                 className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-              />
+               
+            />
             </div>
             <div className="text-center">
               <p className="font-semibold text-lg text-gray-900 mb-2">{bank.name}</p>

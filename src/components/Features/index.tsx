@@ -64,11 +64,12 @@ const Features = () => {
           >
             {/* Image with zoom effect */}
             <div className="absolute inset-0 w-full h-full">
-              <Image
+              <img 
                 src={card.imageUrl}
                 alt={card.title}
                 className="w-full h-full object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-110 grayscale hover:grayscale-0"
-
+               
+               
               />
               {/* Dark overlay */}
               <div className="absolute inset-0 bg-primary/30 transition-opacity group-hover:bg-black/50" />
