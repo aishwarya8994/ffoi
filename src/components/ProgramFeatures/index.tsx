@@ -63,7 +63,7 @@ const ProgramFeatures = () => {
 
       <div className="relative  z-10 mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-[#333333] md:text-4xl lg:text-5xl">
+          <h2 className="mb-4 text-2xl font-bold text-[#333333] md:text-4xl lg:text-5xl">
             What Sets This Program Apart?
           </h2>
           {/* <div className="w-20 h-1 bg-blue-400 mx-auto rounded-full"/> */}

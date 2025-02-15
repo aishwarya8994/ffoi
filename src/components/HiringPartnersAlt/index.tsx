@@ -142,11 +142,11 @@ const HiringPartnersAlt = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             {/* <Briefcase className="w-10 h-10 text-blue-600 mr-3" /> */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333]">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#333333]">
             Launch Your Career with Global & Domestic Investment Banks
             </h2>
           </div>
-          <p className="text-xl text-gray-600  mt-2">
+          <p className="text-sm lg:text-xl text-gray-600  mt-2">
           Top Hiring Firms
           </p>
         </div>
@@ -187,7 +187,7 @@ const HiringPartnersAlt = () => {
 
 
         {/* only cards section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {bank2.map((bank, index) => (
           <div
             key={index}

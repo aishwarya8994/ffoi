@@ -33,11 +33,11 @@ const Overview = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-6 lg:py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="relative mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-8 leading-tight text-center">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-8 leading-tight text-center">
             What Sets Us Apart?
           </h2>
           {/* <div className="absolute h-px w-full bg-gray-300 top-1/2 left-0 -z-0" /> */}
@@ -85,11 +85,11 @@ const Overview = () => {
           
        />
       </div>
-      <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm p-3 rounded-full shadow-lg">
+      <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm p-2 lg:p-3 rounded-full shadow-lg">
         {React.cloneElement(feature.icon, { className: "text-white" })}
       </div>
       <div className="bg-white p-6 rounded-lg shadow-lg -mt-16 ml-8 mr-8 relative z-10 group-hover:-translate-y-2 transition-transform duration-300">
-        <p className="text-gray-900 font-bold text-[1.6rem] leading-snug text-center">
+        <p className="text-gray-900 font-bold text-base lg:text-[1.6rem] leading-snug text-center">
           {feature.title}
         </p>
       </div>

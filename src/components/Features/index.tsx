@@ -37,7 +37,7 @@ const Features = () => {
     <>
       <section id="features" className="py-16 md:py-20 lg:py-28 bg-white">
       <div className="bg-gray-200 text-center pt-2 pb-2 mb-8">
-      <h2 className="wow fadeInUp  text-3xl md:text-4xl lg:text-5xl font-bold !leading-tight text-[#333333]  sm:text-4xl md:text-[45px]" data-wow-delay=".15s">
+      <h2 className="wow fadeInUp  text-2xl md:text-4xl lg:text-5xl font-bold !leading-tight text-[#333333]  sm:text-4xl md:text-[45px]" data-wow-delay=".15s">
       Why Choose FFOI MBA in Investment Banking?
         </h2>
          
@@ -77,10 +77,10 @@ const Features = () => {
             
             {/* Text content */}
             <div className="absolute bottom-6 left-6 right-6 z-10 bg-[#333333]/70 px-5 py-3 rounded text-center">
-              <h3 className="text-white text-4xl font-semibold mb-2">
+              <h3 className="text-white text-lg lg:text-4xl font-semibold mb-2">
                 {card.title}
               </h3>
-              <p className="text-white text-4xl font-semibold line-clamp-2">
+              <p className="text-white text-lg lg:text-4xl font-semibold mb-2 line-clamp-2">
                 {card.description}
               </p>
             </div>

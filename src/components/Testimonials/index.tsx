@@ -71,10 +71,10 @@ const Testimonials = () => {
         /> */}
 
         <div className="text-center mb-12">
-        <h2 className="text-center text-3xl font-bold text-[#fff] md:text-4xl lg:text-5xl mb-4">
+        <h2 className="text-center text-2xl font-bold text-[#fff] md:text-4xl lg:text-5xl mb-4">
             What Our Students Say
           </h2>
-          <p className="text-xl text-gray-200 text-center">Hear from our students about their experiences, successes, and how we've helped them achieve their goals</p>
+          <p className="text-sm lg:text-xl text-gray-200 text-center">Hear from our students about their experiences, successes, and how we've helped them achieve their goals</p>
         </div>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">

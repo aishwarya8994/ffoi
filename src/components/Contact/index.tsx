@@ -19,7 +19,7 @@ const Contact = () => {
               <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
                 Enquire Now
               </h2>
-              <p className="mb-12 text-base font-medium text-white">
+              <p className="mb-3 lg:mb-12 text-sm lg:text-base font-medium text-white">
                 Our support team will get back to you ASAP via email.
               </p>
               <form>
@@ -117,7 +117,7 @@ const Contact = () => {
                     </div>
                   </div> */}
                   <div className="w-full px-4">
-                    <button className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
+                    <button className="rounded-sm bg-primary px-3 lg:px-9 py-2 lg:py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
                      Send Enquiry
                     </button>
                   </div>
@@ -125,7 +125,7 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          <div className="-ml-5 w-full lg:w-5/12 xl:w-4/12 ">
+          <div className="lg:-ml-5 w-full lg:w-5/12 xl:w-4/12 ">
             {/* <NewsLatterBox /> */}
            
        

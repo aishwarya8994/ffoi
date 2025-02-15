@@ -22,12 +22,12 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
     <div className="w-full">
       <div className=" border-b-8 border-primary bg-white p-8 shadow-two duration-300 hover:shadow-one  lg:px-5 xl:px-8">
         <div className="mb-5 flex items-center space-x-1">{ratingIcons}</div>
-        <p className="mb-8 border-b-2 border-primary  pb-8 text-xl font-medium leading-relaxed text-body-color">
+        <p className="mb-8 border-b-2 border-primary  pb-8 text-sm lg:text-xl font-medium leading-relaxed text-body-color">
           “{content}
         </p>
         <div className="flex items-center">
-          <div className="relative mr-4 h-[150px] w-full max-w-[150px] overflow-hidden rounded-md object-cover">
-            <img  src={image} alt={name}  className="w-[170px] h-[150px] object-cover" 
+          <div className="relative mr-4 h-[100px] lg:h-[150px] w-[100px] lg:max-w-[150px] overflow-hidden rounded-md">
+            <img  src={image} alt={name}  className="w-[100px] lg:w-[170px] h-[100px] lg:h-[150px] object-cover" 
            />
           </div>
           <div className="w-full">

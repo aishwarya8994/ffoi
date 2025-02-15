@@ -107,10 +107,10 @@ const Alumni = () => {
     <div className="bg-gray-50 py-16 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="mb-4 text-3xl font-bold text-[#333333] md:text-4xl lg:text-5xl">
+          <h2 className="mb-4 text-2xl font-bold text-[#333333] md:text-4xl lg:text-5xl">
             Unlock Your Future in Finance: Career Paths That Define Success
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-sm lg:text-xl text-gray-600">
             Step into the high-stakes world of finance and carve your path to success!
           </p>
         </div>
@@ -131,29 +131,29 @@ const Alumni = () => {
               </div>
 
               <div className="p-6">
-                <h4 className="text-primary font-semibold mb-4 text-2xl">{career.title}</h4>
+                <h4 className="text-primary font-semibold mb-4 text-lg lg:text-2xl">{career.title}</h4>
 
                 <ul className="space-y-2 mb-6">
                   {career.responsibilities.map((resp, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0 text-gray-600" />
-                      <span className='text-gray-600 text-lg'>{resp}</span>
+                      <span className='text-gray-600 text-sm lg:text-lg'>{resp}</span>
                     </li>
                   ))}
                 </ul>
 
                 <div className="space-y-4 border-t pt-4">
                   <div className='bg-primary/10 p-2 rounded'>
-                    <p className="font-semibold text-primary text-xl">Who You Are:</p>
-                    <p className="text-gray-600 text-lg">{career.whoYouAre}</p>
+                    <p className="font-semibold text-primary text-sm lg:text-xl">Who You Are:</p>
+                    <p className="text-gray-600 text-sm lg:text-lg">{career.whoYouAre}</p>
                   </div>
                   <div className='bg-secondary/10 p-2 rounded'>
-                    <p className="font-semibold text-[#333] text-xl">Future You:</p>
-                    <p className="text-gray-600 text-lg">{career.futureYou}</p>
+                    <p className="font-semibold text-[#333] text-sm lg:text-xl">Future You:</p>
+                    <p className="text-gray-600 text-sm lg:text-lg">{career.futureYou}</p>
                   </div>
                   <div className='bg-blue-100 p-2 rounded'>
-                    <p className="font-semibold text-[#333] text-xl">Salary:</p>
-                    <p className="text-gray-600 text-lg">
+                    <p className="font-semibold text-[#333] text-sm lg:text-xl">Salary:</p>
+                    <p className="text-gray-600 text-sm lg:text-lg">
                       {career.salary.start} (Start) → {career.salary.top} (Top)
                     </p>
                   </div>

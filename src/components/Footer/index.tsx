@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <footer className="relative z-10 bg-white pt-16  md:pt-20 lg:pt-24">
+      <footer className="relative z-10 bg-white pt-16  md:pt-20 lg:pt-24 mb-5">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
@@ -14,13 +14,12 @@ const Footer = () => {
                   <img 
                     src="/images/logo/FFOI-Logo.png"
                     alt="logo"
-                    className="w-full"
-                    width={140}
-                    height={30}
+                    className="w-[150px] lg:w-[200px]"
+                   
                   />
                   
                 </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color ">
+                <p className="mb-9 text-base leading-relaxed text-gray-600 ">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer lobortis.
                 </p>
@@ -30,7 +29,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary "
+                    className="mr-6 text-gray-600 duration-300 hover:text-primary "
                   >
                     <svg
                       width="18"
@@ -50,7 +49,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="mr-6 text-gray-600 duration-300 hover:text-primary  "
                   >
                     <svg
                       width="18"
@@ -72,7 +71,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="mr-6 text-gray-600 duration-300 hover:text-primary  "
                   >
                     <svg
                       width="18"
@@ -88,7 +87,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary  "
                   >
                     <svg
                       width="17"
@@ -112,7 +111,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                       Lorem
                     </Link>
@@ -120,7 +119,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                       Lorem
                     </Link>
@@ -128,7 +127,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                       Lorem
                     </Link>
@@ -146,7 +145,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                       TOS
                     </Link>
@@ -154,7 +153,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                      Lorem
                     </Link>
@@ -162,7 +161,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary "
                     >
                       Lorem
                     </Link>
@@ -180,7 +179,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                      Lorem
                     </Link>
@@ -188,7 +187,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                       Lorem
                     </Link>
@@ -196,7 +195,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
                     >
                       Lorem
                     </Link>

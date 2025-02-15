@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head />
-      <body className={`bg-[#FFF] dark:bg-black ${roboto.className}`}>
+      <body className={`bg-[#FFF] ${roboto.className}`}>
         <Providers>
           <Header />
           <main className={raleway.className}>{children}</main> {/* Apply Raleway to titles/headers */}

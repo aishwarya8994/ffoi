@@ -64,13 +64,7 @@ const Header = () => {
                   height={40}
                   className="w-full"
                 />
-                {/* <img 
-                  src="/images/logo/FFOI-Logo.png"
-                  alt="logo"
-                  width={160}
-                  height={40}
-                  className="hidden w-full dark:block"
-                /> */}
+                
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
@@ -97,7 +91,7 @@ const Header = () => {
                     }`}
                   />
                 </button>
-                {/* <nav
+                <nav
                   id="navbarCollapse"
                   className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
@@ -105,7 +99,7 @@ const Header = () => {
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  <ul className="block lg:flex lg:space-x-12">
+                  {/* <ul className="block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
@@ -156,8 +150,26 @@ const Header = () => {
                         )}
                       </li>
                     ))}
-                  </ul>
-                </nav> */}
+                  </ul> */}
+                  <Link
+                  href="/"
+                  className="block   lg:hidden "
+                >
+                  <div className="flex bg-primary px-3 lg:px-6 py-3 text-white hover:bg-[#375210] mb-3">
+                  <Phone className="mr-2 text-sm lg:text-lg text-white" />{" "}
+                  <span>+91 123456789</span>
+                  </div>
+                </Link>
+                <Link
+                  href="/"
+                  className="block   lg:hidden"
+                >
+                  <div className="flex bg-primary px-3 lg:px-6 py-3 text-white hover:bg-[#375210]">
+                  <ArrowDownToLine className="mr-2 text-sm lg:text-lg text-white" />{" "}
+                  <span>Download Brochure</span>
+                  </div>
+                </Link>
+                </nav>
               </div>
               <div className="flex items-center justify-end gap-4 pr-16 lg:pr-0">
                 {/* <Link
@@ -174,17 +186,21 @@ const Header = () => {
                 </Link> */}
                 <Link
                   href="/"
-                  className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210]  "
+                  className="hidden md:block   "
                 >
+                  <div className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210]">
                   <Phone className="mr-2 text-lg text-white" />{" "}
                   <span>+91 123456789</span>
+                  </div>
                 </Link>
                 <Link
                   href="/"
-                  className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210] "
+                  className="hidden   lg:block"
                 >
+                  <div className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210]">
                   <ArrowDownToLine className="mr-2 text-lg text-white" />{" "}
                   <span>Download Brochure</span>
+                  </div>
                 </Link>
 
                 {/* <div>

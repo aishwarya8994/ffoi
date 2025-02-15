@@ -83,7 +83,7 @@ const MasterInvestment = () => {
     <section className="bg-white py-16 md:py-20 lg:py-28">
     <div className="container max-w-screen-xl mx-auto px-4 sm:px-6 ">
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-12 leading-tight text-center">
+      <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-12 leading-tight text-center">
         Master Investment Banking with a Cutting-Edge Learning Approach
       </h2>
 
