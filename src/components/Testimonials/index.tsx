@@ -49,7 +49,7 @@ const testimonialData: Testimonial[] = [
     star: 5,
   },
   {
-    id: 5,
+    id: 6,
     name: "Mitali Goyal",
     designation: "Founder @Lineicons",
     content:

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
-import { Phone, MessageCircle,ArrowDownToLine } from "lucide-react";
+import { Phone, MessageCircle, ArrowDownToLine } from "lucide-react";
 
 const Header = () => {
   // Navbar toggle
@@ -172,17 +172,21 @@ const Header = () => {
                 >
                   Call Now
                 </Link> */}
-                <Link href="/"
-                className="flex bg-primary hover:bg-[#375210] text-white py-3 px-6  "
+                <Link
+                  href="/"
+                  className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210]  "
                 >
-<Phone className="text-white text-lg mr-2" /> <span>+91 123456789</span>
+                  <Phone className="mr-2 text-lg text-white" />{" "}
+                  <span>+91 123456789</span>
                 </Link>
-                <Link href="/"
-                className="flex bg-primary hover:bg-[#375210] text-white py-3 px-6 "
+                <Link
+                  href="/"
+                  className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210] "
                 >
-<ArrowDownToLine  className="text-white text-lg mr-2" /> <span>Download Brochure</span>
+                  <ArrowDownToLine className="mr-2 text-lg text-white" />{" "}
+                  <span>Download Brochure</span>
                 </Link>
-               
+
                 {/* <div>
                   <ThemeToggler />
                 </div> */}

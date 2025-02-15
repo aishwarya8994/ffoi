@@ -23,7 +23,7 @@ export default function StickyFooter() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
 
     if (!formData.agreement) {
