@@ -7,7 +7,6 @@ import { Clock, Award, Building2 } from 'lucide-react';
 import {MoveRight} from 'lucide-react'
 import Link from "next/link";
 
-import ModalVideo from "react-modal-video";
 
 const Video = () => {
   const [isOpen, setOpen] = useState(false);
