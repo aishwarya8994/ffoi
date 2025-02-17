@@ -71,7 +71,7 @@ export default function Home() {
       <Alumni/>
       <Contact/>
       <Footer />
-      <StickyFooter/>
+      {/* <StickyFooter/> */}
     </>
   );
 }
