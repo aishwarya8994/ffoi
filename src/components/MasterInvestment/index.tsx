@@ -80,7 +80,7 @@ const MasterInvestment = () => {
 
 
   return (
-    <section className="bg-white py-16 md:py-20 lg:py-28">
+    <section className="bg-white py-5 md:py-20 lg:py-28">
     <div className="container max-w-screen-xl mx-auto px-4 sm:px-6 ">
       {/* Section Title */}
       <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-12 leading-tight text-center">
@@ -111,7 +111,7 @@ const MasterInvestment = () => {
                 <div className="bg-primary/80 backdrop-blur-sm p-3 rounded-lg inline-block mb-4">
                   {React.cloneElement(feature.icon, { className: "text-white" })}
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
+                <h3 className="text-xl lg:text-2xl font-bold mb-2">{feature.title}</h3>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ const MasterInvestment = () => {
                 <div className="bg-primary/80 backdrop-blur-sm p-3 rounded-lg inline-block mb-4">
                   {React.cloneElement(feature.icon, { className: "text-white" })}
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
+                <h3 className="text-xl lg:text-2xl font-bold mb-2">{feature.title}</h3>
               </div>
             </div>
           </div>

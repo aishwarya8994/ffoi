@@ -60,7 +60,7 @@ const Header = () => {
                 <img 
                   src="/images/logo/FFOI-Logo.png"
                   alt="logo"
-                  width={160}
+                  width={200}
                   height={40}
                   className="w-full"
                 />

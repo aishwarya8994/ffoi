@@ -60,7 +60,7 @@ const Leaders = () => {
     <div className="container-fluid  py-8">
       <div className="mb-12 text-center">
         <h2 className="mb-4 text-3xl font-bold text-[#fff] md:text-4xl lg:text-5xl">
-          The Leaders Who Shaped India's Financial Landscape
+          The Leaders Who Shaped India&apos;s Financial Landscape
         </h2>
         <p className="text-xl font-semibold text-primary">
           Are you ready to follow their path?

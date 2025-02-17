@@ -72,15 +72,15 @@ const Features = () => {
                
               />
               {/* Dark overlay */}
-              <div className="absolute inset-0 bg-primary/30 transition-opacity group-hover:bg-black/50" />
+              <div className="absolute inset-0 bg-black/10 transition-opacity group-hover:bg-black/50" />
             </div>
             
             {/* Text content */}
-            <div className="absolute bottom-6 left-6 right-6 z-10 bg-[#333333]/70 px-5 py-3 rounded text-center">
-              <h3 className="text-white text-lg lg:text-4xl font-semibold mb-2">
+            <div className="absolute bottom-6 left-6 right-6 z-10 bg-[#fff]/90 px-5 py-3 rounded text-center">
+              <h3 className="text-secondary text-xl lg:text-5xl font-semibold mb-2">
                 {card.title}
               </h3>
-              <p className="text-white text-lg lg:text-4xl font-semibold mb-2 line-clamp-2">
+              <p className="text-primary text-lg lg:text-4xl font-semibold mb-2 line-clamp-2">
                 {card.description}
               </p>
             </div>

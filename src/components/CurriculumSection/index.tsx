@@ -96,7 +96,7 @@ const CurriculumSection = () => {
        <div>
        {semesterData.map((year, index) => (
           <div key={index} className="relative group">
-            <div className="h-full  lg:py-8 ">
+            <div className="h-full py-0 lg:py-8 ">
               <div 
                 className="absolute inset-0 bg-cover bg-center rounded-lg grayscale hover:grayscale-0"
                 // style={{ backgroundImage: `url(${year.bgImage})` }}
