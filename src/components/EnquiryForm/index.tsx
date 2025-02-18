@@ -18,7 +18,7 @@ const EnquiryForm = () => {
   return (
     <div>
       {/* Sticky Button for Mobile */}
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center lg:hidden">
+      <div className="fixed z-50 bottom-4 left-0 right-0 flex justify-center lg:hidden">
         <button
           onClick={openModal}
           className="bg-primary text-white py-3 px-6 rounded-full shadow-lg hover:bg-primary-dark transition duration-300"
