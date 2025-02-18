@@ -67,8 +67,15 @@ const Header = () => {
                 
               </Link>
             </div>
-            <div className="flex w-full items-center justify-between px-4">
+            
+            <div className="flex w-full items-center justify-end px-4">
               <div>
+              {/* Contact Icon (Mobile Only) */}
+              <Link href="tel:+91123456789" className="lg:hidden">
+     <div className="bg-secondary rounded-full p-2">
+     <Phone className="w-6 h-6 text-white" />
+     </div>
+    </Link>
                 <button
                   onClick={navbarToggleHandler}
                   id="navbarToggler"
@@ -99,7 +106,7 @@ const Header = () => {
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  {/* <ul className="block lg:flex lg:space-x-12">
+                  <ul className="block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
@@ -107,15 +114,15 @@ const Header = () => {
                             href={menuItem.path}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                               usePathName === menuItem.path
-                                ? "text-primary dark:text-white"
-                                : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                                ? "text-white lg:text-dark hover:text-primary"
+                                : "text-white lg:text-dark hover:text-primary "
                             }`}
                           >
                             {menuItem.title}
                           </Link>
                         ) : (
                           <>
-                            <p
+                            {/* <p
                               onClick={() => handleSubmenu(index)}
                               className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
                             >
@@ -145,12 +152,12 @@ const Header = () => {
                                   {submenuItem.title}
                                 </Link>
                               ))}
-                            </div>
+                            </div> */}
                           </>
                         )}
                       </li>
                     ))}
-                  </ul> */}
+                  </ul>
                   <Link
                   href="/"
                   className="block   lg:hidden "
@@ -208,6 +215,7 @@ const Header = () => {
                 </div> */}
               </div>
             </div>
+            
           </div>
         </div>
       </header>

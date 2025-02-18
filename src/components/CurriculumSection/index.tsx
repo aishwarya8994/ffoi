@@ -21,6 +21,10 @@ import {MoveRight} from 'lucide-react'
 import SectionTitle from "../Common/SectionTitle";
 import { Check } from 'lucide-react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 const CurriculumSection = () => {
  
@@ -91,8 +95,49 @@ const CurriculumSection = () => {
           paragraph="Curriculum Designed for Global Impact"
           center
         />
+
+       {/* Mobile View (Slider) */}
+      <div className="block lg:hidden mb-4">
+        <Swiper
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {[...semesterData, ...semesterData2].map((year, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative group p-4 border rounded-lg shadow-md">
+                <div className="relative p-3 text-secondary">
+                  <h3 className="text-lg font-semibold mb-4 text-white bg-primary p-2 rounded-lg">
+                    {year.title}
+                  </h3>
+                  <div className="space-y-6">
+                    {year.semesters.map((semester) => (
+                      <div key={semester.number} className="border-primary pl-4">
+                        <h4 className="text-base font-semibold mb-3 text-gray-400">
+                          Semester {semester.number}
+                        </h4>
+                        <ul className="space-y-2">
+                          {semester.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-start gap-2 p-2">
+                              <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+                              <span className="text-gray-900 font-semibold text-sm">{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+
       
-     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-5">
+     <div className="hidden lg:grid grid-cols-2 gap-8 mb-5">
        <div>
        {semesterData.map((year, index) => (
           <div key={index} className="relative group">
@@ -133,7 +178,7 @@ const CurriculumSection = () => {
            </div>
        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="hidden lg:grid grid-cols-2 gap-8">
       <div className='img-section hidden lg:block'>
        <div className="mt-5">
            <img  src="/images/hero/13765.jpg" className="mb-2 lg:h-[600px] object-cover rounded-lg grayscale" alt=''  

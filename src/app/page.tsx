@@ -24,6 +24,7 @@ import CareerPath2 from "@/components/CareerPath2";
 import Overview from "@/components/Overview";
 import Leaders from "@/components/Leaders";
 import Alumni from "@/components/Alumni";
+import EnquiryForm from "@/components/EnquiryForm";
 
 // export const metadata: Metadata = {
 //   title: "Finance Forum of India",
@@ -71,6 +72,7 @@ export default function Home() {
       <Alumni/>
       <Contact/>
       <Footer />
+      <EnquiryForm/>
       {/* <StickyFooter/> */}
     </>
   );

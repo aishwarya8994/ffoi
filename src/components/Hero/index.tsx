@@ -11,12 +11,12 @@ const Hero = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 sm:w-7/12">
-              <div className="max-w-[900px] text-left">
+              <div className="max-w-[900px] text-left p-3 lg:p-0 bg-white/80 lg:bg-transparent ">
                 <p className="text-3xl font-bold text-primary lg:text-secondary sm:text-4xl sm:leading-tight md:text-[4rem] md:leading-tight mb-4">
                   Build Your Future in Global Finance!
                 </p>
                 <h1 className=" mb-3 text-lg lg:text-3xl font-bold leading-tight text-secondary  sm:text-4xl sm:leading-tight md:text-[1.5rem] md:leading-tight">
-                  MBA in Investment Banking 
+                  MBA in Investment Banking
                 </h1>
 
                 <h1 className=" mb-3 text-lg lg:text-3xl font-bold leading-tight text-secondary  sm:text-4xl sm:leading-tight md:text-[1.5rem] md:leading-tight">AICTE-Approved | 2-Year Full-Time</h1>

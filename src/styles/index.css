@@ -40,3 +40,7 @@
  font-weight: 800;
  font-size: 2em;
 }
+
+.swiper-pagination{
+position:static !important;
+}

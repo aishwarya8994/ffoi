@@ -1,7 +1,12 @@
 "use client"
 import React from 'react';
-import { ArrowRight } from "lucide-react";
 import Image from 'next/image';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { ArrowRight } from "lucide-react";
 
 const Alumni = () => {
   const careers = [
@@ -114,8 +119,67 @@ const Alumni = () => {
             Step into the high-stakes world of finance and carve your path to success!
           </p>
         </div>
+        {/* Mobile View (Slider for sm & md screens) */}
+      <div className="block lg:hidden">
+        <Swiper
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {careers.map((career, index) => (
+            <SwiperSlide key={index}>
+              <div className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border">
+                <div className="relative h-64">
+                  <img
+                    src={career.image}
+                    alt={career.name}
+                    className="w-full h-full object-cover grayscale hover:grayscale-0"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 className="font-bold text-xl text-white">{career.name}</h3>
+                  </div>
+                </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="p-6">
+                  <h4 className="text-primary font-semibold mb-4 text-lg lg:text-2xl">
+                    {career.title}
+                  </h4>
+
+                  <ul className="space-y-2 mb-6">
+                    {career.responsibilities.map((resp, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0 text-gray-600" />
+                        <span className="text-gray-600 text-sm lg:text-base">{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="space-y-4 border-t pt-4">
+                    <div className="bg-primary/10 p-2 rounded">
+                      <p className="font-semibold text-primary text-sm lg:text-xl">Who You Are:</p>
+                      <p className="text-gray-600 text-sm lg:text-base">{career.whoYouAre}</p>
+                    </div>
+                    <div className="bg-secondary/10 p-2 rounded">
+                      <p className="font-semibold text-[#333] text-sm lg:text-xl">Future You:</p>
+                      <p className="text-gray-600 text-sm lg:text-base">{career.futureYou}</p>
+                    </div>
+                    <div className="bg-blue-100 p-2 rounded">
+                      <p className="font-semibold text-[#333] text-sm lg:text-xl">Salary:</p>
+                      <p className="text-gray-600 text-sm lg:text-base">
+                        {career.salary.start} (Start) → {career.salary.top} (Top)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+
+        <div className="hidden lg:grid grid-cols-3 gap-8">
           {careers.map((career, index) => (
             <div key={index} className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border ">
               <div className="relative h-64">
@@ -137,7 +201,7 @@ const Alumni = () => {
                   {career.responsibilities.map((resp, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0 text-gray-600" />
-                      <span className='text-gray-600 text-sm lg:text-lg'>{resp}</span>
+                      <span className='text-gray-600 text-sm lg:text-base'>{resp}</span>
                     </li>
                   ))}
                 </ul>
@@ -145,15 +209,15 @@ const Alumni = () => {
                 <div className="space-y-4 border-t pt-4">
                   <div className='bg-primary/10 p-2 rounded'>
                     <p className="font-semibold text-primary text-sm lg:text-xl">Who You Are:</p>
-                    <p className="text-gray-600 text-sm lg:text-lg">{career.whoYouAre}</p>
+                    <p className="text-gray-600 text-sm lg:text-base">{career.whoYouAre}</p>
                   </div>
                   <div className='bg-secondary/10 p-2 rounded'>
                     <p className="font-semibold text-[#333] text-sm lg:text-xl">Future You:</p>
-                    <p className="text-gray-600 text-sm lg:text-lg">{career.futureYou}</p>
+                    <p className="text-gray-600 text-sm lg:text-base">{career.futureYou}</p>
                   </div>
                   <div className='bg-blue-100 p-2 rounded'>
                     <p className="font-semibold text-[#333] text-sm lg:text-xl">Salary:</p>
-                    <p className="text-gray-600 text-sm lg:text-lg">
+                    <p className="text-gray-600 text-sm lg:text-base">
                       {career.salary.start} (Start) → {career.salary.top} (Top)
                     </p>
                   </div>

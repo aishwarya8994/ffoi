@@ -145,12 +145,12 @@ export default function StickyFooter() {
             >
               Enquire Now!
             </button>
-            <button
+            {/* <button
               type="submit"
               className="flex bg-[#7BBA27] text-[#fff] px-6 py-2 font-bold rounded-md hover:bg-[#375210] transition"
             >
               <ArrowDownToLine className="mr-2" /> Download Brochure
-            </button>
+            </button> */}
             <div className="flex items-center w-full md:w-auto">
               <input
                 type="checkbox"
