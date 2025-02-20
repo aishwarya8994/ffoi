@@ -162,8 +162,8 @@ const Header = () => {
                   href="/"
                   className="block   lg:hidden "
                 >
-                  <div className="flex bg-primary px-3 lg:px-6 py-3 text-white hover:bg-[#375210] mb-3">
-                  <Phone className="mr-2 text-sm lg:text-lg text-white" />{" "}
+                  <div className="flex bg-primary px-3 lg:px-6 py-2 text-white hover:bg-[#375210] mb-3">
+                  <Phone className="mr-2 text-sm lg:text-base text-white" />{" "}
                   <span>+91 123456789</span>
                   </div>
                 </Link>
@@ -171,8 +171,8 @@ const Header = () => {
                   href="/"
                   className="block   lg:hidden"
                 >
-                  <div className="flex bg-primary px-3 lg:px-6 py-3 text-white hover:bg-[#375210]">
-                  <ArrowDownToLine className="mr-2 text-sm lg:text-lg text-white" />{" "}
+                  <div className="flex bg-primary px-3 lg:px-6 py-2 text-white hover:bg-[#375210]">
+                  <ArrowDownToLine className="mr-2 text-sm lg:text-base text-white" />{" "}
                   <span>Download Brochure</span>
                   </div>
                 </Link>

@@ -16,17 +16,9 @@ const testimonialData: Testimonial[] = [
     image: "/images/testimonials/Adwait Sunil.jpg",
     star: 5,
   },
+  
   {
     id: 2,
-    name: "Falak Nawab",
-    designation: "Founder @UIdeck",
-    content:
-      "The mentorship at FFOI and real-world case studies provided a strong foundation in finance. I feel confident tackling professional challenges.",
-    image: "/images/testimonials/falak Nawab.webp",
-    star: 5,
-  },
-  {
-    id: 3,
     name: "Akhtar Shah",
     designation: "Founder @Lineicons",
     content:
@@ -35,16 +27,17 @@ const testimonialData: Testimonial[] = [
     star: 5,
   },
   {
-    id: 4,
-    name: "Ishwari Kalsekar",
-    designation: "Founder @Lineicons",
+    id: 3,
+    name: "Falak Nawab",
+    designation: "Founder @UIdeck",
     content:
-      "The live market simulations have been invaluable for real-world finance applications.",
-    image: "/images/testimonials/Ishwari Kalsekar.png",
+      "The mentorship at FFOI and real-world case studies provided a strong foundation in finance. I feel confident tackling professional challenges.",
+    image: "/images/testimonials/falak Nawab.webp",
     star: 5,
   },
+ 
   {
-    id: 5,
+    id: 4,
     name: "Melvin Rodrigues",
     designation: "Founder @Lineicons",
     content:
@@ -53,12 +46,21 @@ const testimonialData: Testimonial[] = [
     star: 5,
   },
   {
-    id: 6,
+    id: 5,
     name: "Mitali Goyal",
     designation: "Founder @Lineicons",
     content:
       "FFOI’s faculty combines deep industry knowledge with practical insights, making learning impactful and relevant.",
     image: "/images/testimonials/Mitali Goyal.webp",
+    star: 5,
+  },
+  {
+    id: 6,
+    name: "Ishwari Kalsekar",
+    designation: "Founder @Lineicons",
+    content:
+      "The live market simulations have been invaluable for real-world finance applications.",
+    image: "/images/testimonials/Ishwari Kalsekar.png",
     star: 5,
   },
 ];

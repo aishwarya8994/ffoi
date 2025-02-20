@@ -12,7 +12,7 @@ export default function StickyFooter() {
     email: "",
     city: "",
     whoAmI: "",
-    agreement: false,
+    agreement: true,
   });
 
   const handleChange = (e) => {
@@ -80,28 +80,28 @@ export default function StickyFooter() {
   return (
     <div className="flex flex-col">
       {showFooter && (
-        <footer className="fixed bottom-0 left-0 right-0 bg-[#0B1D2E] text-white py-4 px-6 shadow-lg z-50">
-          <form className="flex flex-wrap items-center justify-center gap-4" onSubmit={handleSubmit}>
+        <footer className="fixed bottom-0 left-0 right-0 bg-[#0B1D2E] text-white py-4 px-2 shadow-lg z-50">
+          <form className="flex flex-wrap items-center justify-center gap-2" onSubmit={handleSubmit}>
             <input
               type="text"
               name="fullName"
               placeholder="Full Name"
               value={formData.fullName}
               onChange={handleChange}
-              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-auto"
+              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-auto text-sm"
               required
             />
             <div className="flex items-center bg-white rounded-md overflow-hidden">
-              <span className="bg-[#f3f4f6] px-3 py-2 text-sm flex items-center text-blue-900">
+              {/* <span className="bg-[#f3f4f6] px-3 py-2 text-sm flex items-center text-blue-900">
                 🇮🇳 (+91)
-              </span>
+              </span> */}
               <input
                 type="text"
                 name="phoneNumber"
                 placeholder="Phone Number"
                 value={formData.phoneNumber}
                 onChange={handleChange}
-                className="flex-grow px-4 py-2 text-black bg-white"
+                className="flex-grow px-4 py-2 text-black bg-white md:w-[150px] text-sm"
                 required
               />
             </div>
@@ -111,39 +111,62 @@ export default function StickyFooter() {
               placeholder="Email ID"
               value={formData.email}
               onChange={handleChange}
-              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-auto"
+              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-[150px] text-sm"
               required
             />
             <select
               name="city"
               value={formData.city}
               onChange={handleChange}
-              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-auto"
+              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-[150px] text-sm"
               required
             >
-              <option value="">City</option>
-              <option value="Mumbai">Mumbai</option>
+              <option value="">Qualification</option>
+              <option value="Mumbai">Maharashtra</option>
               <option value="Delhi">Delhi</option>
               <option value="Bangalore">Bangalore</option>
               <option value="Chennai">Chennai</option>
             </select>
             <select
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-[150px] text-sm"
+              required
+            >
+              <option value="">State</option>
+              <option value="Mumbai">Maharashtra</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Chennai">Chennai</option>
+            </select>
+            
+            <select
               name="whoAmI"
               value={formData.whoAmI}
               onChange={handleChange}
-              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-auto"
+              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-[150px] text-sm"
               required
             >
-              <option value="">Who am I?</option>
+              <option value="">Work exp</option>
               <option value="Student">Student</option>
               <option value="Professional">Professional</option>
               <option value="Entrepreneur">Entrepreneur</option>
             </select>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="City"
+              value={formData.fullName}
+              onChange={handleChange}
+              className="bg-white text-black px-4 py-2 rounded-md w-full md:w-[150px] text-sm"
+              required
+            />
             <button
               type="submit"
-              className="bg-[#7BBA27] text-[#fff] px-6 py-2 font-bold rounded-md hover:bg-[#375210] transition"
+              className="bg-[#7BBA27] text-[#fff] px-6 py-2 text-sm font-bold rounded-md hover:bg-[#375210] transition"
             >
-              Enquire Now!
+              Submit
             </button>
             {/* <button
               type="submit"

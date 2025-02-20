@@ -1,21 +1,15 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import {
-  Globe2,
-  Building2,
-  ArrowRight,
-  Briefcase,
- 
-} from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Globe2, Building2, ArrowRight, Briefcase } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
+import 'swiper/css/navigation';
 
 const HiringPartnersAlt = () => {
-
   const [activeTab, setActiveTab] = useState("global");
 
   const banks = {
@@ -107,8 +101,6 @@ const HiringPartnersAlt = () => {
       logo: "https://signup.jmfonline.in/assets/images/JM%20Logo-%20Blue%20Logo.png",
     },
   ];
-
-  
 
   // Style Variations for different layouts
   const layouts = {
@@ -206,10 +198,10 @@ const HiringPartnersAlt = () => {
   };
 
   return (
-    <section className="bg-white lg:bg-gray-50 px-4 py-16">
+    <section className="bg-white px-4 py-16 lg:bg-gray-50">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="mb-6 lg:mb-12 text-center">
+        <div className="mb-6 text-center lg:mb-12">
           <div className="mb-4 flex items-center justify-center">
             {/* <Briefcase className="w-10 h-10 text-blue-600 mr-3" /> */}
             <h2 className="text-2xl font-bold text-[#333333] md:text-4xl lg:text-5xl">
@@ -254,46 +246,45 @@ const HiringPartnersAlt = () => {
           {layouts.cards}
           {layouts.list}
         </div> */}
-           {/* Mobile View (Slider for sm & md screens) */}
-      <div className="block lg:hidden">
-        <Swiper
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          modules={[Pagination]}
-          className="mySwiper"
-          
-        >
-          {Array.from({ length: Math.ceil(bank2.length / 4) }).map((_, i) => (
-            <SwiperSlide key={i}>
-              <div className="grid grid-cols-2 gap-4 p-4">
-                {bank2.slice(i * 4, i * 4 + 4).map((bank, index) => (
-                  <div
-                    key={index}
-                    className="group relative  p-2  grayscale transition-all duration-300  hover:grayscale-0"
-                  >
-                    <div className="flex h-20 items-center justify-center">
-                      <img
-                        src={bank.logo}
-                        alt={`${bank.name} logo`}
-                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                    {/* <div className="text-center">
+        {/* Mobile View (Slider for sm & md screens) */}
+        <div className="block lg:hidden">
+          <Swiper
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {Array.from({ length: Math.ceil(bank2.length / 4) }).map((_, i) => (
+              <SwiperSlide key={i}>
+                <div className="grid grid-cols-2 gap-4 p-4">
+                  {bank2.slice(i * 4, i * 4 + 4).map((bank, index) => (
+                    <div
+                      key={index}
+                      className="group relative  p-2  grayscale transition-all duration-300  hover:grayscale-0"
+                    >
+                      <div className="flex h-20 items-center justify-center">
+                        <img
+                          src={bank.logo}
+                          alt={`${bank.name} logo`}
+                          className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      {/* <div className="text-center">
                       <p className="mb-2 text-lg font-semibold text-gray-900">
                         {bank.name}
                       </p>
                     </div> */}
-                  </div>
-                ))}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+                    </div>
+                  ))}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
         {/* only cards section */}
-         {/* Large Screen View (Keeps the existing layout) */}
-        <div className="hidden lg:grid grid-cols-4 gap-6">
+        {/* Large Screen View (Keeps the existing layout) */}
+        {/* <div className="hidden lg:grid grid-cols-4 gap-6">
           {bank2.map((bank, index) => (
             <div
               key={index}
@@ -310,10 +301,78 @@ const HiringPartnersAlt = () => {
                 <p className="mb-2 text-lg font-semibold text-gray-900">
                   {bank.name}
                 </p>
-                {/* <p className="text-sm text-gray-600">{bank.description}</p> */}
+               
               </div>
             </div>
           ))}
+        </div> */}
+        <div className="hidden lg:block">
+          {/* <Swiper
+            slidesPerView={1}
+            spaceBetween={20}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+            }}
+            pagination={{ clickable: true }}
+            navigation={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            modules={[Pagination, Navigation]}
+            className="my-6"
+          >
+            {bank2.map((bank, index) => (
+              <SwiperSlide key={index}>
+                <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-8 shadow-lg grayscale transition-all duration-300 hover:shadow-xl hover:grayscale-0">
+                  <div className="mb-6 flex h-24 items-center justify-center">
+                    <img
+                      src={bank.logo}
+                      alt={`${bank.name} logo`}
+                      className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <p className="mb-2 text-lg font-semibold text-gray-900">
+                      {bank.name}
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper> */}
+          <Swiper
+      slidesPerView={1}
+      spaceBetween={20}
+      breakpoints={{
+        640: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+        1280: { slidesPerView: 5 },
+        1536: { slidesPerView: 6 },
+      }}
+      pagination={{ clickable: true }}
+      navigation={true}
+      autoplay={{ delay: 1000, disableOnInteraction: true }}
+      modules={[Pagination, Navigation]}
+      className="my-6"
+    >
+      {bank2.map((bank, index) => (
+        <SwiperSlide key={index}>
+          <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-8 shadow-lg grayscale transition-all duration-300 hover:shadow-xl hover:grayscale-0">
+            <div className="mb-6 flex h-24 items-center justify-center">
+              <img
+                src={bank.logo}
+                alt={`${bank.name} logo`}
+                className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="text-center">
+              <p className="mb-2 text-lg font-semibold text-gray-900">{bank.name}</p>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
         </div>
       </div>
     </section>

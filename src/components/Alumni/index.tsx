@@ -17,7 +17,7 @@ const Alumni = () => {
       responsibilities: [
         "Builds financial models & valuation reports",
         "Supports M&A, fundraising, and strategic deals",
-        "Cracks complex financial puzzles"
+        "Expertly cracks complex financial puzzles"
       ],
       whoYouAre: "A data-driven problem solver with sharp analytical skills",
       futureYou: "Leading billion-dollar transactions in global markets",
@@ -49,7 +49,7 @@ const Alumni = () => {
       responsibilities: [
         "Ensures compliance with financial regulations",
         "Identifies risks in investments & corporate policies",
-        "Develops fraud prevention frameworks"
+        "Strategically develops robust fraud prevention frameworks"
       ],
       whoYouAre: "A detail-oriented watchdog who thrives on precision",
       futureYou: "Advising Fortune 500 companies on regulatory frameworks",
@@ -93,14 +93,14 @@ const Alumni = () => {
     {
       name: "Aniket Mehta",
       image: "/images/testimonials/2150408675.jpg",
-      title: "Investment Banking Operations Specialist: The Backbone of Transactions",
+      title: "Investment Banking Operations: The Backbone of Transactions",
       responsibilities: [
         "Manages trade settlements, reconciliations & risk assessments",
         "Ensures smooth processing of investment transactions",
         "Works with compliance & regulatory teams to minimize financial risk"
       ],
       whoYouAre: "A meticulous executor with a deep understanding of financial operations",
-      futureYou: "Leading global banking operations & driving financial efficiency at top investment banks",
+      futureYou: "Leading banking operations & financial efficiency",
       salary: {
         start: "₹8-12 LPA",
         top: "₹40-80 LPA"
@@ -130,7 +130,7 @@ const Alumni = () => {
           {careers.map((career, index) => (
             <SwiperSlide key={index}>
               <div className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border">
-                <div className="relative h-64">
+                <div className="relative h-[250px]">
                   <img
                     src={career.image}
                     alt={career.name}
@@ -142,7 +142,7 @@ const Alumni = () => {
                 </div>
 
                 <div className="p-6">
-                  <h4 className="text-primary font-semibold mb-4 text-lg lg:text-2xl">
+                  <h4 className="text-primary font-semibold mb-4 text-lg lg:text-xl">
                     {career.title}
                   </h4>
 
@@ -155,8 +155,8 @@ const Alumni = () => {
                     ))}
                   </ul>
 
-                  <div className="space-y-4 border-t pt-4">
-                    <div className="bg-primary/10 p-2 rounded">
+                  <div className="space-y-4 border-t">
+                    <div className="bg-primary/10 p-2 rounded ">
                       <p className="font-semibold text-primary text-sm lg:text-xl">Who You Are:</p>
                       <p className="text-gray-600 text-sm lg:text-base">{career.whoYouAre}</p>
                     </div>
@@ -195,7 +195,7 @@ const Alumni = () => {
               </div>
 
               <div className="p-6">
-                <h4 className="text-primary font-semibold mb-4 text-lg lg:text-2xl">{career.title}</h4>
+                <h4 className="text-primary font-semibold mb-4 text-lg lg:text-xl">{career.title}</h4>
 
                 <ul className="space-y-2 mb-6">
                   {career.responsibilities.map((resp, idx) => (
@@ -206,7 +206,7 @@ const Alumni = () => {
                   ))}
                 </ul>
 
-                <div className="space-y-4 border-t pt-4">
+                <div className="space-y-4 border-t py-4">
                   <div className='bg-primary/10 p-2 rounded'>
                     <p className="font-semibold text-primary text-sm lg:text-xl">Who You Are:</p>
                     <p className="text-gray-600 text-sm lg:text-base">{career.whoYouAre}</p>
