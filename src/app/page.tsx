@@ -25,6 +25,7 @@ import Overview from "@/components/Overview";
 import Leaders from "@/components/Leaders";
 import Alumni from "@/components/Alumni";
 import EnquiryForm from "@/components/EnquiryForm";
+import { ModalProvider } from "@/components/ModalContext";
 
 // export const metadata: Metadata = {
 //   title: "Finance Forum of India",
@@ -58,6 +59,7 @@ export default function Home() {
 
   return (
     <>
+     
       <ScrollUp />
       <Hero />
       <Features />
@@ -74,6 +76,7 @@ export default function Home() {
       <Footer />
       <EnquiryForm/>
       {/* <StickyFooter/> */}
+     
     </>
   );
 }

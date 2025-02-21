@@ -25,6 +25,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import InquireButton from '../InquireButton';
 
 const CurriculumSection = () => {
  
@@ -232,12 +233,13 @@ const CurriculumSection = () => {
         </div>
         </div>
         <div>
-        <Link
+        {/* <Link
             href="/"
             className="flex inline-block rounded-sm bg-primary w-[180px]  lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
           >
             Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
-          </Link>
+          </Link> */}
+          <InquireButton/>
         </div>
         </div>
        

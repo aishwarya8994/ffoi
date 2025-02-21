@@ -6,6 +6,7 @@ import SectionTitle from "../Common/SectionTitle";
 import { Clock, Award, Building2 } from 'lucide-react';
 import {MoveRight} from 'lucide-react'
 import Link from "next/link";
+import InquireButton from "../InquireButton";
 
 
 const Video = () => {
@@ -140,7 +141,7 @@ const Video = () => {
           </div>
         </div>
         {/* Partner Institutions */}
-        <div>
+        <div className="mb-3">
           <h4 className="mb-2  text-base lg:text-2xl font-medium text-white">
             Partner Institutions
           </h4>
@@ -168,12 +169,13 @@ const Video = () => {
            </div>
          
         </div>
-        <Link
+        {/* <Link
             href="/"
             className="flex inline-block rounded-sm bg-primary w-[180px] lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
           >
             Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
-          </Link>
+          </Link> */}
+           <InquireButton />
       </div>
 
       {/* <ModalVideo

@@ -1,6 +1,12 @@
+import { useState } from "react";
+
 import Link from "next/link";
 import {MoveRight} from 'lucide-react'
+import EnquiryForm from "../EnquiryForm";
+import InquireButton from "../InquireButton";
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       
@@ -31,12 +37,13 @@ const Hero = () => {
           >
             🔥 Get Pro
           </Link> */}
-          <Link
-            href="/"
+          {/* <button 
+           
             className="flex inline-block rounded-sm bg-primary px-5 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
           >
             Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
-          </Link>
+          </button > */}
+           <InquireButton />
         </div>
               </div>
             </div>

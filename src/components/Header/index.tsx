@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import { Phone, MessageCircle, ArrowDownToLine } from "lucide-react";
+import DownloadBrochure from "@/components/DownloadBrochure";
 
 const Header = () => {
   // Navbar toggle
@@ -167,7 +168,7 @@ const Header = () => {
                   <span>+91 123456789</span>
                   </div>
                 </Link>
-                <Link
+                {/* <Link
                   href="/"
                   className="block   lg:hidden"
                 >
@@ -175,7 +176,11 @@ const Header = () => {
                   <ArrowDownToLine className="mr-2 text-sm lg:text-base text-white" />{" "}
                   <span>Download Brochure</span>
                   </div>
-                </Link>
+                </Link> */}  
+               <div className="block   lg:hidden ">
+               <DownloadBrochure/>
+               </div>
+              
                 </nav>
               </div>
               <div className="flex items-center justify-end gap-4 pr-16 lg:pr-0">
@@ -195,12 +200,12 @@ const Header = () => {
                   href="/"
                   className="hidden md:block   "
                 >
-                  <div className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210]">
+                  <div className="flex bg-primary px-6 py-2 text-white hover:bg-[#375210]">
                   <Phone className="mr-2 text-lg text-white" />{" "}
                   <span>+91 123456789</span>
                   </div>
                 </Link>
-                <Link
+                {/* <Link
                   href="/"
                   className="hidden   lg:block"
                 >
@@ -208,7 +213,8 @@ const Header = () => {
                   <ArrowDownToLine className="mr-2 text-lg text-white" />{" "}
                   <span>Download Brochure</span>
                   </div>
-                </Link>
+                </Link> */}
+                  <DownloadBrochure/>
 
                 {/* <div>
                   <ThemeToggler />

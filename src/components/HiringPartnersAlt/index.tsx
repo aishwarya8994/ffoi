@@ -62,43 +62,121 @@ const HiringPartnersAlt = () => {
   const bank2 = [
     {
       name: "J.P. Morgan",
-      logo: "https://cdn.prod.website-files.com/63f6e52346a353ca1752970e/644fb7a5f64fb5cb87a5beaa_20230501T1259-9f1793fc-a440-492c-a2b5-c01eba32c7f4.jpeg",
+      logo: "/images/global/Barclays-Logo.jpg",
     },
     {
       name: "Goldman Sachs",
-      logo: "https://worldgbc.s3.eu-west-2.amazonaws.com/wp-content/uploads/2022/08/08135440/GSsignature_Blue.png",
+      logo: "/images/global/BMO_Capital_Markets_logo.svg.png",
     },
     {
       name: "Morgan Stanley",
-      logo: "https://pbs.twimg.com/profile_images/1631347869687898142/ATwo7QZZ_400x400.jpg",
+      logo: "/images/global/bofa_securities_lo2_rgb.jpg",
     },
     {
       name: "Bank of America",
-      logo: "https://logos-world.net/wp-content/uploads/2020/11/Bank-of-America-Emblem.png",
+      logo: "/images/global/Citigroup logo.jpg",
     },
     {
       name: "Barclays",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaAMBzVwmCWxPtgjiI7i7X4vrHX7GcH9i0zQ&s",
+      logo: "/images/global/Deutsche-Bank-Emblem.png",
     },
     {
       name: "Kotak Mahindra",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0x-5XTuch9fn5z1DFeFeNUI7iaWTAsN9Bpg&s",
+      logo: "/images/global/evercore_wealth_management_llclogo.jpg",
     },
     {
       name: "HDFC Bank",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsiMz-D2pGIen44gUk-84rgzGpeOzLuh3vgQ&s",
+      logo: "/images/global/Goldman-Sachs-Logo.png",
     },
     {
       name: "BNP Paribas",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiLoiOe8E7v5GQnEVMFBQes0_igRqgSTiM4Q&s",
+      logo: "/images/global/HSBC-Logo.png",
     },
     {
       name: "ICICI Securities",
-      logo: "https://companieslogo.com/img/orig/ISEC.NS_BIG-46531085.png?t=1720452992",
+      logo: "/images/global/images.png",
     },
     {
       name: "JM Financial",
-      logo: "https://signup.jmfonline.in/assets/images/JM%20Logo-%20Blue%20Logo.png",
+      logo: "/images/global/Jefferies_logo.svg.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/global/Lazard-Ltd-Logo.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/global/Mitsubishi_UFJ_Financial_Group.svg.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/global/Mizuho_logo.svg.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/global/Morgan_Stanley_Logo_1.svg.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/global/RBC-Capital-Markets-official-logo.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/global/UBS-Logo.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/global/Nomura_Holdings_logo.svg.png",
+    },
+    
+    // indian
+    {
+      name: "BMO",
+      logo: "/images/indian/0e17eaf90cfd6de3c7aa52437a2b7ee4.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/4zUR2dgxsYElMMyDR4UU.webp",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/Axis Bank.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/Axis-Capital.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/bajajcapital.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/BNP-Paribas-Logo.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/Centrum Capital Limited Logo 3.jpg",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/IIFL.NS_BIG-f1d6efdb.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/edelweiss.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/JM Logo- Blue Logo.png",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/kotak_investment_banking_cover.jpg",
+    },
+    {
+      name: "BMO",
+      logo: "/images/indian/piramal-finance-aiming-for-predictable-profitability-md.webp",
     },
   ];
 
@@ -350,7 +428,7 @@ const HiringPartnersAlt = () => {
         1280: { slidesPerView: 5 },
         1536: { slidesPerView: 6 },
       }}
-      pagination={{ clickable: true }}
+      // pagination={{ clickable: true }}
       navigation={true}
       autoplay={{ delay: 1000, disableOnInteraction: true }}
       modules={[Pagination, Navigation]}
@@ -358,7 +436,7 @@ const HiringPartnersAlt = () => {
     >
       {bank2.map((bank, index) => (
         <SwiperSlide key={index}>
-          <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-8 shadow-lg grayscale transition-all duration-300 hover:shadow-xl hover:grayscale-0">
+          <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-5  grayscale transition-all duration-300 hover:shadow-xl hover:grayscale-0">
             <div className="mb-6 flex h-24 items-center justify-center">
               <img
                 src={bank.logo}
@@ -366,9 +444,9 @@ const HiringPartnersAlt = () => {
                 className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-            <div className="text-center">
+            {/* <div className="text-center">
               <p className="mb-2 text-lg font-semibold text-gray-900">{bank.name}</p>
-            </div>
+            </div> */}
           </div>
         </SwiperSlide>
       ))}
