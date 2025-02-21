@@ -86,9 +86,9 @@ const BrochureFormModal = ({ isOpen, closeModal, setDownloadable }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 pt-7">
-      <div className="-full rounded-lg bg-dark p-6 lg:w-1/2">
+      <div className="relative w-full lg:w-1/2 rounded-lg bg-dark p-6 shadow-lg">
         <div className="flex justify-between">
-          <h2 className="mb-4 text-xl font-semibold text-primary">
+          <h2 className="mb-4 text-2xl font-semibold text-primary">
             Enquiry Form
           </h2>
           <button onClick={closeModal} className=" mb-4 text-gray-500">
