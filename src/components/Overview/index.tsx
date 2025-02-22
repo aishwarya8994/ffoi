@@ -3,6 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { BookOpen, LineChart, Monitor, Target, Gem } from "lucide-react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 
 const Overview = () => {
   const features = [
@@ -33,99 +39,26 @@ const Overview = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
-    
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
-    return () => window.removeEventListener('resize', checkIfMobile);
+
+    handleResize(); // Check on initial render
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === features.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? features.length - 1 : prevIndex - 1
-    );
-  };
-
-  if (isMobile) {
-    return (
-      <div className="relative px-4 py-8">
-        <h2 className=" mb-8 text-center text-2xl font-bold leading-tight text-[#333333] md:text-4xl lg:text-5xl">
-            What Sets Us Apart?
-          </h2>
-        {/* Feature Card */}
-        <div className="group relative w-full">
-          <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg">
-            <img
-              src={features[currentIndex].imageUrl}
-              alt={features[currentIndex].title}
-              className="h-full w-full object-cover grayscale transition-transform duration-500 group-hover:scale-110"
-            />
-          </div>
-          <div className="absolute left-4 top-4 rounded-full bg-primary/90 p-2 shadow-lg backdrop-blur-sm">
-            {React.cloneElement(features[currentIndex].icon, { 
-              className: "text-white" 
-            })}
-          </div>
-          <div className="relative z-10 -mt-16 mx-8 rounded-lg bg-white p-6 shadow-lg transition-transform duration-300 group-hover:-translate-y-2">
-            <p className="text-center text-base font-bold leading-snug text-gray-900">
-              {features[currentIndex].title}
-            </p>
-          </div>
-        </div>
-
-        {/* Navigation Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg"
-          aria-label="Previous feature"
-        >
-          <ChevronLeft className="h-6 w-6 text-primary" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg"
-          aria-label="Next feature"
-        >
-          <ChevronRight className="h-6 w-6 text-primary" />
-        </button>
-
-        {/* Dots Indicator */}
-        <div className="mt-4 flex justify-center gap-2">
-          {features.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-primary' : 'bg-gray-300'
-              }`}
-              aria-label={`Go to feature ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
-
 
 
   return (
     <section className="bg-gray-50 py-6 lg:py-16">
       <div className="mx-auto max-w-7xl px-4">
         {/* Header */}
-        <div className="relative mb-16">
-          <h2 className="mb-8 text-center text-2xl font-bold leading-tight text-[#333333] md:text-4xl lg:text-5xl">
+        <div className="relative mb-6 lg:mb-16">
+          <h2 className="mb-4 lg:mb-8 text-center text-2xl font-bold leading-tight text-[#333333] md:text-4xl lg:text-5xl">
             What Sets Us Apart?
           </h2>
           {/* <div className="absolute h-px w-full bg-gray-300 top-1/2 left-0 -z-0" /> */}
@@ -158,7 +91,7 @@ const Overview = () => {
             </div>
           ))}
         </div> */}
-        <div className="flex flex-wrap justify-center gap-6">
+        {/* <div className="flex flex-wrap justify-center gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -181,7 +114,63 @@ const Overview = () => {
               </div>
             </div>
           ))}
+        </div> */}
+        {isMobile ? (
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+        >
+          {features.map((feature, index) => (
+            <SwiperSlide key={index}>
+              <div className="group relative w-full">
+                <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg">
+                  <img
+                    src={feature.imageUrl}
+                    alt={feature.title}
+                    className="h-full w-full object-cover grayscale transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="absolute left-4 top-4 rounded-full bg-primary/90 p-2 shadow-lg backdrop-blur-sm lg:p-3">
+                  {React.cloneElement(feature.icon, { className: "text-white" })}
+                </div>
+                <div className="relative z-10 -mt-16 mx-8 rounded-lg bg-white p-6 shadow-lg transition-transform duration-300 group-hover:-translate-y-2">
+                  <p className="text-center text-base font-bold leading-snug text-gray-900 lg:text-[1.6rem]">
+                    {feature.title}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="flex flex-wrap justify-center gap-6">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="lg:w-[calc(33.33%-16px) group relative w-full md:w-[calc(50%-16px)]"
+            >
+              <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg">
+                <img
+                  src={feature.imageUrl}
+                  alt={feature.title}
+                  className="h-full w-full object-cover grayscale transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute left-4 top-4 rounded-full bg-primary/90 p-2 shadow-lg backdrop-blur-sm lg:p-3">
+                {React.cloneElement(feature.icon, { className: "text-white" })}
+              </div>
+              <div className="relative z-10 -mt-16 mx-8 rounded-lg bg-white p-6 shadow-lg transition-transform duration-300 group-hover:-translate-y-2">
+                <p className="text-center text-base font-bold leading-snug text-gray-900 lg:text-[1.6rem]">
+                  {feature.title}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
+      )}
 
         {/* Bottom Accent */}
         {/* <div className="mt-16 flex justify-center">

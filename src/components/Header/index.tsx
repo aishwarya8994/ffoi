@@ -101,7 +101,7 @@ const Header = () => {
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20  lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
                       ? "visibility top-full opacity-100"
                       : "invisible top-[120%] opacity-0"
@@ -115,8 +115,8 @@ const Header = () => {
                             href={menuItem.path}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                               usePathName === menuItem.path
-                                ? "text-white lg:text-dark hover:text-primary"
-                                : "text-white lg:text-dark hover:text-primary "
+                                ? "text-dark hover:text-primary"
+                                : "text-dark hover:text-primary "
                             }`}
                           >
                             {menuItem.title}
@@ -177,7 +177,7 @@ const Header = () => {
                   <span>Download Brochure</span>
                   </div>
                 </Link> */}  
-               <div className="block   lg:hidden ">
+               <div className="block lg:hidden ">
                <DownloadBrochure/>
                </div>
               
@@ -214,7 +214,9 @@ const Header = () => {
                   <span>Download Brochure</span>
                   </div>
                 </Link> */}
+                  <div className="hidden md:block ">
                   <DownloadBrochure/>
+                  </div>
 
                 {/* <div>
                   <ThemeToggler />

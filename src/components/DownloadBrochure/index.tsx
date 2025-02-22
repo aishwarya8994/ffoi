@@ -9,6 +9,8 @@ const DownloadBrochure = () => {
   const [isDownloadable, setIsDownloadable] = useState(false);
 
   return (
+    <>
+   
     <div>
       {isDownloadable ? (
         // Replaces the "Download Brochure" button with "Click to Download" after submission
@@ -24,20 +26,22 @@ const DownloadBrochure = () => {
         // Show this button before form submission
         <button
           onClick={() => setIsModalOpen(true)}
-          className="flex bg-primary px-6 py-2 text-white rounded hover:bg-[#375210]"
+          className="flex bg-primary px-3 lg:px-6 py-[6px] lg:py-2 text-white rounded hover:bg-[#375210]"
         >
           <ArrowDownToLine className="mr-2 text-lg text-white" />
           <span>Download Brochure</span>
         </button>
       )}
 
-      {/* Modal Component */}
-      <BrochureFormModal
+      
+    </div>
+    {/* Modal Component */}
+    <BrochureFormModal
         isOpen={isModalOpen}
         closeModal={() => setIsModalOpen(false)}
         setDownloadable={setIsDownloadable} // Ensures the form submission updates the button
       />
-    </div>
+    </>
   );
 };
 

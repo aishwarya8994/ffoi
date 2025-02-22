@@ -50,11 +50,11 @@ const BrochureFormModal = ({ isOpen, closeModal, setDownloadable }) => {
     if (isOpen) {
       document.body.style.overflow = "hidden"; // Disable scrolling
     } else {
-      document.body.style.overflow = ""; // Enable scrolling when closed
+      document.body.style.overflow = "auto"; // Enable scrolling when closed
     }
 
     return () => {
-      document.body.style.overflow = ""; // Cleanup when unmounting
+      document.body.style.overflow = "auto"; // Cleanup when unmounting
     };
   }, [isOpen]);
 
@@ -85,8 +85,10 @@ const BrochureFormModal = ({ isOpen, closeModal, setDownloadable }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 pt-7">
-      <div className="relative w-full lg:w-1/2 rounded-lg bg-dark p-6 shadow-lg">
+    <div className="fixed inset-0 z-50 flex items-top lg:items-center justify-center bg-black bg-opacity-50">
+      <div className="relative w-[90%] lg:w-1/2 rounded-lg bg-dark p-6 shadow-lg"
+       onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+      >
         <div className="flex justify-between">
           <h2 className="mb-4 text-2xl font-semibold text-primary">
             Enquiry Form

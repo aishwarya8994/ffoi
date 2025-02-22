@@ -5,6 +5,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Testimonial } from "@/types/testimonial";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const testimonialData: Testimonial[] = [
   {
@@ -67,80 +72,18 @@ const testimonialData: Testimonial[] = [
 
 const Testimonials = () => {
 
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
-    
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
-    return () => window.removeEventListener('resize', checkIfMobile);
+
+    handleResize(); // Check on initial render
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === testimonialData.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonialData.length - 1 : prevIndex - 1
-    );
-  };
-
-  if (isMobile) {
-    return (
-      <div className="group relative px-4 py-8 bg-secondary">
-        <div className="mb-12 text-center">
-            <h2 className="mb-4 text-center text-2xl font-bold text-[#fff] md:text-4xl lg:text-5xl">
-              What Our Students Say
-            </h2>
-            <p className="text-center text-sm text-gray-200 lg:text-xl">
-              Hear from our students about their experiences, successes, and how
-              we&apos;ve helped them achieve their goals
-            </p>
-          </div>
-        {/* Current Testimonial */}
-        <div className="transition-opacity duration-300">
-          <SingleTestimonial testimonial={testimonialData[currentIndex]} />
-        </div>
-
-        {/* Navigation Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg"
-          aria-label="Previous testimonial"
-        >
-          <ChevronLeft className="h-6 w-6 text-primary" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg"
-          aria-label="Next testimonial"
-        >
-          <ChevronRight className="h-6 w-6 text-primary" />
-        </button>
-
-        {/* Dots Indicator */}
-        <div className="mt-6 flex justify-center gap-2">
-          {testimonialData.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-primary' : 'bg-gray-300'
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
 
 
 
@@ -168,14 +111,36 @@ const Testimonials = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
             {testimonialData.map((testimonial) => (
               <SingleTestimonial
                 key={testimonial.id}
                 testimonial={testimonial}
               />
             ))}
-          </div>
+          </div> */}
+
+{isMobile ? (
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+        >
+          {testimonialData.map((testimonial) => (
+            <SwiperSlide key={testimonial.id}>
+              <SingleTestimonial testimonial={testimonial} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          {testimonialData.map((testimonial) => (
+            <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
+          ))}
+        </div>
+      )}
         </div>
         <div className="absolute right-0 top-5 z-[-1]">
           <svg
