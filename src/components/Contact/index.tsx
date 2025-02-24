@@ -206,7 +206,7 @@ const Contact = () => {
             {/* <NewsLatterBox /> */}
 
             {/* Contact Details */}
-            <div className="ml-0 h-[624px] space-y-5 bg-secondary/80 p-5">
+            <div className="ml-0 h-[400px] lg:h-[545px] space-y-5 bg-secondary/80 p-5">
               {/* Header */}
               <h2 className="mb-5 text-2xl font-bold text-primary dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
                 Contact Us
