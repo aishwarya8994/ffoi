@@ -37,7 +37,7 @@ const Contact = () => {
               <form>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
+                    <div className="mb-3 lg:mb-8">
                       {/* <label
                         htmlFor="name"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -52,7 +52,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
+                    <div className="mb-3 lg:mb-8">
                       {/* <label
                         htmlFor="contact"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -68,7 +68,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
+                    <div className="mb-3 lg:mb-8">
                       {/* <label
                         htmlFor="email"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -83,7 +83,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
+                    <div className="mb-3 lg:mb-8">
                       {/* <label
                         htmlFor="city"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -97,7 +97,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  <div className="mb-8 w-full px-4 md:w-1/2">
+                  {/* <div className="mb-3 lg:mb-8 w-full px-4 md:w-1/2">
                     <select
                       name="whoAmI"
                       className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
@@ -108,8 +108,8 @@ const Contact = () => {
                       <option value="Professional">Graduate</option>
                       <option value="Entrepreneur">Post Graduate</option>
                     </select>
-                  </div>
-                  <div className="mb-8 w-full px-4 md:w-1/2">
+                  </div> */}
+                  <div className="mb-3 lg:mb-8 w-full px-4 md:w-1/2">
                     <select
                       name="state"
                       className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
@@ -162,7 +162,7 @@ const Contact = () => {
                       </option>
                     </select>
                   </div>
-                  <div className="mb-8 w-full px-4 md:w-1/2">
+                  <div className="mb-3 lg:mb-8 w-full px-4 md:w-1/2">
                     <select
                       name="whoAmI"
                       className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
@@ -243,7 +243,7 @@ const Contact = () => {
               </div>
 
               {/* Social Icons */}
-              <div className="mt-16 flex gap-8 pt-11">
+              <div className="mt-4 lg:mt-16 flex gap-8 pt-4 lg:pt-11">
                 <Link
                   href="https://www.instagram.com/ffoi_official?igsh=NmN3YjdqZGV5cHl6"
                   target="_blank"

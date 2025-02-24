@@ -86,7 +86,7 @@ const BrochureFormModal = ({ isOpen, closeModal, setDownloadable }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-top lg:items-center justify-center bg-black bg-opacity-50">
-      <div className="relative w-[90%] lg:w-1/2 rounded-lg bg-dark p-6 shadow-lg"
+      <div className="relative w-[90%] lg:w-1/3 rounded-lg bg-dark p-6 shadow-lg"
        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
       >
         <div className="flex justify-between">
@@ -99,7 +99,7 @@ const BrochureFormModal = ({ isOpen, closeModal, setDownloadable }) => {
         </div>
 
         <form className="flex flex-wrap " onSubmit={handleSubmit}>
-          <div className="mb-3 w-full px-2 md:w-1/2">
+          <div className="mb-3 w-full px-2 md:w-full">
             {/* Name */}
             <input
               type="text"
@@ -168,8 +168,8 @@ const BrochureFormModal = ({ isOpen, closeModal, setDownloadable }) => {
               ))}
             </select>
           </div>
-          <div className="mb-3  w-full px-2 md:w-1/2">
-            {/* Qualification Dropdown */}
+          {/* <div className="mb-3  w-full px-2 md:w-1/2">
+           
             <select
               name="qualification"
               className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
@@ -185,7 +185,7 @@ const BrochureFormModal = ({ isOpen, closeModal, setDownloadable }) => {
               <option value="PhD">PhD</option>
               <option value="Other">Other</option>
             </select>
-          </div>
+          </div> */}
           <div className="mb-3  w-full px-2 md:w-1/2">
             {/* Work Experience Dropdown */}
             <select

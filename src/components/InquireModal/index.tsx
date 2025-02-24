@@ -7,8 +7,8 @@ const InquireModal = () => {
   if (!isOpen) return null; // Don't render if not open
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 lg:pt-7">
-      <div className="bg-dark p-6 rounded-lg w-full lg:w-1/2">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 pt-3 lg:pt-7">
+      <div className="bg-dark p-4 lg:p-6 rounded-lg w-full lg:w-1/3">
       <div className="flex justify-end">
       <button onClick={closeModal} className="mt-2 text-gray-500"><CircleX /></button>
       </div>
@@ -18,8 +18,8 @@ const InquireModal = () => {
              
         <form>
                 <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
+                  <div className="w-full px-4 md:w-full">
+                    <div className="mb-4 lg:mb-6">
                       {/* <label
                         htmlFor="name"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -34,7 +34,7 @@ const InquireModal = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-8">
+                    <div className="mb-4 lg:mb-6">
                       {/* <label
                         htmlFor="contact"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -50,7 +50,7 @@ const InquireModal = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-8">
+                    <div className="mb-4 lg:mb-6">
                       {/* <label
                         htmlFor="email"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -65,7 +65,7 @@ const InquireModal = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-8">
+                    <div className="mb-4 lg:mb-6">
                       {/* <label
                         htmlFor="city"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -79,7 +79,7 @@ const InquireModal = () => {
                       />
                     </div>
                   </div>
-                  <div className="mb-4 lg:mb-8 w-full px-4 md:w-1/2">
+                  {/* <div className="mb-4 lg:mb-6 w-full px-4 md:w-1/2">
                     <select
                       name="whoAmI"
                       className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
@@ -90,8 +90,8 @@ const InquireModal = () => {
                       <option value="Professional">Graduate</option>
                       <option value="Entrepreneur">Post Graduate</option>
                     </select>
-                  </div>
-                  <div className="mb-4 lg:mb-8 w-full px-4 md:w-1/2">
+                  </div> */}
+                  <div className="mb-4 lg:mb-6 w-full px-4 md:w-1/2">
                     <select
                       name="state"
                       className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
@@ -144,7 +144,7 @@ const InquireModal = () => {
                       </option>
                     </select>
                   </div>
-                  <div className="mb-4 lg:mb-8 w-full px-4 md:w-1/2">
+                  <div className="mb-4 lg:mb-6 w-full px-4 md:w-1/2">
                     <select
                       name="whoAmI"
                       className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
