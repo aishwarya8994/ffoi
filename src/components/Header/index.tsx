@@ -107,7 +107,7 @@ const Header = () => {
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  <ul className="block lg:flex lg:space-x-12">
+                  {/* <ul className="block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
@@ -123,7 +123,7 @@ const Header = () => {
                           </Link>
                         ) : (
                           <>
-                            {/* <p
+                            <p
                               onClick={() => handleSubmenu(index)}
                               className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
                             >
@@ -153,12 +153,12 @@ const Header = () => {
                                   {submenuItem.title}
                                 </Link>
                               ))}
-                            </div> */}
+                            </div>
                           </>
                         )}
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                   <Link
                   href="/"
                   className="block   lg:hidden "
@@ -168,18 +168,19 @@ const Header = () => {
                   <span>+91 123456789</span>
                   </div>
                 </Link>
-                {/* <Link
-                  href="/"
+                <Link
+                href="#contact" scroll={false}
+                  // href="/"
                   className="block   lg:hidden"
                 >
-                  <div className="flex bg-primary px-3 lg:px-6 py-2 text-white hover:bg-[#375210]">
+                  <div className="flex bg-primary rounded px-3  lg:px-6 py-2 text-white hover:bg-[#375210]">
                   <ArrowDownToLine className="mr-2 text-sm lg:text-base text-white" />{" "}
                   <span>Download Brochure</span>
                   </div>
-                </Link> */}  
-               <div className="block lg:hidden ">
+                </Link>  
+               {/* <div className="block lg:hidden ">
                <DownloadBrochure/>
-               </div>
+               </div> */}
               
                 </nav>
               </div>
@@ -200,23 +201,24 @@ const Header = () => {
                   href="/"
                   className="hidden md:block   "
                 >
-                  <div className="flex bg-primary rounded px-6 py-2 text-white hover:bg-[#375210]">
+                  <div className="flex bg-primary rounded px-3 lg:px-6 py-2 text-white hover:bg-[#375210]">
                   <Phone className="mr-2 text-lg text-white" />{" "}
                   <span>+91 123456789</span>
                   </div>
                 </Link>
-                {/* <Link
-                  href="/"
+                <Link
+                href="#contact"
+                  // href="/"
                   className="hidden   lg:block"
                 >
-                  <div className="flex bg-primary px-6 py-3 text-white hover:bg-[#375210]">
+                  <div className="flex bg-primary rounded px-6 py-2 text-white hover:bg-[#375210]">
                   <ArrowDownToLine className="mr-2 text-lg text-white" />{" "}
                   <span>Download Brochure</span>
                   </div>
-                </Link> */}
-                  <div className="hidden md:block ">
+                </Link>
+                  {/* <div className="hidden md:block ">
                   <DownloadBrochure/>
-                  </div>
+                  </div> */}
 
                 {/* <div>
                   <ThemeToggler />

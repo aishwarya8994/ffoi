@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Navigation } from "swiper/modules";
+import {Autoplay, Pagination, Navigation } from "swiper/modules";
 import 'swiper/css/navigation';
 
 const HiringPartnersAlt = () => {
@@ -431,7 +431,7 @@ const HiringPartnersAlt = () => {
       // pagination={{ clickable: true }}
       navigation={true}
       autoplay={{ delay: 1000, disableOnInteraction: true }}
-      modules={[Pagination, Navigation]}
+      modules={[Autoplay,Pagination, Navigation]}
       className="my-6"
     >
       {bank2.map((bank, index) => (

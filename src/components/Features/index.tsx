@@ -20,7 +20,7 @@ const Features = () => {
     {
       id: 2,
       title: "Command Lucrative Salaries",
-      description: "– Earn up to ₹1Cr+ per year",
+      description: "Earn up to ₹1Cr+ per year",
       imageUrl: "/images/hero/2151575336.jpg",
     },
     {

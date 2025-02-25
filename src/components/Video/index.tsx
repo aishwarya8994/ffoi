@@ -169,13 +169,13 @@ const Video = () => {
            </div>
          
         </div>
-        {/* <Link
-            href="/"
+        <Link
+            href="#contact"
             className="flex inline-block rounded-sm bg-primary w-[180px] lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
           >
             Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
-          </Link> */}
-           <InquireButton />
+          </Link>
+           {/* <InquireButton /> */}
       </div>
 
       {/* <ModalVideo

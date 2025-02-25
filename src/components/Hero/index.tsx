@@ -25,7 +25,7 @@ const Hero = () => {
                   MBA in Investment Banking
                 </h1>
 
-                <h1 className=" mb-3 text-lg lg:text-3xl font-bold leading-tight text-secondary  sm:text-4xl sm:leading-tight md:text-[1.5rem] md:leading-tight">AICTE-Approved | 2-Year Full-Time</h1>
+                <h1 className=" mb-3 text-lg lg:text-3xl font-bold leading-tight text-secondary  sm:text-4xl sm:leading-tight md:text-[1.5rem] md:leading-tight">AICTE-Approved | 2-Year Full-Time Program</h1>
                 {/* <p className="text-4xl font-semibold text-gray-700 sm:text-4xl sm:leading-tight md:text-[1.3rem] md:leading-tight mb-3">
                 Transform Your Career in Investment Banking
                 </p> */}
@@ -37,13 +37,13 @@ const Hero = () => {
           >
             🔥 Get Pro
           </Link> */}
-          {/* <button 
-           
+          <Link 
+           href="#contact"
             className="flex inline-block rounded-sm bg-primary px-5 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
           >
             Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
-          </button > */}
-           <InquireButton />
+          </Link >
+           {/* <InquireButton /> */}
         </div>
               </div>
             </div>

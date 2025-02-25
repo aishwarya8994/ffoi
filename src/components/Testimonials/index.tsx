@@ -37,7 +37,7 @@ const testimonialData: Testimonial[] = [
     designation: "Founder @UIdeck",
     content:
       "The mentorship at FFOI and real-world case studies provided a strong foundation in finance. I feel confident tackling professional challenges.",
-    image: "/images/testimonials/falak Nawab.webp",
+    image: "/images/testimonials/falak nawab 2.jpg",
     star: 5,
   },
  
