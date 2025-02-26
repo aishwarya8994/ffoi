@@ -129,7 +129,7 @@ const Alumni = () => {
         >
           {careers.map((career, index) => (
             <SwiperSlide key={index}>
-              <div className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border">
+              <div data-aos="zoom-out" className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border">
                 <div className="relative h-[250px]">
                   <img
                     src={career.image}
@@ -181,7 +181,7 @@ const Alumni = () => {
 
         <div className="hidden lg:grid grid-cols-3 gap-8">
           {careers.map((career, index) => (
-            <div key={index} className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border ">
+            <div data-aos="zoom-out" key={index} className="hover:shadow-xl transition-shadow duration-300 overflow-hidden border ">
               <div className="relative h-64">
                 <img  
                   src={career.image} 

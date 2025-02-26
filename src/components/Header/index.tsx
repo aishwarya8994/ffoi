@@ -160,8 +160,8 @@ const Header = () => {
                     ))}
                   </ul> */}
                   <Link
-                  href="/"
-                  className="block   lg:hidden "
+                  href="tel:1234567892"
+                  className="block   lg:hidden"
                 >
                   <div className="flex bg-primary rounded px-3 lg:px-6 py-2 text-white hover:bg-[#375210] mb-3">
                   <Phone className="mr-2 text-sm lg:text-base text-white" />{" "}
@@ -178,6 +178,16 @@ const Header = () => {
                   <span>Download Brochure</span>
                   </div>
                 </Link>  
+                <Link
+                href="#contact"
+                  // href="/"
+                  className="block  lg:hidden"
+                >
+                  <div className="flex bg-secondary rounded px-6 py-2 text-white hover:bg-secondary/70">
+                  {/* <ArrowDownToLine className="mr-2 text-lg text-white" />{" "} */}
+                  <span>Enquire Now</span>
+                  </div>
+                </Link>
                {/* <div className="block lg:hidden ">
                <DownloadBrochure/>
                </div> */}
@@ -214,6 +224,16 @@ const Header = () => {
                   <div className="flex bg-primary rounded px-6 py-2 text-white hover:bg-[#375210]">
                   <ArrowDownToLine className="mr-2 text-lg text-white" />{" "}
                   <span>Download Brochure</span>
+                  </div>
+                </Link>
+                <Link
+                href="#contact"
+                  // href="/"
+                  className="hidden  lg:block"
+                >
+                  <div className="flex bg-secondary rounded px-6 py-2 text-white hover:bg-secondary/70">
+                  {/* <ArrowDownToLine className="mr-2 text-lg text-white" />{" "} */}
+                  <span>Enquire Now</span>
                   </div>
                 </Link>
                   {/* <div className="hidden md:block ">

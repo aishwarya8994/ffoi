@@ -17,8 +17,8 @@ const Hero = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 sm:w-7/12">
-              <div className="max-w-[900px] text-left p-3 lg:p-0 bg-white/80 lg:bg-transparent ">
-                <p className="text-3xl font-bold text-primary lg:text-secondary sm:text-4xl sm:leading-tight md:text-[4rem] md:leading-tight mb-4">
+              <div  data-aos="fade-right" className="max-w-[900px] p-3 lg:p-0 bg-white/80 lg:bg-transparent mx-auto lg:mx-0 text-center lg:text-left ">
+                <p className=" text-3xl font-bold text-primary lg:text-secondary sm:text-4xl sm:leading-tight md:text-[4rem] md:leading-tight mb-4">
                   Build Your Future in Global Finance!
                 </p>
                 <h1 className=" mb-3 text-lg lg:text-3xl font-bold leading-tight text-secondary  sm:text-4xl sm:leading-tight md:text-[1.5rem] md:leading-tight">
@@ -30,7 +30,7 @@ const Hero = () => {
                 Transform Your Career in Investment Banking
                 </p> */}
                 
-                <div className="flex flex-col items-start justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                <div className="flex flex-col items-center lg:items-start justify-center lg:justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           {/* <Link
             href="https://nextjstemplates.com/templates/saas-starter-startup"
             className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"

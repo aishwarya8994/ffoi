@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { BookOpen, LineChart, Monitor, Target, Gem } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import {Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -117,15 +117,21 @@ const Overview = () => {
         </div> */}
         {isMobile ? (
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Autoplay,Navigation, Pagination]}
           spaceBetween={20}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3000, // Time between slides in ms (3s)
+            disableOnInteraction: false, // Keep autoplay running after interaction
+          }}
+          loop={true} // Loop slides continuously
+          
         >
           {features.map((feature, index) => (
             <SwiperSlide key={index}>
-              <div className="group relative w-full">
+              <div data-aos="fade-down" className="group relative w-full">
                 <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg">
                   <img
                     src={feature.imageUrl}
@@ -146,9 +152,10 @@ const Overview = () => {
           ))}
         </Swiper>
       ) : (
-        <div className="flex flex-wrap justify-center gap-6">
+        <div  className="flex flex-wrap justify-center gap-6">
           {features.map((feature, index) => (
             <div
+            data-aos="fade-down"
               key={index}
               className="lg:w-[calc(33.33%-16px) group relative w-full md:w-[calc(50%-16px)]"
             >

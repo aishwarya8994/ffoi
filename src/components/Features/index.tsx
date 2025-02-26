@@ -72,7 +72,7 @@ if (isMobile) {
             Why Choose FFOI MBA in Investment Banking?
           </h2>
       {/* Card */}
-      <div className="relative h-[400px] overflow-hidden rounded-lg">
+      <div data-aos="zoom-in" className="relative h-[400px] overflow-hidden rounded-lg">
         {/* Image with zoom effect */}
         <div className="absolute inset-0 h-full w-full">
           <img
@@ -131,7 +131,7 @@ if (isMobile) {
 
   return (
     <>
-      <section id="features" className="bg-white py-16 md:py-20 lg:py-28">
+      <section  id="features" className="bg-white py-16 md:py-20 lg:py-28">
         <div className="mb-8 bg-gray-200 pb-2 pt-2 text-center">
           <h2
             className="wow fadeInUp  text-2xl font-bold !leading-tight text-[#333333] sm:text-4xl md:text-4xl  md:text-[45px] lg:text-5xl"
@@ -145,6 +145,7 @@ if (isMobile) {
           <div className="grid grid-cols-1 gap-6 pt-11 md:grid-cols-2">
             {cards.map((card) => (
               <div
+              data-aos="zoom-in"
                 key={card.id}
                 className="group relative h-[400px] overflow-hidden rounded-lg"
               >

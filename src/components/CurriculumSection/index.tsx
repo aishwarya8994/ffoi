@@ -24,7 +24,7 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import {Autoplay, Pagination } from "swiper/modules";
 import InquireButton from '../InquireButton';
 
 const CurriculumSection = () => {
@@ -102,12 +102,17 @@ const CurriculumSection = () => {
         <Swiper
           slidesPerView={1}
           pagination={{ clickable: true }}
-          modules={[Pagination]}
+          modules={[Autoplay,Pagination]}
           className="mySwiper"
+          autoplay={{
+            delay: 3000, // Time between slides in ms (3s)
+            disableOnInteraction: false, // Keep autoplay running after interaction
+          }}
+          loop={true} // Loop slides continuously
         >
           {[...semesterData, ...semesterData2].map((year, index) => (
             <SwiperSlide key={index}>
-              <div className="relative group p-4 border rounded-lg shadow-md">
+              <div data-aos="fade-left" className="relative group p-4 border rounded-lg shadow-md">
                 <div className="relative p-3 text-secondary">
                   <h3 className="text-lg font-semibold mb-4 text-white bg-primary p-2 rounded-lg">
                     {year.title}
@@ -148,7 +153,7 @@ const CurriculumSection = () => {
                 // style={{ backgroundImage: `url(${year.bgImage})` }}
               />
               <div className="absolute inset-0" />
-              <div className="relative p-6 text-secondary">
+              <div data-aos="fade-right" className="relative p-6 text-secondary">
                 <h3 className="text-lg lg:text-[28px] font-semibold mb-4 text-white bg-primary p-2 rounded-lg pl-4">{year.title}</h3>
                 <div className="space-y-6">
                   {year.semesters.map((semester) => (
@@ -172,15 +177,15 @@ const CurriculumSection = () => {
           </div>
         ))}
        </div>
-       <div className='img-section hidden lg:block'>
+       <div data-aos="fade-left" className='img-section hidden lg:block'>
        <div className="mt-10 ">
            <img  src="/images/hero/5252.jpg" className="mb-2 lg:h-[600px] object-cover rounded-lg grayscale" alt='' 
           />
            </div>
        </div>
       </div>
-      <div className="hidden lg:grid grid-cols-2 gap-8">
-      <div className='img-section hidden lg:block'>
+      <div  className="hidden lg:grid grid-cols-2 gap-8">
+      <div data-aos="fade-right" className='img-section hidden lg:block'>
        <div className="mt-5">
            <img  src="/images/hero/13765.jpg" className="mb-2 lg:h-[600px] object-cover rounded-lg grayscale" alt=''  
           />
@@ -189,7 +194,7 @@ const CurriculumSection = () => {
        <div>
        {semesterData2.map((year, index) => (
           <div key={index} className="relative group">
-            <div className="h-full py-8 ">
+            <div data-aos="fade-left" className="h-full py-8 ">
               <div 
                 className="absolute inset-0 bg-cover bg-center rounded-lg grayscale hover:grayscale-0"
                 // style={{ backgroundImage: `url(${year.bgImage})` }}
@@ -222,7 +227,7 @@ const CurriculumSection = () => {
        
       </div>
 
-      <div className='bg-secondary p-4 rounded-md'>
+      <div data-aos="fade-left" className='bg-secondary p-4 rounded-md'>
         <div className='block lg:flex justify-between '>
         <div className='flex justify-content-start'>
         <GraduationCap size={70}  className='text-primary font-bold mr-4' /> 
@@ -235,7 +240,7 @@ const CurriculumSection = () => {
         <div>
         <Link
             href="#contact"
-            className="flex inline-block rounded-sm bg-primary w-[180px]  lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
+            className="flex items-center justify-center lg:justify-start mx-auto lg:mx-0 rounded-sm bg-primary w-[180px] lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
           >
             Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
           </Link>

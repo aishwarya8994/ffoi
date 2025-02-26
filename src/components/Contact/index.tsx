@@ -35,7 +35,7 @@ const Contact = () => {
       className="relative min-h-screen bg-cover bg-center bg-no-repeat py-16 md:py-20 lg:py-28"
       style={{ backgroundImage: `url('/images/hero/Group-12.png')` }}
     >
-      <div className="container">
+      <div data-aos="fade-right" className="container">
         <div className="justify-content-end -mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
             <div className="mb-12 rounded-sm bg-dark px-8 py-11 shadow-three sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
@@ -122,7 +122,7 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="mb-4 w-full px-4">
+                    <div className="mb-4 w-full flex items-center justify-center lg:justify-start px-4">
                       <button
                         type="submit"
                         className="rounded-sm bg-primary px-3 py-2 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 lg:px-9 lg:py-4"

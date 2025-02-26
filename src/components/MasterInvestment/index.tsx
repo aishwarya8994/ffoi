@@ -90,7 +90,7 @@ const MasterInvestment = () => {
       {/* First Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mb-16">
         {firstGridFeatures.map((feature, index) => (
-          <div
+          <div data-aos="flip-up"
             key={index}
             className="relative h-96 group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >
@@ -121,7 +121,7 @@ const MasterInvestment = () => {
       {/* Second Grid */}
       <div className="flex flex-wrap justify-center gap-8 ">
         {secondGridFeatures.map((feature, index) => (
-          <div
+          <div data-aos="flip-up"
             key={index}
             className="relative h-96  w-full md:w-[calc(33.33%-16px)] lg:w-[calc(33.33%-16px) group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >

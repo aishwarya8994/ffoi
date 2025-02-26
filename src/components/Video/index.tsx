@@ -71,20 +71,20 @@ const Video = () => {
           </div>
         </div>
       </div> */}
-      <div className="container">
+      <div  className="container">
         {/* Header */}
-        <h2 className="mb-4 text-3xl md:text-4xl lg:text-5xl font-bold !leading-tight text-white dark:text-white sm:text-4xl md:text-[45px]">
+        <h2 className="text-center lg:text-left mb-4 text-3xl md:text-4xl lg:text-5xl font-bold !leading-tight text-white dark:text-white sm:text-4xl md:text-[45px]">
           Program Overview
         </h2>
 
         {/* Title */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-1 w-full">
-          <h3 className="text-left text-lg font-semibold !leading-relaxed text-white md:text-lg lg:text-2xl lg:mb-6">
+          <h3 className="text-center lg:text-left text-lg font-semibold !leading-relaxed text-white md:text-lg lg:text-2xl lg:mb-6">
           MBA in Investment Banking – A Deep Dive into the Financial World
         </h3>
           </div>
         {/* Details Grid */}
-        <div className="mb-6 mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div data-aos="fade-right"  className="mb-6 mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           
           {/* New Ui design */}
 
@@ -127,9 +127,9 @@ const Video = () => {
           
         </div>
         {/* Campuses */}
-        <div className="mb-6">
-          <h4 className="mb-2 text-base lg:text-2xl font-medium text-white">Campuses</h4>
-          <div className="flex flex-wrap gap-3">
+        <div data-aos="fade-right" className="mb-6">
+          <h4 className="text-center lg:text-left mb-2 text-base lg:text-2xl font-medium text-white ">Campuses</h4>
+          <div className="flex justify-center lg:justify-start flex-wrap gap-3">
             {["Mumbai", "Navi Mumbai", "Goa", "Bangalore"].map((campus) => (
               <span
                 key={campus}
@@ -141,8 +141,8 @@ const Video = () => {
           </div>
         </div>
         {/* Partner Institutions */}
-        <div className="mb-3">
-          <h4 className="mb-2  text-base lg:text-2xl font-medium text-white">
+        <div data-aos="fade-right" className="mb-3">
+          <h4 className="mb-2  text-base lg:text-2xl font-medium text-white text-center lg:text-left">
             Partner Institutions
           </h4>
           {/* <div className="flex flex-wrap gap-3">
@@ -170,8 +170,9 @@ const Video = () => {
          
         </div>
         <Link
+        data-aos="fade-right"
             href="#contact"
-            className="flex inline-block rounded-sm bg-primary w-[180px] lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
+            className="flex items-center justify-center lg:justify-start mx-auto lg:mx-0 rounded-sm bg-primary w-[180px] lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
           >
             Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
           </Link>

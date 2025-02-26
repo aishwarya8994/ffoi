@@ -6,7 +6,7 @@ import { Testimonial } from "@/types/testimonial";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import {Autoplay , Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -122,11 +122,16 @@ const Testimonials = () => {
 
 {isMobile ? (
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Autoplay,Navigation, Pagination]}
           spaceBetween={20}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3000, // Time between slides in ms (3s)
+            disableOnInteraction: false, // Keep autoplay running after interaction
+          }}
+          loop={true} // Loop slides continuously
         >
           {testimonialData.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>

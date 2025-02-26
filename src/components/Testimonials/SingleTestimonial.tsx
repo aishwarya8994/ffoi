@@ -19,7 +19,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
   }
 
   return (
-    <div className="w-full">
+    <div data-aos="fade-down" className="w-full">
       <div className=" border-b-8 border-primary bg-white p-6 lg:p-8 shadow-two duration-300 hover:shadow-one  lg:px-5 xl:px-8  lg:h-[400px]">
         <div className="mb-5 flex items-center space-x-1">{ratingIcons}</div>
         <p className="mb-8 border-b-2 border-primary  pb-5 text-sm lg:text-base font-medium leading-relaxed text-body-color">

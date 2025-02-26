@@ -79,7 +79,7 @@ const EnquiryForm = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-8">
+                    <div className="mb-3 lg:mb-8">
                       {/* <label
                         htmlFor="contact"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -88,14 +88,14 @@ const EnquiryForm = () => {
 
                       </label> */}
                       <input
-                        type="email"
+                        type="text"
                         placeholder="Phone Number"
                         className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
                       />
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-8">
+                    <div className="mb-3 lg:mb-8">
                       {/* <label
                         htmlFor="email"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -110,7 +110,7 @@ const EnquiryForm = () => {
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-8">
+                    <div className="mb-3 lg:mb-8">
                       {/* <label
                         htmlFor="city"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -124,7 +124,7 @@ const EnquiryForm = () => {
                       />
                     </div>
                   </div>
-                  {/* <div className="mb-8 w-full px-4 md:w-1/2">
+                  <div className="mb-3 lg:mb-8 w-full px-4 md:w-1/2">
                     <select
                       name="whoAmI"
                       className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
@@ -134,9 +134,10 @@ const EnquiryForm = () => {
                       <option value="Student">Pursuing Graduation</option>
                       <option value="Professional">Graduate</option>
                       <option value="Entrepreneur">Post Graduate</option>
+                      <option value="Entrepreneur">Other</option>
                     </select>
-                  </div> */}
-                  <div className="mb-4 lg:mb-8 w-full px-4 md:w-1/2">
+                  </div>
+                  {/* <div className="mb-4 lg:mb-8 w-full px-4 md:w-1/2">
                     <select
                       name="state"
                       className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
@@ -188,8 +189,8 @@ const EnquiryForm = () => {
                         Jammu and Kashmir
                       </option>
                     </select>
-                  </div>
-                  <div className="mb-4 lg:mb-8 w-full px-4 md:w-1/2">
+                  </div> */}
+                  {/* <div className="mb-4 lg:mb-8 w-full px-4 md:w-1/2">
                     <select
                       name="whoAmI"
                       className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
@@ -203,7 +204,7 @@ const EnquiryForm = () => {
                       <option value="Entrepreneur">5 to 10 years</option>
                       <option value="Entrepreneur">10+ years</option>
                     </select>
-                  </div>
+                  </div> */}
                   {/* <div className="w-full px-4">
                     <div className="mb-8">
                       <label

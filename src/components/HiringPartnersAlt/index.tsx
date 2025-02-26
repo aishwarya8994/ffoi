@@ -329,8 +329,13 @@ const HiringPartnersAlt = () => {
           <Swiper
             slidesPerView={1}
             pagination={{ clickable: true }}
-            modules={[Pagination]}
+            modules={[Autoplay,Pagination]}
             className="mySwiper"
+            autoplay={{
+              delay: 3000, // Time between slides in ms (3s)
+              disableOnInteraction: false, // Keep autoplay running after interaction
+            }}
+            loop={true} // Loop slides continuously
           >
             {Array.from({ length: Math.ceil(bank2.length / 4) }).map((_, i) => (
               <SwiperSlide key={i}>
