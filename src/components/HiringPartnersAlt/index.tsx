@@ -132,19 +132,19 @@ const HiringPartnersAlt = () => {
     // indian
     {
       name: "BMO",
-      logo: "/images/indian/0e17eaf90cfd6de3c7aa52437a2b7ee4.png",
+      logo: "/images/indian/canara.png",
     },
     {
       name: "BMO",
-      logo: "/images/indian/4zUR2dgxsYElMMyDR4UU.webp",
+      logo: "/images/indian/motilal-oswal.webp",
     },
     {
       name: "BMO",
-      logo: "/images/indian/Axis Bank.png",
+      logo: "/images/indian/Axisbank.png",
     },
     {
       name: "BMO",
-      logo: "/images/indian/Axis-Capital.png",
+      logo: "/images/indian/Axiscapital.png",
     },
     {
       name: "BMO",
@@ -152,15 +152,15 @@ const HiringPartnersAlt = () => {
     },
     {
       name: "BMO",
-      logo: "/images/indian/BNP-Paribas-Logo.png",
+      logo: "/images/indian/bnp.png",
     },
     {
       name: "BMO",
-      logo: "/images/indian/Centrum Capital Limited Logo 3.jpg",
+      logo: "/images/indian/centram.jpg",
     },
     {
       name: "BMO",
-      logo: "/images/indian/IIFL.NS_BIG-f1d6efdb.png",
+      logo: "/images/indian/iifl.png",
     },
     {
       name: "BMO",
@@ -168,7 +168,7 @@ const HiringPartnersAlt = () => {
     },
     {
       name: "BMO",
-      logo: "/images/indian/JM Logo- Blue Logo.png",
+      logo: "/images/indian/jmlogo.png",
     },
     {
       name: "BMO",
