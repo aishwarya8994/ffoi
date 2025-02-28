@@ -441,7 +441,7 @@ const HiringPartnersAlt = () => {
     >
       {bank2.map((bank, index) => (
         <SwiperSlide key={index}>
-          <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-5  grayscale transition-all duration-300 hover:shadow-xl hover:grayscale-0">
+          <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-5  grayscale transition-all duration-300  hover:grayscale-0">
             <div className="mb-6 flex h-24 items-center justify-center">
               <img
                 src={bank.logo}

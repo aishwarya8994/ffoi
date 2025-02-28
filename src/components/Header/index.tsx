@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
-import { Phone, MessageCircle, ArrowDownToLine } from "lucide-react";
+import { Phone, MessageCircle, ArrowDownToLine, Send  } from "lucide-react";
 import DownloadBrochure from "@/components/DownloadBrochure";
 
 const Header = () => {
@@ -55,7 +55,7 @@ const Header = () => {
               <Link
                 href="/"
                 className={`header-logo block w-full ${
-                  sticky ? "py-5 lg:py-2" : "py-4"
+                  sticky ? "py-5 lg:py-2" : "py-2"
                 } `}
               >
                 <img 
@@ -69,12 +69,12 @@ const Header = () => {
               </Link>
             </div>
             
-            <div className="flex w-full items-center justify-end px-4">
+            <div className="flex w-full items-center justify-end px-2">
               <div>
               {/* Contact Icon (Mobile Only) */}
               <Link href="tel:+91123456789" className="lg:hidden">
      <div className="bg-secondary rounded-full p-2">
-     <Phone className="w-6 h-6 text-white" />
+     <Phone className=" text-white" size={18} />
      </div>
     </Link>
                 <button
@@ -107,7 +107,7 @@ const Header = () => {
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  {/* <ul className="block lg:flex lg:space-x-12">
+                  <ul className="block lg:hidden lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
@@ -115,8 +115,8 @@ const Header = () => {
                             href={menuItem.path}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                               usePathName === menuItem.path
-                                ? "text-dark hover:text-primary"
-                                : "text-dark hover:text-primary "
+                                ? "text-dark font-semibold hover:text-primary"
+                                : "text-dark font-semibold hover:text-primary "
                             }`}
                           >
                             {menuItem.title}
@@ -158,8 +158,8 @@ const Header = () => {
                         )}
                       </li>
                     ))}
-                  </ul> */}
-                  <Link
+                  </ul>
+                  {/* <Link
                   href="tel:1234567892"
                   className="block   lg:hidden"
                 >
@@ -170,24 +170,26 @@ const Header = () => {
                 </Link>
                 <Link
                 href="#contact" scroll={false}
-                  // href="/"
+                  
                   className="block   lg:hidden"
                 >
-                  <div className="flex bg-primary rounded px-3  lg:px-6 py-2 text-white hover:bg-[#375210]">
+                  <div className="flex bg-primary rounded px-3  lg:px-6 py-2 text-white hover:bg-[#375210] mb-3">
                   <ArrowDownToLine className="mr-2 text-sm lg:text-base text-white" />{" "}
                   <span>Download Brochure</span>
                   </div>
                 </Link>  
                 <Link
                 href="#contact"
-                  // href="/"
+                  
                   className="block  lg:hidden"
                 >
                   <div className="flex bg-secondary rounded px-6 py-2 text-white hover:bg-secondary/70">
-                  {/* <ArrowDownToLine className="mr-2 text-lg text-white" />{" "} */}
+                  
+                  
                   <span>Enquire Now</span>
+                  <Send className="ml-2 text-sm lg:text-base text-white" />
                   </div>
-                </Link>
+                </Link> */}
                {/* <div className="block lg:hidden ">
                <DownloadBrochure/>
                </div> */}
@@ -211,8 +213,8 @@ const Header = () => {
                   href="/"
                   className="hidden md:block   "
                 >
-                  <div className="flex bg-primary rounded px-3 lg:px-6 py-2 text-white hover:bg-[#375210]">
-                  <Phone className="mr-2 text-lg text-white" />{" "}
+                  <div className="flex items-center bg-primary rounded px-3 lg:px-6 py-2 text-white hover:bg-[#375210]">
+                  <Phone className="mr-2 text-lg text-white" size={20} />{" "}
                   <span>+91 123456789</span>
                   </div>
                 </Link>
@@ -221,8 +223,8 @@ const Header = () => {
                   // href="/"
                   className="hidden   lg:block"
                 >
-                  <div className="flex bg-primary rounded px-6 py-2 text-white hover:bg-[#375210]">
-                  <ArrowDownToLine className="mr-2 text-lg text-white" />{" "}
+                  <div className="flex items-center bg-primary rounded px-6 py-2 text-white hover:bg-[#375210]">
+                  <ArrowDownToLine className="mr-2 text-lg text-white" size={20} />{" "}
                   <span>Download Brochure</span>
                   </div>
                 </Link>
@@ -231,9 +233,11 @@ const Header = () => {
                   // href="/"
                   className="hidden  lg:block"
                 >
-                  <div className="flex bg-secondary rounded px-6 py-2 text-white hover:bg-secondary/70">
+                  <div className="flex items-center bg-secondary rounded px-6 py-2 text-white hover:bg-secondary/70">
                   {/* <ArrowDownToLine className="mr-2 text-lg text-white" />{" "} */}
+                 
                   <span>Enquire Now</span>
+                  <Send className="ml-2 text-lg text-white" size={20} />
                   </div>
                 </Link>
                   {/* <div className="hidden md:block ">
