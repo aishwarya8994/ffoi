@@ -130,51 +130,51 @@ const HiringPartnersAlt = () => {
     },
     {
       name: "canara",
-      logo: "/images/indian/canara.png",
+      logo: "/canara.png",
     },
     {
       name: "motilal-oswal",
-      logo: "/images/indian/motilal-oswal.webp",
+      logo: "/motilal-oswal.webp",
     },
     {
       name: "Axisbank",
-      logo: "/images/indian/axisbank.png",
+      logo: "/axisbank.png",
     },
     {
       name: "Axiscapital",
-      logo: "/images/indian/axiscapital.png",
+      logo: "/axiscapital.png",
     },
     {
       name: "bajajcapital",
-      logo: "/images/indian/bajajcapital.png",
+      logo: "/bajajcapital.png",
     },
     {
       name: "bnp",
-      logo: "/images/indian/bnp.png",
+      logo: "/bnp.png",
     },
     {
       name: "centram",
-      logo: "/images/indian/centram.jpg",
+      logo: "/centram.jpg",
     },
     {
       name: "iifl",
-      logo: "/images/indian/iifl.png",
+      logo: "/iifl.png",
     },
     {
       name: "edelweiss",
-      logo: "/images/indian/edelweiss.png",
+      logo: "/edelweiss.png",
     },
     {
       name: "jmlogo",
-      logo: "/images/indian/jmlogo.png",
+      logo: "/jmlogo.png",
     },
     {
       name: "kotak",
-      logo: "/images/indian/kotak_investment_banking_cover.jpg",
+      logo: "/kotak_investment_banking_cover.jpg",
     },
     {
       name: "piramal",
-      logo: "/images/indian/piramal-finance.webp",
+      logo: "/piramal-finance.webp",
     },
   ];
 
