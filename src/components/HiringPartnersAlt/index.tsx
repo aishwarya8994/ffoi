@@ -101,81 +101,81 @@ const HiringPartnersAlt = () => {
       logo: "/images/global/Jefferies_logo.svg.png",
     },
     {
-      name: "BMO",
+      name: "Lazard",
       logo: "/images/global/Lazard-Ltd-Logo.png",
     },
     {
-      name: "BMO",
+      name: "Mitsubishi",
       logo: "/images/global/Mitsubishi_UFJ_Financial_Group.svg.png",
     },
     {
-      name: "BMO",
+      name: "Mizuho",
       logo: "/images/global/Mizuho_logo.svg.png",
     },
     {
-      name: "BMO",
+      name: "Morgan",
       logo: "/images/global/Morgan_Stanley_Logo_1.svg.png",
     },
     {
-      name: "BMO",
+      name: "RBC-Capital-Markets",
       logo: "/images/global/RBC-Capital-Markets-official-logo.png",
     },
     {
-      name: "BMO",
+      name: "UBS",
       logo: "/images/global/UBS-Logo.png",
     },
     {
-      name: "BMO",
+      name: "Nomura",
       logo: "/images/global/Nomura_Holdings_logo.svg.png",
     },
     
-    // indian
+   
     {
-      name: "BMO",
+      name: "canara",
       logo: "/images/indian/canara.png",
     },
     {
-      name: "BMO",
+      name: "motilal-oswal",
       logo: "/images/indian/motilal-oswal.webp",
     },
     {
-      name: "BMO",
+      name: "Axisbank",
       logo: "/images/indian/Axisbank.png",
     },
     {
-      name: "BMO",
+      name: "Axiscapital",
       logo: "/images/indian/Axiscapital.png",
     },
     {
-      name: "BMO",
+      name: "bajajcapital",
       logo: "/images/indian/bajajcapital.png",
     },
     {
-      name: "BMO",
+      name: "bnp",
       logo: "/images/indian/bnp.png",
     },
     {
-      name: "BMO",
+      name: "centram",
       logo: "/images/indian/centram.jpg",
     },
     {
-      name: "BMO",
+      name: "iifl",
       logo: "/images/indian/iifl.png",
     },
     {
-      name: "BMO",
+      name: "edelweiss",
       logo: "/images/indian/edelweiss.png",
     },
     {
-      name: "BMO",
+      name: "jmlogo",
       logo: "/images/indian/jmlogo.png",
     },
     {
-      name: "BMO",
+      name: "kotak",
       logo: "/images/indian/kotak_investment_banking_cover.jpg",
     },
     {
-      name: "BMO",
+      name: "piramal",
       logo: "/images/indian/piramal-finance-aiming-for-predictable-profitability-md.webp",
     },
   ];
