@@ -6,8 +6,8 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import {Autoplay, Pagination, Navigation } from "swiper/modules";
-import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css/navigation";
 
 const HiringPartnersAlt = () => {
   const [activeTab, setActiveTab] = useState("global");
@@ -128,8 +128,6 @@ const HiringPartnersAlt = () => {
       name: "Nomura",
       logo: "/images/global/Nomura_Holdings_logo.svg.png",
     },
-    
-   
     {
       name: "canara",
       logo: "/images/indian/canara.png",
@@ -329,7 +327,7 @@ const HiringPartnersAlt = () => {
           <Swiper
             slidesPerView={1}
             pagination={{ clickable: true }}
-            modules={[Autoplay,Pagination]}
+            modules={[Autoplay, Pagination]}
             className="mySwiper"
             autoplay={{
               delay: 3000, // Time between slides in ms (3s)
@@ -346,11 +344,14 @@ const HiringPartnersAlt = () => {
                       className="group relative  p-2  grayscale transition-all duration-300  hover:grayscale-0"
                     >
                       <div className="flex h-20 items-center justify-center">
-                        <img
+                        <Image
                           src={bank.logo}
                           alt={`${bank.name} logo`}
                           className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                        />
+                          width={200} // Set appropriate width
+                          height={100} // Set appropriate height
+                          objectFit="contain"
+                      />
                       </div>
                       {/* <div className="text-center">
                       <p className="mb-2 text-lg font-semibold text-gray-900">
@@ -424,38 +425,41 @@ const HiringPartnersAlt = () => {
             ))}
           </Swiper> */}
           <Swiper
-      slidesPerView={1}
-      spaceBetween={20}
-      breakpoints={{
-        640: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
-        1280: { slidesPerView: 5 },
-        1536: { slidesPerView: 6 },
-      }}
-      // pagination={{ clickable: true }}
-      navigation={true}
-      autoplay={{ delay: 1000, disableOnInteraction: true }}
-      modules={[Autoplay,Pagination, Navigation]}
-      className="my-6"
-    >
-      {bank2.map((bank, index) => (
-        <SwiperSlide key={index}>
-          <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-5  grayscale transition-all duration-300  hover:grayscale-0">
-            <div className="mb-6 flex h-24 items-center justify-center">
-              <img
-                src={bank.logo}
-                alt={`${bank.name} logo`}
-                className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            {/* <div className="text-center">
+            slidesPerView={1}
+            spaceBetween={20}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+              1280: { slidesPerView: 5 },
+              1536: { slidesPerView: 6 },
+            }}
+            // pagination={{ clickable: true }}
+            navigation={true}
+            autoplay={{ delay: 1000, disableOnInteraction: true }}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="my-6"
+          >
+            {bank2.map((bank, index) => (
+              <SwiperSlide key={index}>
+                <div className="group relative rounded-xl bg-gradient-to-br from-white to-gray-50 p-5  grayscale transition-all duration-300  hover:grayscale-0">
+                  <div className="mb-6 flex h-24 items-center justify-center">
+                    <Image
+                      src={bank.logo}
+                      alt={`${bank.name} logo`}
+                      className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                      width={200} // Set appropriate width
+                      height={100} // Set appropriate height
+                      objectFit="contain"
+                   />
+                  </div>
+                  {/* <div className="text-center">
               <p className="mb-2 text-lg font-semibold text-gray-900">{bank.name}</p>
             </div> */}
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
