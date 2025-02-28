@@ -138,11 +138,11 @@ const HiringPartnersAlt = () => {
     },
     {
       name: "Axisbank",
-      logo: "/images/indian/Axisbank.png",
+      logo: "/images/indian/axisbank.png",
     },
     {
       name: "Axiscapital",
-      logo: "/images/indian/Axiscapital.png",
+      logo: "/images/indian/axiscapital.png",
     },
     {
       name: "bajajcapital",
@@ -174,7 +174,7 @@ const HiringPartnersAlt = () => {
     },
     {
       name: "piramal",
-      logo: "/images/indian/piramal-finance-aiming-for-predictable-profitability-md.webp",
+      logo: "/images/indian/piramal-finance.webp",
     },
   ];
 
