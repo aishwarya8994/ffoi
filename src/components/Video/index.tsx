@@ -32,7 +32,7 @@ const Video = () => {
 
 
   return (
-    <section className="relative z-10 py-16 md:py-20 lg:py-28 " id="first-section"
+    <section id="first-section" className="relative z-10 py-16 md:py-20 lg:py-28 bg-[url(/images/video/program-overview.png)] bg-cover bg-center bg-no-repeat" 
     
     >
       {/* <div className="container">
@@ -192,7 +192,7 @@ const Video = () => {
         onClose={() => setOpen(false)}
       /> */}
 
-      <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/images/video/program-overview.png)] bg-cover  bg-center bg-no-repeat"></div>
+      {/* <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/images/video/program-overview.png)] bg-cover  bg-center bg-no-repeat"></div> */}
       {/* <div className="absolute bottom-0 left-0 right-0 z-[-1] min-h-screen w-full bg-[url(/images/video/program-overview.png)] bg-cover bg-center bg-no-repeat"></div> */}
 
       {/* <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full">
