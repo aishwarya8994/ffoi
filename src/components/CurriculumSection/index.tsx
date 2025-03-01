@@ -90,7 +90,7 @@ const CurriculumSection = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-0 lg:py-16  lg:px-4">
-      <div className='container mx-auto px-4 py-8'>
+      <div className='container mx-auto lg:px-4 py-8'>
         <SectionTitle
           title="Built for Excellence "
           paragraph="Curriculum Designed for Global Impact"
@@ -156,7 +156,7 @@ const CurriculumSection = () => {
       <SwiperSlide key={index}>
         <div
           data-aos="fade-left"
-          className="relative group p-4 border rounded-lg shadow-md bg-cover bg-center before:absolute before:inset-0 before:bg-white before:opacity-50"
+          className="relative group p-4 border rounded-lg shadow-md bg-cover bg-center before:absolute before:inset-0 before:bg-white before:opacity-70"
           style={{
             backgroundImage: `url(${index < semesterData.length ? '/images/hero/sem-1.jpg' : '/images/hero/sem-2.jpg'})`,
           }}
