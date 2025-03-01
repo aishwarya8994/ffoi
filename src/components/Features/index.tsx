@@ -15,25 +15,25 @@ const Features = () => {
       id: 1,
       title: "Join a $100B+ Global Industry",
       description: "Poised for exponential growth",
-      imageUrl: "/images/hero/2150900719.jpg",
+      imageUrl: "/images/hero/ffoi-high-demand.jpg",
     },
     {
       id: 2,
       title: "Be part of India’s Booming Investment Banking Sector,",
       description: "Projected to hit $3.3B by 2025",
-      imageUrl: "/images/hero/2150970201.jpg",
+      imageUrl: "/images/hero/ffoi-booming.jpg",
     },
     {
       id: 3,
       title: "Command Lucrative Salaries",
       description: "Earn up to ₹1Cr+ per year",
-      imageUrl: "/images/hero/2151575336.jpg",
+      imageUrl: "/images/hero/command.jpg",
     },
     {
       id: 4,
       title: "Step into High-Demand Roles",
       description: " In M&A, IPOs, and Private Equity",
-      imageUrl: "/images/hero/178.jpg",
+      imageUrl: "/images/hero/high-demand.jpg",
     },
     
   ];
