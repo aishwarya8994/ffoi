@@ -155,7 +155,7 @@ const Contact = () => {
 
           {/* Contact Details */}
           <div className="w-full lg:-ml-5 lg:w-5/12 xl:w-4/12">
-            <div className="ml-0 h-[400px] space-y-5 bg-secondary/80 p-5 lg:h-[641px]">
+            <div className="ml-0 h-[400px] space-y-5 bg-secondary/80 p-5 lg:h-[634px]">
               <h2 className="mb-5 text-2xl font-bold text-primary dark:text-white sm:text-3xl">
                 Contact Us
               </h2>
