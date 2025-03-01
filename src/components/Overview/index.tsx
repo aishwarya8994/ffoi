@@ -30,7 +30,7 @@ const Overview = () => {
     {
       icon: <Target className="h-6 w-6" />,
       title: "100% Placement Assistance with top IB firms",
-      imageUrl: "/images/hero/4968.jpg",
+      imageUrl: "/images/hero/placement-img.jpg",
     },
     {
       icon: <Gem className="h-6 w-6" />,
@@ -55,7 +55,8 @@ const Overview = () => {
 
   return (
     <section className="bg-gray-50 py-6 lg:py-16">
-      <div className="mx-auto max-w-7xl px-4">
+     <div className='container'>
+     <div className="mx-auto max-w-7xl px-4">
         {/* Header */}
         <div className="relative mb-6 lg:mb-16">
           <h2 className="mb-4 lg:mb-8 text-center text-2xl font-bold leading-tight text-[#333333] md:text-4xl lg:text-5xl">
@@ -132,13 +133,14 @@ const Overview = () => {
           {features.map((feature, index) => (
             <SwiperSlide key={index}>
               <div data-aos="fade-down" className="group relative w-full">
-                <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg">
-                  <img
-                    src={feature.imageUrl}
-                    alt={feature.title}
-                    className="h-full w-full object-cover grayscale transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
+              <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg relative group">
+  <Image
+    src={feature.imageUrl}
+    alt={feature.title}
+    fill
+    className="object-cover grayscale transition-transform duration-500 hover:grayscale-0 group-hover:scale-105"
+  />
+</div>
                 <div className="absolute left-4 top-4 rounded-full bg-primary/90 p-2 shadow-lg backdrop-blur-sm lg:p-3">
                   {React.cloneElement(feature.icon, { className: "text-white" })}
                 </div>
@@ -159,13 +161,16 @@ const Overview = () => {
               key={index}
               className="lg:w-[calc(33.33%-16px) group relative w-full md:w-[calc(50%-16px)]"
             >
-              <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg">
-                <img
-                  src={feature.imageUrl}
-                  alt={feature.title}
-                  className="h-full w-full object-cover grayscale transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
+              <div className="mb-4 aspect-[4/3] overflow-hidden rounded-lg group">
+  <Image
+    src={feature.imageUrl}
+    alt={feature.title}
+    width={500} // Adjust as needed
+    height={400} // Adjust as needed
+    className="w-full h-full object-cover grayscale transition-transform duration-500 hover:grayscale-0 group-hover:scale-105"
+  />
+</div>
+
               <div className="absolute left-4 top-4 rounded-full bg-primary/90 p-2 shadow-lg backdrop-blur-sm lg:p-3">
                 {React.cloneElement(feature.icon, { className: "text-white" })}
               </div>
@@ -188,6 +193,7 @@ const Overview = () => {
           </div>
         </div> */}
       </div>
+     </div>
     </section>
   );
 };

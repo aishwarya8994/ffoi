@@ -20,14 +20,16 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
 
   return (
     <div data-aos="fade-down" className="w-full">
-      <div className=" border-b-8 border-primary bg-white p-6 lg:p-8 shadow-two duration-300 hover:shadow-one  lg:px-5 xl:px-8  lg:h-[400px]">
+      <div className=" border-b-8 border-primary bg-white p-6 lg:p-8 shadow-two duration-300 hover:shadow-one  lg:px-5 xl:px-8 h-[350px] lg:h-[400px]">
         <div className="mb-5 flex items-center space-x-1">{ratingIcons}</div>
-        <p className="mb-8 border-b-2 border-primary  pb-5 text-sm lg:text-base font-medium leading-relaxed text-body-color">
+        <p className="mb-8 border-b-2 border-primary  pb-5 text-[15px] lg:text-base font-medium leading-relaxed text-body-color">
           “{content}
         </p>
         <div className="flex items-center">
           <div className="relative mr-4 ">
-            <img  src={image} alt={name}  className="w-[100px] lg:w-[200px] h-[100px] lg:h-[150px] object-cover" 
+            <Image src={image} alt={name}  className="w-[100px] lg:w-[200px] h-[100px] lg:h-[150px] object-cover" 
+             width={150}
+             height={150}
            />
           </div>
           <div className="w-full">

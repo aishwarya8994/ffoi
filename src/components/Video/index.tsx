@@ -159,11 +159,13 @@ const Video = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           
            <div className="bg-white/70 p-5 rounded-md align-center">
-           <img  src="images/hero/TGBS Logo-01.png" alt="Terna" className="grayscale"  
+           <Image   src="/images/hero/TGBS-Logo-01.png" alt="Terna" className="grayscale"  
+           width={250} height={150}
           />
            </div>
            <div className="bg-white/70 p-5 rounded-md">
-           <img  src="images/hero/osb.png" alt="Terna"  className="grayscale" 
+           <Image  src="/images/hero/osb.png" alt="Terna"  className="grayscale" 
+           width={250} height={150}
           />
            </div>
            </div>

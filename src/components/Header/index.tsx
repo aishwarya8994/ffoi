@@ -72,7 +72,7 @@ const Header = () => {
             <div className="flex w-full items-center justify-end px-2">
               <div>
               {/* Contact Icon (Mobile Only) */}
-              <Link href="tel:+91123456789" className="lg:hidden">
+              <Link href="tel:+918065138207" className="lg:hidden">
      <div className="bg-secondary rounded-full p-2">
      <Phone className=" text-white" size={18} />
      </div>
@@ -215,7 +215,7 @@ const Header = () => {
                 >
                   <div className="flex items-center bg-primary rounded px-3 lg:px-6 py-2 text-white hover:bg-[#375210]">
                   <Phone className="mr-2 text-lg text-white" size={20} />{" "}
-                  <span>+91 123456789</span>
+                  <span>+918065138207</span>
                   </div>
                 </Link>
                 <Link

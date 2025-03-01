@@ -81,7 +81,7 @@ const MasterInvestment = () => {
 
   return (
     <section className="bg-white py-5 md:py-20 lg:py-28">
-    <div className="container max-w-screen-xl mx-auto px-4 sm:px-6 ">
+    <div className="container  mx-auto px-4 sm:px-6 ">
       {/* Section Title */}
       <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-12 leading-tight text-center">
         Master Investment Banking with a Cutting-Edge Learning Approach
@@ -95,11 +95,11 @@ const MasterInvestment = () => {
             className="relative h-96 group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >
             {/* Background Image */}
-            <img 
+            <Image 
               src={feature.imageUrl}
               alt={feature.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale"
-             
+             fill
            />
 
             {/* Gradient Overlay */}
@@ -126,11 +126,11 @@ const MasterInvestment = () => {
             className="relative h-96  w-full md:w-[calc(33.33%-16px)] lg:w-[calc(33.33%-16px) group overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl"
           >
             {/* Background Image */}
-            <img 
+            <Image 
               src={feature.imageUrl}
               alt={feature.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale"
-             
+             fill
            />
 
             {/* Gradient Overlay */}

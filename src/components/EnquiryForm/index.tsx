@@ -19,15 +19,15 @@ const EnquiryForm = () => {
   return (
     <div className="container">
       {/* Sticky Buttons for Mobile */}
-      <div className="fixed bg-white z-50 bottom-0 py-1 left-0 right-0 flex justify-center lg:hidden  gap-2 px-4">
+      <div className="fixed bg-white z-50 bottom-0 w-full py-2 flex justify-center left-0 right-0 flex justify-center lg:hidden  gap-2 px-4">
         
 
         {/* Call Now Button */}
         <a
-          href="tel:+1234567890"
-          className="flex bg-primary text-white text-sm py-1 px-2 rounded shadow-lg  transition duration-300 items-center"
+          href="tel:+918065138207"
+          className="flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 items-center"
         >
-        <Phone size={15} className="mr-1 " />  Call
+        <Phone size={16} className="mr-1 " />  Call
         </a>
 
         {/* Download Brochure Button */}
@@ -35,15 +35,15 @@ const EnquiryForm = () => {
           // href="/FFOI Brochure.pdf" 
           onClick={openModal}
           // download
-          className="flex bg-primary text-white text-xs py-1 px-2 rounded shadow-lg  transition duration-300 items-center"
+          className="flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 items-center"
         >
-       <ArrowDownToLine size={15} className="mr-1" />   Get Brochure
+       <ArrowDownToLine size={16} className="mr-1" />   Get Brochure
         </button>
         {/* Enquire Now Button */}
         <button
         // href="#contact"
           onClick={openModal}
-          className="bg-primary text-white text-xs py-1 px-2 rounded shadow-lg  transition duration-300 items-center"
+          className="bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 items-center"
         >
           Enquire
         </button>
@@ -114,11 +114,17 @@ const EnquiryForm = () => {
                     </div>
                     <div className="w-full px-4 md:w-1/2">
                       <div className="mb-3 lg:mb-8">
-                        <input
-                          type="text"
-                          placeholder="City"
-                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
-                        />
+                      <select
+                        name="whoAmI"
+                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
+                        required
+                      >
+                        <option value="city">City</option>
+                        <option value="Student">Mumbai</option>
+                        <option value="Professional">Navi Mumbai</option>
+                        <option value="Entrepreneur">Thane</option>
+                        
+                      </select>
                       </div>
                     </div>
                     <div className="mb-3 lg:mb-8 w-full px-4 md:w-1/2">

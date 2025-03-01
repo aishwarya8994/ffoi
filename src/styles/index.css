@@ -41,6 +41,10 @@ html, body, div, span, input, button, select, textarea {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-raleway), sans-serif; /* Apply Raleway for headers */
 }
+.container {
+  max-width: 1200px; /* Prevents layout breaking on zoom */
+  width: 90%; /* Makes it responsive */
+}
 .hero-text{
  font-family: "Raleway", serif !important;
  font-weight: 800;

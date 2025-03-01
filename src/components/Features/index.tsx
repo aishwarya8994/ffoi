@@ -19,22 +19,23 @@ const Features = () => {
     },
     {
       id: 2,
+      title: "Be part of India’s Booming Investment Banking Sector,",
+      description: "Projected to hit $3.3B by 2025",
+      imageUrl: "/images/hero/2150970201.jpg",
+    },
+    {
+      id: 3,
       title: "Command Lucrative Salaries",
       description: "Earn up to ₹1Cr+ per year",
       imageUrl: "/images/hero/2151575336.jpg",
     },
     {
-      id: 3,
+      id: 4,
       title: "Step into High-Demand Roles",
       description: " In M&A, IPOs, and Private Equity",
       imageUrl: "/images/hero/178.jpg",
     },
-    {
-      id: 4,
-      title: "Be part of India’s Booming Investment Banking Sector,",
-      description: "Projected to hit $3.3B by 2025",
-      imageUrl: "/images/hero/2150970201.jpg",
-    },
+    
   ];
 
 // Check if we're on mobile
@@ -75,10 +76,11 @@ if (isMobile) {
       <div data-aos="zoom-in" className="relative h-[400px] overflow-hidden rounded-lg">
         {/* Image with zoom effect */}
         <div className="absolute inset-0 h-full w-full">
-          <img
+          <Image
             src={cards[currentIndex].imageUrl}
             alt={cards[currentIndex].title}
-            className="h-full w-full object-cover object-center grayscale transition-transform duration-700 ease-in-out hover:grayscale-0 group-hover:scale-110"
+            fill
+            className="object-cover object-center grayscale transition-transform duration-700 ease-in-out hover:grayscale-0 group-hover:scale-110"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/10 transition-opacity group-hover:bg-black/50" />
@@ -133,12 +135,14 @@ if (isMobile) {
     <>
       <section  id="features" className="bg-white py-16 md:py-20 lg:py-28">
         <div className="mb-8 bg-gray-200 pb-2 pt-2 text-center">
-          <h2
+         <div className='container'>
+         <h2
             className="wow fadeInUp  text-2xl font-bold !leading-tight text-[#333333] sm:text-4xl md:text-4xl  md:text-[45px] lg:text-5xl"
             data-wow-delay=".15s"
           >
             Why Choose FFOI MBA in Investment Banking?
           </h2>
+         </div>
         </div>
         <div className="container">
           {/* New Modified section */}
@@ -151,11 +155,13 @@ if (isMobile) {
               >
                 {/* Image with zoom effect */}
                 <div className="absolute inset-0 h-full w-full">
-                  <img
+                  <Image
                     src={card.imageUrl}
                     alt={card.title}
-                    className="h-full w-full object-cover object-center grayscale transition-transform duration-700 ease-in-out hover:grayscale-0 group-hover:scale-110"
-                  />
+                    fill
+                    className="object-cover object-center grayscale transition-transform duration-700 ease-in-out hover:grayscale-0 hover:scale-105 group-hover:grayscale-0 group-hover:scale-105"
+
+                 />
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-black/10 transition-opacity group-hover:bg-black/50" />
                 </div>

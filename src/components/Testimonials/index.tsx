@@ -11,23 +11,81 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+// const testimonialData: Testimonial[] = [
+//   {
+//     id: 1,
+//     name: "Adwait Sunil",
+//     designation: "Founder @TailGrids",
+//     content:
+//       "The FFOI PGDM program exceeded my expectations. The industry-driven curriculum and hands-on projects taught me practical skills for success.",
+//     image: "/images/testimonials/Adwait Sunil.jpg",
+//     star: 5,
+//   },
+  
+//   {
+//     id: 2,
+//     name: "Akhtar Shah",
+//     designation: "Founder @Lineicons",
+//     content:
+//       "The MBA in Investment Banking has built a solid foundation in finance and advanced strategies, opening doors to diverse global opportunities in the field!",
+//     image: "/images/testimonials/Akhtar Shah.webp",
+//     star: 5,
+//   },
+//   {
+//     id: 3,
+//     name: "Falak Nawab",
+//     designation: "Founder @UIdeck",
+//     content:
+//       "The mentorship at FFOI and real-world case studies gave me a strong finance foundation. I now feel confident tackling professional challenges.",
+//     image: "/images/testimonials/falak nawab 2.jpg",
+//     star: 5,
+//   },
+ 
+//   {
+//     id: 4,
+//     name: "Melvin Rodrigues",
+//     designation: "Founder @Lineicons",
+//     content:
+//       "The practical learning approach and industry connections have made all the difference in my career!",
+//     image: "/images/testimonials/Melvin Rodrigues.jpg",
+//     star: 5,
+//   },
+//   {
+//     id: 5,
+//     name: "Mitali Goyal",
+//     designation: "Founder @Lineicons",
+//     content:
+//       "FFOI’s faculty combines deep industry knowledge with practical insights, making learning impactful and relevant.",
+//     image: "/images/testimonials/Mitali Goyal.webp",
+//     star: 5,
+//   },
+//   {
+//     id: 6,
+//     name: "Ishwari Kalsekar",
+//     designation: "Founder @Lineicons",
+//     content:
+//       "The live market simulations have been invaluable for real-world finance applications.",
+//     image: "/images/testimonials/Ishwari Kalsekar.png",
+//     star: 5,
+//   },
+// ];
+
 const testimonialData: Testimonial[] = [
   {
     id: 1,
     name: "Adwait Sunil",
     designation: "Founder @TailGrids",
     content:
-      "The FFOI PGDM program exceeded my expectations. The industry-driven curriculum and hands-on projects taught me practical skills for success.",
+      "The FFOI PGDM program exceeded my expectations. The industry-focused curriculum and hands-on projects equipped me with real-world skills for success.",
     image: "/images/testimonials/Adwait Sunil.jpg",
     star: 5,
   },
-  
   {
     id: 2,
     name: "Akhtar Shah",
     designation: "Founder @Lineicons",
     content:
-      "The MBA in Investment Banking has built a solid foundation in finance and advanced strategies, opening doors to diverse global opportunities in the field!",
+      "The MBA in Investment Banking gave me a strong foundation in finance and advanced strategies. It has opened doors to exciting global opportunities in the field.",
     image: "/images/testimonials/Akhtar Shah.webp",
     star: 5,
   },
@@ -36,17 +94,16 @@ const testimonialData: Testimonial[] = [
     name: "Falak Nawab",
     designation: "Founder @UIdeck",
     content:
-      "The mentorship at FFOI and real-world case studies provided a strong foundation in finance. I feel confident tackling professional challenges.",
+      "The mentorship at FFOI and in-depth case studies provided me with strong financial expertise. I feel confident tackling complex professional challenges.",
     image: "/images/testimonials/falak nawab 2.jpg",
     star: 5,
   },
- 
   {
     id: 4,
     name: "Melvin Rodrigues",
     designation: "Founder @Lineicons",
     content:
-      "The practical learning approach and industry connections have made all the difference in my career!",
+      "The practical learning approach and industry connections have transformed my career. The knowledge gained here has been truly invaluable.",
     image: "/images/testimonials/Melvin Rodrigues.jpg",
     star: 5,
   },
@@ -55,7 +112,7 @@ const testimonialData: Testimonial[] = [
     name: "Mitali Goyal",
     designation: "Founder @Lineicons",
     content:
-      "FFOI’s faculty combines deep industry knowledge with practical insights, making learning impactful and relevant.",
+      "FFOI’s faculty blends deep industry knowledge with real-world insights. The learning experience has been practical, engaging, and highly relevant.",
     image: "/images/testimonials/Mitali Goyal.webp",
     star: 5,
   },
@@ -64,7 +121,7 @@ const testimonialData: Testimonial[] = [
     name: "Ishwari Kalsekar",
     designation: "Founder @Lineicons",
     content:
-      "The live market simulations have been invaluable for real-world finance applications.",
+      "The live market simulations and hands-on finance training at FFOI have given me a strong competitive edge in real-world applications.",
     image: "/images/testimonials/Ishwari Kalsekar.png",
     star: 5,
   },
@@ -122,10 +179,10 @@ const Testimonials = () => {
 
 {isMobile ? (
         <Swiper
-          modules={[Autoplay,Navigation, Pagination]}
+          modules={[Autoplay, Pagination]}
           spaceBetween={20}
           slidesPerView={1}
-          navigation
+          // navigation
           pagination={{ clickable: true }}
           autoplay={{
             delay: 3000, // Time between slides in ms (3s)

@@ -15,7 +15,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] }); // Configure Roboto
-const raleway = Raleway({ subsets: ["latin"], weight: ["400", "600", "800"] }); // Configure Raleway
+// const raleway = Raleway({ subsets: ["latin"], weight: ["400", "600", "800"] }); 
 
 export default function RootLayout({
   children,
@@ -39,7 +39,7 @@ export default function RootLayout({
         <ModalProvider>
           
           <Header />
-          <main className={raleway.className}>{children}</main>{" "}
+          <main className={roboto.className}>{children}</main>{" "}
           {/* Apply Raleway to titles/headers */}
           <InquireModal />
           <ScrollToTop />

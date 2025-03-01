@@ -89,16 +89,16 @@ const CurriculumSection = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-0 lg:py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-0 lg:py-16  lg:px-4">
       <div className='container mx-auto px-4 py-8'>
-      <SectionTitle
+        <SectionTitle
           title="Built for Excellence "
           paragraph="Curriculum Designed for Global Impact"
           center
         />
 
        {/* Mobile View (Slider) */}
-      <div className="block lg:hidden mb-4">
+      {/* <div className="block lg:hidden mb-4">
         <Swiper
           slidesPerView={1}
           pagination={{ clickable: true }}
@@ -139,7 +139,58 @@ const CurriculumSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
+<div className="block lg:hidden mb-4">
+  <Swiper
+    slidesPerView={1}
+    pagination={{ clickable: true }}
+    modules={[Autoplay, Pagination]}
+    className="mySwiper"
+    autoplay={{
+      delay: 3000, // Time between slides in ms (3s)
+      disableOnInteraction: false, // Keep autoplay running after interaction
+    }}
+    loop={true} // Loop slides continuously
+  >
+    {[...semesterData, ...semesterData2].map((year, index) => (
+      <SwiperSlide key={index}>
+        <div
+          data-aos="fade-left"
+          className="relative group p-4 border rounded-lg shadow-md bg-cover bg-center before:absolute before:inset-0 before:bg-white before:opacity-50"
+          style={{
+            backgroundImage: `url(${index < semesterData.length ? '/images/hero/sem-1.jpg' : '/images/hero/sem-2.jpg'})`,
+          }}
+        >
+          {/* Overlay for better text visibility */}
+          <div className="absolute inset-0 bg-white/50 rounded-lg"></div>
+
+          <div className="relative lg:p-3 text-secondary">
+            <h3 className="text-base lg:text-lg font-semibold mb-4 text-white bg-primary p-2 rounded-lg">
+              {year.title}
+            </h3>
+            <div className="space-y-6">
+              {year.semesters.map((semester) => (
+                <div key={semester.number} className="border-primary pl-4">
+                  <h4 className="text-base font-semibold mb-3 text-gray-600">
+                    Semester {semester.number}
+                  </h4>
+                  <ul className="space-y-2">
+                    {semester.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start gap-2 p-2">
+                        <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+                        <span className="text-gray-900 font-semibold text-sm">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
 
 
       
@@ -179,7 +230,7 @@ const CurriculumSection = () => {
        </div>
        <div data-aos="fade-left" className='img-section hidden lg:block'>
        <div className="mt-10 ">
-           <img  src="/images/hero/5252.jpg" className="mb-2 lg:h-[600px] object-cover rounded-lg grayscale" alt='' 
+           <Image fill  src="/images/hero/sem-1.jpg" className="mb-2 lg:h-[600px] object-cover rounded-lg grayscale" alt='' 
           />
            </div>
        </div>
@@ -187,7 +238,7 @@ const CurriculumSection = () => {
       <div  className="hidden lg:grid grid-cols-2 gap-8">
       <div data-aos="fade-right" className='img-section hidden lg:block'>
        <div className="mt-5">
-           <img  src="/images/hero/13765.jpg" className="mb-2 lg:h-[600px] object-cover rounded-lg grayscale" alt=''  
+           <Image fill  src="/images/hero/sem-2.jpg" className="mb-2 lg:h-[600px] object-cover rounded-lg grayscale" alt=''  
           />
            </div>
        </div>
@@ -227,7 +278,7 @@ const CurriculumSection = () => {
        
       </div>
 
-      <div data-aos="fade-left" className='bg-secondary p-4 rounded-md'>
+      <div data-aos="fade-left" className='bg-secondary p-4 rounded-md mt-8'>
         <div className='block lg:flex justify-between '>
         <div className='flex justify-content-start'>
         <GraduationCap size={70}  className='text-primary font-bold mr-4' /> 

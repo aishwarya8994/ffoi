@@ -12,11 +12,11 @@ const Hero = () => {
       
       <section
         id="home"
-      className="relative z-10 overflow-hidden bg-[position:50%_5%] bg-[url('/images/hero/FFOI-WEB-BANNER.jpg')] bg-cover bg-center bg-no-repeat pb-16 pt-[140px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+      className="relative z-10 overflow-hidden bg-[position:50%_5%] bg-[url(/images/hero/ffoi-mb-banner.jpg)] lg:bg-[url('/images/hero/FFOI-WEB-BANNER.jpg')]  bg-cover bg-center bg-no-repeat pb-16 pt-[140px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 sm:w-7/12">
+            <div className="w-full px-4 sm:w-7/12 mt-16 lg:mt-0">
               <div  data-aos="fade-right" className="max-w-[900px] p-3 lg:p-0 bg-white/80 lg:bg-transparent mx-auto lg:mx-0 text-center lg:text-left ">
                 <p className=" text-3xl font-bold text-primary lg:text-secondary sm:text-4xl sm:leading-tight md:text-[4rem] md:leading-tight mb-4">
                   Build Your Future in Global Finance!

@@ -37,7 +37,7 @@ const Contact = () => {
     >
       <div data-aos="fade-right" className="container">
         <div className="justify-content-end -mx-4 flex flex-wrap">
-          <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
+          <div className="w-full lg:px-4 lg:w-7/12 xl:w-8/12">
             <div className="mb-12 rounded-sm bg-dark px-8 py-11 shadow-three sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
               <h2 className="mb-3 text-2xl font-bold text-primary dark:text-white sm:text-3xl">
                 Enquire Now
@@ -89,7 +89,7 @@ const Contact = () => {
                         className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                         required
                       >
-                        <option value="" disabled >
+                        <option value="Qualification" >
                           Select Your Qualification
                         </option>
                         <option value="Student">Pursuing Graduation</option>
@@ -98,16 +98,20 @@ const Contact = () => {
                         <option value="Other">Other</option>
                       </select>
                     </div>
-                    <div className="w-full px-4 md:full">
-                      <div className="mb-3 lg:mb-4">
-                        <input
-                          type="text"
-                          name="city"
-                          placeholder="City"
-                          required
-                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
-                        />
-                      </div>
+                    <div className="w-full px-4 md:full mb-3">
+                    <select
+                        name="qualification"
+                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                        required
+                      >
+                        <option value="City">
+                         City
+                        </option>
+                        <option value="Student">Mumbai</option>
+                        <option value="Professional">Navi Mumbai</option>
+                        <option value="Entrepreneur">Thane</option>
+                      
+                      </select>
                     </div>
 
                     <div className="w-full px-4">
@@ -158,8 +162,8 @@ const Contact = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-1 h-8 w-8 text-gray-300" />
                 <div>
-                  <p className="text-lg text-gray-300">Office No.2, Vimla Plaza</p>
-                  <p className="text-lg text-gray-300">Sector 5, Ghansoli - 400701</p>
+                  <p className="text-lg text-gray-300">Bharatiya Vidya Bhavan, Plot 3A, </p>
+                  <p className="text-lg text-gray-300">Sector-30, Vashi, Navi Mumbai - 400703</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
