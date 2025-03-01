@@ -34,6 +34,9 @@
     @apply opacity-100;
   }
 }
+html, body {
+  overflow-x: hidden;
+}
 html, body, div, span, input, button, select, textarea {
   font-family: var(--font-roboto), sans-serif; /* Apply Roboto by default */
 }
