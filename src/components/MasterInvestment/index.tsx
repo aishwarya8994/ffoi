@@ -106,9 +106,9 @@ const MasterInvestment = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
 
             {/* Content */}
-            <div className="relative h-full p-6 flex flex-col justify-end text-white">
+            <div className="relative h-full p-6 flex flex-col justify-end text-white ">
               <div className="mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div className="bg-primary/80 backdrop-blur-sm p-3 rounded-lg inline-block mb-4">
+                <div className="bg-primary/80 backdrop-blur-sm p-3 rounded-lg inline-block  mb-4">
                   {React.cloneElement(feature.icon, { className: "text-white" })}
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold mb-2">{feature.title}</h3>

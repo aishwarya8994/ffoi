@@ -131,11 +131,11 @@ const Video = () => {
         {/* Campuses */}
         <div data-aos="fade-right" className="mb-6">
           <h4 className="text-center lg:text-left mb-2 text-base lg:text-2xl font-medium text-white ">Campuses</h4>
-          <div className="flex justify-start lg:justify-start flex-wrap gap-2 lg:gap-3">
+          <div className="flex justify-center lg:justify-start flex-wrap gap-2 lg:gap-3">
             {["Mumbai", "Navi Mumbai", "Goa", "Bangalore"].map((campus) => (
               <span
                 key={campus}
-                className=" bg-[#0B1D2E] px-3 lg:px-8 py-3 text-base lg:text-xl font-semibold text-white shadow-md"
+                className=" bg-[#0B1D2E] px-2 lg:px-8 py-2 lg:py-3 text-sm lg:text-xl font-medium lg:font-semibold text-white shadow-md"
               >
                 {campus}
               </span>

@@ -13,7 +13,7 @@ const Features = () => {
   const cards = [
     {
       id: 1,
-      title: "Join a $100B+ Global Industry",
+      title: "Join a $ 100B+ Global Industry",
       description: "Poised for exponential growth",
       imageUrl: "/images/hero/ffoi-high-demand.jpg",
     },

@@ -19,13 +19,13 @@ const EnquiryForm = () => {
   return (
     <div className="container">
       {/* Sticky Buttons for Mobile */}
-      <div className="fixed bg-white z-50 bottom-0 w-full py-2 flex justify-center left-0 right-0 flex justify-center lg:hidden  gap-2 px-4">
+      <div className="fixed bg-white z-50 bottom-0 w-full py-2 flex justify-between left-0 right-0 flex justify-center lg:hidden  gap-2 px-2">
         
 
         {/* Call Now Button */}
         <a
           href="tel:+918065138207"
-          className="flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 items-center"
+          className="flex-grow flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
         >
         <Phone size={16} className="mr-1 " />  Call
         </a>
@@ -35,7 +35,7 @@ const EnquiryForm = () => {
           // href="/FFOI Brochure.pdf" 
           onClick={openModal}
           // download
-          className="flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 items-center"
+          className="flex-grow flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
         >
        <ArrowDownToLine size={16} className="mr-1" />   Get Brochure
         </button>
@@ -43,7 +43,7 @@ const EnquiryForm = () => {
         <button
         // href="#contact"
           onClick={openModal}
-          className="bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 items-center"
+          className="flex-grow bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
         >
           Enquire
         </button>

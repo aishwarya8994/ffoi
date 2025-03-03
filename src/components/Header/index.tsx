@@ -72,11 +72,11 @@ const Header = () => {
             <div className="flex w-full items-center justify-end px-2">
               <div>
               {/* Contact Icon (Mobile Only) */}
-              <Link href="tel:+918065138207" className="lg:hidden">
+              {/* <Link href="tel:+918065138207" className="lg:hidden">
      <div className="bg-secondary rounded-full p-2">
      <Phone className=" text-white" size={18} />
      </div>
-    </Link>
+    </Link> */}
                 <button
                   onClick={navbarToggleHandler}
                   id="navbarToggler"

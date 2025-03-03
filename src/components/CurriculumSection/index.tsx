@@ -281,7 +281,7 @@ const CurriculumSection = () => {
       <div data-aos="fade-left" className='bg-secondary p-4 rounded-md mt-8'>
         <div className='block lg:flex justify-between '>
         <div className='flex justify-content-start'>
-        <GraduationCap size={70}  className='text-primary font-bold mr-4' /> 
+        <GraduationCap size={70}  className=' text-primary font-bold mr-4' /> 
         <div>
         <p className='text-lg lg:text-3xl text-white font-semibold mt-2'>Capstone Project</p>
         <p className='text-gray-100 text-sm lg:text-lg mt-2'>Work on real-time investment deals and financial analysis with top firms. </p>

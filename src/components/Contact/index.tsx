@@ -1,32 +1,47 @@
 "use client"; // Ensure it's a client component
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
-
 import Link from "next/link";
-import { MapPin, Mail, Phone, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { MapPin, Mail, Phone, Instagram, Linkedin, Facebook } from "lucide-react";
 
 const Contact = () => {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    qualification: "",
+    city: "",
+    message: "",
+  });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
-    emailjs
-      .sendForm(
-        "service_udgygmo", // Replace with your EmailJS Service ID
-        "your_template_id", // Replace with your EmailJS Template ID
-        e.currentTarget,
-        "your_user_id" // Replace with your EmailJS Public Key
-      )
-      .then(
-        (result) => {
-          console.log("Success:", result.text);
-          setIsSubmitted(true);
-        },
-        (error) => {
-          console.error("Failed to send:", error.text);
-        }
-      );
+    try {
+      // Submit form to Kylas CRM API
+      const kylasResponse = await fetch("/api/kylas", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const kylasData = await kylasResponse.json();
+      if (!kylasData.success) {
+        throw new Error(kylasData.error || "Failed to submit lead to Kylas CRM");
+      }
+
+      setIsSubmitted(true);
+    } catch (error: any) {
+      console.error("Form submission failed:", error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -37,6 +52,7 @@ const Contact = () => {
     >
       <div data-aos="fade-right" className="container">
         <div className="justify-content-end -mx-4 flex flex-wrap">
+          {/* Left Section: Form */}
           <div className="w-full lg:px-4 lg:w-7/12 xl:w-8/12">
             <div className="mb-12 rounded-sm bg-dark px-8 py-11 shadow-three sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
               <h2 className="mb-3 text-2xl font-bold text-primary dark:text-white sm:text-3xl">
@@ -49,6 +65,7 @@ const Contact = () => {
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit}>
                   <div className="-mx-4 flex flex-wrap">
+                    {/* Name */}
                     <div className="w-full px-4 md:w-1/2">
                       <div className="mb-3 lg:mb-4">
                         <input
@@ -56,10 +73,14 @@ const Contact = () => {
                           name="name"
                           placeholder="Name"
                           required
+                          value={form.name}
+                          onChange={handleChange}
                           className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                         />
                       </div>
                     </div>
+
+                    {/* Phone */}
                     <div className="w-full px-4 md:w-1/2">
                       <div className="mb-3 lg:mb-4">
                         <input
@@ -67,10 +88,14 @@ const Contact = () => {
                           name="phone"
                           placeholder="Phone Number"
                           required
+                          value={form.phone}
+                          onChange={handleChange}
                           className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                         />
                       </div>
                     </div>
+
+                    {/* Email */}
                     <div className="w-full px-4 md:w-1/2">
                       <div className="mb-3 lg:mb-4">
                         <input
@@ -78,60 +103,69 @@ const Contact = () => {
                           name="email"
                           placeholder="Email"
                           required
+                          value={form.email}
+                          onChange={handleChange}
                           className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                         />
                       </div>
                     </div>
 
+                    {/* Qualification */}
                     <div className="mb-3 w-full px-4 md:w-1/2 lg:mb-4">
                       <select
                         name="qualification"
-                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                         required
+                        value={form.qualification}
+                        onChange={handleChange}
+                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                       >
-                        <option value="Qualification" >
-                          Select Your Qualification
-                        </option>
-                        <option value="Student">Pursuing Graduation</option>
-                        <option value="Professional">Graduate</option>
-                        <option value="Entrepreneur">Post Graduate</option>
+                        <option value="">Select Your Qualification</option>
+                        <option value="Pursuing Graduation">Pursuing Graduation</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Post Graduate">Post Graduate</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
+
+                    {/* City */}
                     <div className="w-full px-4 md:full mb-3">
-                    <select
-                        name="qualification"
-                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                      <select
+                        name="city"
                         required
+                        value={form.city}
+                        onChange={handleChange}
+                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                       >
-                        <option value="City">
-                         City
-                        </option>
-                        <option value="Student">Mumbai</option>
-                        <option value="Professional">Navi Mumbai</option>
-                        <option value="Entrepreneur">Thane</option>
-                      
+                        <option value="">City</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Navi Mumbai">Navi Mumbai</option>
+                        <option value="Thane">Thane</option>
                       </select>
                     </div>
 
+                    {/* Message */}
                     <div className="w-full px-4">
                       <div className="mb-4">
                         <textarea
                           name="message"
                           rows={4}
-                          placeholder="Enter your Message"
                           required
+                          value={form.message}
+                          onChange={handleChange}
+                          placeholder="Enter your Message"
                           className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                         ></textarea>
                       </div>
                     </div>
 
+                    {/* Submit Button */}
                     <div className="mb-4 w-full flex items-center justify-center lg:justify-start px-4">
                       <button
                         type="submit"
                         className="rounded-sm bg-primary px-3 py-2 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 lg:px-9 lg:py-4"
+                        disabled={loading}
                       >
-                        Send Enquiry
+                        {loading ? "Submitting..." : "Send Enquiry"}
                       </button>
                     </div>
                   </div>
@@ -142,7 +176,7 @@ const Contact = () => {
                     Your enquiry has been submitted successfully!
                   </p>
                   <a
-                    href="/FFOI Brochure.pdf" // Replace with your actual brochure URL
+                    href="/FFOI Brochure.pdf"
                     download
                     className="inline-block rounded-sm bg-primary px-6 py-3 text-white shadow-submit duration-300 hover:bg-primary/90"
                   >
@@ -153,9 +187,10 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Details */}
+          {/* Contact Details Section (Unchanged) */}
           <div className="w-full lg:-ml-5 lg:w-5/12 xl:w-4/12">
             <div className="ml-0 h-[400px] space-y-5 bg-secondary/80 p-5 lg:h-[634px]">
+              {/* Address, Email, Phone, Social Links (As per your original code) */}
               <h2 className="mb-5 text-2xl font-bold text-primary dark:text-white sm:text-3xl">
                 Contact Us
               </h2>
@@ -172,7 +207,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-8 w-8 text-gray-300" />
-                <p className="text-lg text-gray-300">+91 08065138207</p>
+                <p className="text-lg text-gray-300">+91 8065138207</p>
               </div>
               {/* Social Icons */}
               <div className="mt-4 flex gap-8 pt-4 lg:mt-16 lg:pt-11">
@@ -198,7 +233,7 @@ const Contact = () => {
                   <Linkedin className="h-8 w-8 cursor-pointer text-primary transition-colors hover:text-white" />
                 </Link>
               </div>
-              
+
             </div>
           </div>
         </div>
