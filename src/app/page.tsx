@@ -73,7 +73,7 @@ export default function Home() {
       {/* <CareerPath2 /> */}
       <Alumni/>
       <Contact/>
-      {/* <Footer /> */}
+      <Footer />
       <EnquiryForm/>
       {/* <StickyFooter/> */}
      

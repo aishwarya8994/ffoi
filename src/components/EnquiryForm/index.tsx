@@ -29,7 +29,14 @@ const EnquiryForm = () => {
         >
         <Phone size={16} className="mr-1 " />  Call
         </a>
-
+         {/* Enquire Now Button */}
+        <button
+        // href="#contact"
+          onClick={openModal}
+          className="flex-grow bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
+        >
+          Enquire
+        </button>
         {/* Download Brochure Button */}
         <button
           // href="/FFOI Brochure.pdf" 
@@ -39,14 +46,8 @@ const EnquiryForm = () => {
         >
        <ArrowDownToLine size={16} className="mr-1" />   Get Brochure
         </button>
-        {/* Enquire Now Button */}
-        <button
-        // href="#contact"
-          onClick={openModal}
-          className="flex-grow bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
-        >
-          Enquire
-        </button>
+       
+        
       </div>
 
       {/* Modal */}

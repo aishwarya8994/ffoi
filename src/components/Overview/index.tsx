@@ -56,7 +56,7 @@ const Overview = () => {
   return (
     <section className="bg-gray-50 py-6 lg:py-16">
      <div className='container'>
-     <div className="mx-auto max-w-7xl px-4">
+     <div className="mx-auto max-w-7xl lg:px-4">
         {/* Header */}
         <div className="relative mb-6 lg:mb-16">
           <h2 className="mb-4 lg:mb-8 text-center text-2xl font-bold leading-tight text-[#333333] md:text-4xl lg:text-5xl">

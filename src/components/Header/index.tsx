@@ -211,7 +211,7 @@ const Header = () => {
                 </Link> */}
                 <Link
                   href="/"
-                  className="hidden md:block   "
+                  className="hidden lg:block   "
                 >
                   <div className="flex items-center bg-primary rounded px-3 lg:px-6 py-2 text-white hover:bg-[#375210]">
                   <Phone className="mr-2 text-lg text-white" size={20} />{" "}

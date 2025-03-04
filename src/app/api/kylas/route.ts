@@ -1,30 +1,33 @@
-export async function POST(req: Request) {
-  console.log("Kylas API Key:", process.env.KYLAS_API_KEY); // Debugging line
-  try {
-    const body = await req.json();
-    const kylasApiKey = process.env.KYLAS_API_KEY; // Read API key from .env.local
+import { NextRequest, NextResponse } from "next/server";
 
+export async function POST(req: NextRequest) {
+  try {
+    const kylasApiKey = process.env.KYLAS_API_KEY; // Keep API key secure (no NEXT_PUBLIC)
+    
     if (!kylasApiKey) {
-      throw new Error("Kylas API Key is missing. Please set KYLAS_API_KEY in .env.local");
+      return NextResponse.json({ error: "Kylas API Key is missing" }, { status: 500 });
     }
 
-    const response = await fetch("https://api.kylas.io/v1/leads/", {
+    const formData = await req.json(); // Get form data from the request body
+
+    const kylasResponse = await fetch("https://api.kylas.io/v1/leads/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${kylasApiKey}`,
+        "X-API-KEY": kylasApiKey,
+        "Accept": "application/json"
       },
-      body: JSON.stringify(body),
-      
+      body: JSON.stringify(formData),
     });
 
-    if (!response.ok) {
-      throw new Error(`Kylas API Error: ${response.statusText}`);
+    const kylasData = await kylasResponse.json();
+    
+    if (!kylasResponse.ok) {
+      throw new Error(kylasData.error || "Failed to submit lead to Kylas CRM");
     }
 
-    const data = await response.json();
-    return new Response(JSON.stringify({ success: true, data }), { status: 200 });
+    return NextResponse.json({ success: true, data: kylasData });
   } catch (error: any) {
-    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+    return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
   }
 }

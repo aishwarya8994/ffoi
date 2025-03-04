@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { MapPin, Mail, Phone, Instagram, Linkedin, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
     <>
-      <footer className="relative z-10 bg-white pt-16  md:pt-20 lg:pt-24 mb-5">
+      <footer className="relative z-10 bg-white pt-16  md:pt-20 lg:pt-16">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
+            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-1/3">
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <img 
@@ -19,9 +20,8 @@ const Footer = () => {
                   />
                   
                 </Link>
-                <p className="mb-9 text-base leading-relaxed text-gray-600 ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                <p className="mb-9 text-base leading-relaxed text-gray-700 ">
+                Build Your Future in Global Finance! Gain industry-relevant skills, work on real-time investment deals, and connect with top financial firms to accelerate your career in global finance.
                 </p>
                 {/* <div className="flex items-center">
                   <a
@@ -102,111 +102,72 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-black">
-                  Useful Links
+            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-1/3">
+              
+               {/* Social Icons */}
+               <h2 className="text-xl font-bold text-black">
+                  Social Media
                 </h2>
-                <ul>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                      Lorem
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                      Lorem
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                      Lorem
-                    </Link>
-                  </li>
-                </ul>
+               <div className="flex gap-8 pt-5">
+                <Link
+                  href="https://www.instagram.com/ffoi_official?igsh=NmN3YjdqZGV5cHl6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  
+                >
+                  <div className="p-3 bg-gray-200 rounded">
+                  <Instagram className="h-8 w-8 cursor-pointer text-primary transition-colors hover:text-secondary" />
+
+                  </div>
+                </Link>
+                <Link
+                  href="https://www.facebook.com/share/166zv8GL51/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                   <div className="p-3 bg-gray-200 rounded">
+                  <Facebook className="h-8 w-8 cursor-pointer text-primary transition-colors hover:text-secondary" />
+                  </div>
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/company/finance-forum-of-india/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                    <div className="p-3 bg-gray-200 rounded">
+                  <Linkedin className="h-8 w-8 cursor-pointer text-primary transition-colors hover:text-secondary" />
+                  </div>
+                </Link>
               </div>
             </div>
 
-            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-black">
-                  Terms
-                </h2>
-                <ul>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                      TOS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                     Lorem
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary "
-                    >
-                      Lorem
-                    </Link>
-                  </li>
-                </ul>
+            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-1/3">
+              
+              <div className="flex items-start gap-3 mb-3">
+                <MapPin className="mt-1 h-8 w-8 text-gray-700" />
+                <div>
+                  <p className="text-lg text-gray-700">Bharatiya Vidya Bhavan, Plot 3A, </p>
+                  <p className="text-lg text-gray-700">Sector-30, Vashi, Navi Mumbai - 400703</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 mb-3">
+                <Mail className="h-8 w-8 text-gray-700" />
+                <p className="text-lg text-gray-700">Info@ffoi.in</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-8 w-8 text-gray-700" />
+                <p className="text-lg text-gray-700">+91 8065138207</p>
               </div>
             </div>
 
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-black">
-                  Support & Help
-                </h2>
-                <ul>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                     Lorem
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                      Lorem
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-gray-600 duration-300 hover:text-primary  "
-                    >
-                      Lorem
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            
           </div>
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
          
+        </div>
+        <div className="bg-secondary flex justify-center">
+          <p className="text-center text-white py-2">Copyright © 2025 FFOI. All rights reserved</p>
         </div>
         <div className="absolute right-0 top-14 z-[-1]">
           <svg

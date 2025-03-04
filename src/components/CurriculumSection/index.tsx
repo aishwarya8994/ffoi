@@ -278,29 +278,29 @@ const CurriculumSection = () => {
        
       </div>
 
-      <div data-aos="fade-left" className='bg-secondary p-4 rounded-md mt-8'>
-        <div className='block lg:flex justify-between '>
-        <div className='flex justify-content-start'>
-        <GraduationCap size={70}  className=' text-primary font-bold mr-4' /> 
-        <div>
-        <p className='text-lg lg:text-3xl text-white font-semibold mt-2'>Capstone Project</p>
-        <p className='text-gray-100 text-sm lg:text-lg mt-2'>Work on real-time investment deals and financial analysis with top firms. </p>
-
-        </div>
-        </div>
-        <div>
-        <Link
-            href="#contact"
-            className="flex items-center justify-center lg:justify-start mx-auto lg:mx-0 rounded-sm bg-primary w-[180px] lg:w-[290px] text-center mt-6 px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
-          >
-            Enquire Now <span><MoveRight className="text-lg text-white ml-3" /></span>
-          </Link>
-          {/* <InquireButton/> */}
-        </div>
-        </div>
-       
-        
+      <div data-aos="fade-left" className="bg-secondary p-4 rounded-md mt-8">
+  <div className="flex flex-col lg:flex-row lg:justify-between items-center text-center lg:text-left">
+    <div className="flex flex-col sm:flex-row items-center lg:items-start">
+      <GraduationCap size={70} className="text-primary font-bold sm:mr-4 mb-3 sm:mb-0" />
+      <div>
+        <p className="text-lg lg:text-3xl text-white font-semibold">Capstone Project</p>
+        <p className="text-gray-100 text-sm lg:text-lg mt-2">
+          Work on real-time investment deals and financial analysis with top firms.
+        </p>
       </div>
+    </div>
+
+    <div className="mt-6 lg:mt-0">
+      <Link
+        href="#contact"
+        className="flex items-center justify-center lg:justify-start mx-auto lg:mx-0 rounded-sm bg-primary w-[180px] lg:w-[290px] text-center px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
+      >
+        Enquire Now <MoveRight className="text-lg text-white ml-3" />
+      </Link>
+    </div>
+  </div>
+</div>
+
     </div>
     </div>
   );

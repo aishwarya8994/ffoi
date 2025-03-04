@@ -19,23 +19,63 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+
+  //   try {
+  //     const kylasApiKey = process.env.NEXT_PUBLIC_KYLAS_API_KEY; 
+  //     if (!kylasApiKey) throw new Error("Kylas API key is missing!");
+
+  //     const response = await fetch("https://api.kylas.io/v1/leads/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "X-API-KEY": kylasApiKey,
+  //         Accept: "application/json",
+  //       },
+  //       body: JSON.stringify(form),
+  //     });
+
+  //     if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+
+  //     const data = await response.json();
+  //     console.log("Success:", data);
+
+  //     setIsSubmitted(true);
+  //     setForm({
+  //       name: "",
+  //       phone: "",
+  //       email: "",
+  //       qualification: "",
+  //       city: "",
+  //       message: "",
+  //     });
+  //   } catch (error: any) {
+  //     console.error("Form submission failed:", error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
-      // Submit form to Kylas CRM API
-      const kylasResponse = await fetch("/api/kylas", {
+      const response = await fetch("/api/kylas", { // Use Next.js API route
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
-      const kylasData = await kylasResponse.json();
-      if (!kylasData.success) {
-        throw new Error(kylasData.error || "Failed to submit lead to Kylas CRM");
+  
+      const data = await response.json();
+  
+      if (!data.success) {
+        throw new Error(data.error || "Form submission failed");
       }
-
+  
       setIsSubmitted(true);
     } catch (error: any) {
       console.error("Form submission failed:", error.message);
@@ -43,7 +83,7 @@ const Contact = () => {
       setLoading(false);
     }
   };
-
+  
   return (
     <section
       id="contact"
@@ -129,7 +169,7 @@ const Contact = () => {
 
                     {/* City */}
                     <div className="w-full px-4 md:full mb-3">
-                      <select
+                      {/* <select
                         name="city"
                         required
                         value={form.city}
@@ -140,7 +180,18 @@ const Contact = () => {
                         <option value="Mumbai">Mumbai</option>
                         <option value="Navi Mumbai">Navi Mumbai</option>
                         <option value="Thane">Thane</option>
-                      </select>
+                      </select> */}
+                      <div className="mb-3 lg:mb-4">
+                        <input
+                        type="text"
+                          name="city"
+                          required
+                          value={form.city}
+                          onChange={handleChange}
+                           placeholder="City"
+                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                        />
+                      </div>
                     </div>
 
                     {/* Message */}
@@ -148,7 +199,7 @@ const Contact = () => {
                       <div className="mb-4">
                         <textarea
                           name="message"
-                          rows={4}
+                          rows={3}
                           required
                           value={form.message}
                           onChange={handleChange}
@@ -189,7 +240,7 @@ const Contact = () => {
 
           {/* Contact Details Section (Unchanged) */}
           <div className="w-full lg:-ml-5 lg:w-5/12 xl:w-4/12">
-            <div className="ml-0 h-[400px] space-y-5 bg-secondary/80 p-5 lg:h-[634px]">
+            <div className="ml-0 h-[400px] space-y-5 bg-secondary/80 p-5 lg:h-[630px]">
               {/* Address, Email, Phone, Social Links (As per your original code) */}
               <h2 className="mb-5 text-2xl font-bold text-primary dark:text-white sm:text-3xl">
                 Contact Us
