@@ -1,10 +1,28 @@
 "use client"; // Ensure it's a client component
 import { useState } from "react";
 import Link from "next/link";
-import { MapPin, Mail, Phone, Instagram, Linkedin, Facebook } from "lucide-react";
+import {
+  MapPin,
+  Mail,
+  Phone,
+  Instagram,
+  Linkedin,
+  Facebook,
+} from "lucide-react";
+
+import axios from "axios";
+
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  qualification: string;
+  city: string;
+  message: string;
+}
 
 const Contact = () => {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormData>({
     name: "",
     phone: "",
     email: "",
@@ -14,76 +32,69 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+ 
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-
-  //   try {
-  //     const kylasApiKey = process.env.NEXT_PUBLIC_KYLAS_API_KEY; 
-  //     if (!kylasApiKey) throw new Error("Kylas API key is missing!");
-
-  //     const response = await fetch("https://api.kylas.io/v1/leads/", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "X-API-KEY": kylasApiKey,
-  //         Accept: "application/json",
-  //       },
-  //       body: JSON.stringify(form),
-  //     });
-
-  //     if (!response.ok) throw new Error(`Error: ${response.statusText}`);
-
-  //     const data = await response.json();
-  //     console.log("Success:", data);
-
-  //     setIsSubmitted(true);
-  //     setForm({
-  //       name: "",
-  //       phone: "",
-  //       email: "",
-  //       qualification: "",
-  //       city: "",
-  //       message: "",
-  //     });
-  //   } catch (error: any) {
-  //     console.error("Form submission failed:", error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-  
+    setSubmitError(null);
+
     try {
-      const response = await fetch("/api/kylas", { // Use Next.js API route
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-  
-      const data = await response.json();
-  
-      if (!data.success) {
-        throw new Error(data.error || "Form submission failed");
-      }
-  
+      // Kylas API submission
+      const response = await axios.post(
+        "https://api.kylas.io/v1/leads/",
+        {
+          firstName: form.name.split(" ")[0],
+          lastName: form.name.split(" ").slice(1).join(" ") || "",
+          emails: [
+            {
+              type: "OFFICE",
+              value: form.email,
+              primary: true,
+            },
+          ],
+          phoneNumbers: [
+            {
+              type: "MOBILE",
+              code: "IN",
+              value: form.phone,
+              dialCode: "+91",
+              primary: true,
+            },
+          ],
+          requirementName: `Qualification: ${form.qualification}\nCity: ${form.city}\n\nMessage: ${form.message}`,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "api-key": process.env.NEXT_PUBLIC_KYLAS_API_KEY,
+          },
+        },
+      );
+
+      // If API submission is successful
       setIsSubmitted(true);
-    } catch (error: any) {
-      console.error("Form submission failed:", error.message);
-    } finally {
+      setLoading(false);
+    } catch (error) {
+      console.error("Error submitting lead:", error);
+      setSubmitError("Failed to submit enquiry. Please try again.");
       setLoading(false);
     }
   };
-  
+
   return (
     <section
       id="contact"
@@ -92,9 +103,8 @@ const Contact = () => {
     >
       <div data-aos="fade-right" className="container">
         <div className="justify-content-end -mx-4 flex flex-wrap">
-          {/* Left Section: Form */}
-          <div className="w-full lg:px-4 lg:w-7/12 xl:w-8/12">
-            <div className="mb-12 rounded-sm bg-dark px-8 py-11 shadow-three sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
+          <div className="w-full lg:w-7/12 lg:px-4 xl:w-8/12">
+            <div className="mb-12 rounded-sm bg-dark px-8 py-11 shadow-three sm:p-[55px] lg:mb-5 lg:h-[630px] lg:px-8 xl:p-[55px]">
               <h2 className="mb-3 text-2xl font-bold text-primary dark:text-white sm:text-3xl">
                 Enquire Now
               </h2>
@@ -160,7 +170,9 @@ const Contact = () => {
                         className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                       >
                         <option value="">Select Your Qualification</option>
-                        <option value="Pursuing Graduation">Pursuing Graduation</option>
+                        <option value="Pursuing Graduation">
+                          Pursuing Graduation
+                        </option>
                         <option value="Graduate">Graduate</option>
                         <option value="Post Graduate">Post Graduate</option>
                         <option value="Other">Other</option>
@@ -168,27 +180,15 @@ const Contact = () => {
                     </div>
 
                     {/* City */}
-                    <div className="w-full px-4 md:full mb-3">
-                      {/* <select
-                        name="city"
-                        required
-                        value={form.city}
-                        onChange={handleChange}
-                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
-                      >
-                        <option value="">City</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Navi Mumbai">Navi Mumbai</option>
-                        <option value="Thane">Thane</option>
-                      </select> */}
+                    <div className="md:full w-full px-4">
                       <div className="mb-3 lg:mb-4">
                         <input
-                        type="text"
+                          type="text"
                           name="city"
                           required
                           value={form.city}
                           onChange={handleChange}
-                           placeholder="City"
+                          placeholder="City"
                           className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                         />
                       </div>
@@ -209,8 +209,15 @@ const Contact = () => {
                       </div>
                     </div>
 
+                    {/* Error Message */}
+                    {submitError && (
+                      <div className="mb-4 w-full px-4">
+                        <p className="text-sm text-red-500">{submitError}</p>
+                      </div>
+                    )}
+
                     {/* Submit Button */}
-                    <div className="mb-4 w-full flex items-center justify-center lg:justify-start px-4">
+                    <div className="mb-4 flex w-full items-center justify-center px-4 lg:justify-start">
                       <button
                         type="submit"
                         className="rounded-sm bg-primary px-3 py-2 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 lg:px-9 lg:py-4"
@@ -248,8 +255,12 @@ const Contact = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-1 h-8 w-8 text-gray-300" />
                 <div>
-                  <p className="text-lg text-gray-300">Bharatiya Vidya Bhavan, Plot 3A, </p>
-                  <p className="text-lg text-gray-300">Sector-30, Vashi, Navi Mumbai - 400703</p>
+                  <p className="text-lg text-gray-300">
+                    Bharatiya Vidya Bhavan, Plot 3A,{" "}
+                  </p>
+                  <p className="text-lg text-gray-300">
+                    Sector-30, Vashi, Navi Mumbai - 400703
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -284,7 +295,6 @@ const Contact = () => {
                   <Linkedin className="h-8 w-8 cursor-pointer text-primary transition-colors hover:text-white" />
                 </Link>
               </div>
-
             </div>
           </div>
         </div>
