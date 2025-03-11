@@ -274,7 +274,7 @@ const HiringPartnersAlt = () => {
   };
 
   return (
-    <section className="bg-white px-4 py-16 lg:bg-gray-50">
+    <section id="top-hiring-firms" className="bg-white px-4 py-16 lg:bg-gray-50">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-6 text-center lg:mb-12">

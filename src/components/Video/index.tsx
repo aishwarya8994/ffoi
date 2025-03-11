@@ -45,7 +45,7 @@ const Video = () => {
 
   return (
     <section
-      id="first-section"
+    id="program-overview"
       className="relative z-50  py-16 md:py-20 lg:py-28"
     >
       <div className="container">
@@ -158,7 +158,7 @@ const Video = () => {
           </div>
         </div>
 
-        <Link
+        {/* <Link
           data-aos="fade-right"
           href="#contact"
           className="mx-auto mt-6 flex w-[180px] items-center justify-center rounded-sm bg-primary px-4 py-2 text-center text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 lg:mx-0 lg:w-[290px] lg:justify-start lg:px-16 lg:py-4 lg:text-xl"
@@ -167,8 +167,8 @@ const Video = () => {
           <span>
             <MoveRight className="ml-3 text-lg text-white" />
           </span>
-        </Link>
-        {/* <InquireButton /> */}
+        </Link> */}
+        <InquireButton />
       </div>
 
       

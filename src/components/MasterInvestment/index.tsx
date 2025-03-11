@@ -80,7 +80,7 @@ const MasterInvestment = () => {
 
 
   return (
-    <section className="bg-white py-5 md:py-20 lg:py-28">
+    <section id="learning-approach" className="bg-white py-5 md:py-20 lg:py-28">
     <div className="container  mx-auto px-4 sm:px-6 ">
       {/* Section Title */}
       <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-12 leading-tight text-center">

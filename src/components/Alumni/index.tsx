@@ -109,7 +109,7 @@ const Alumni = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div id="career-paths" className="bg-gray-50 py-16 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="mb-4 text-2xl font-bold text-[#333333] md:text-4xl lg:text-5xl">

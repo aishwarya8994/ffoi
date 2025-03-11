@@ -114,24 +114,24 @@ const EnquiryForm = () => {
         {/* Call Now Button */}
         <a
           href="tel:+918065138207"
-          className="flex-grow flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
+          className="flex-grow flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg w-1/3 transition duration-300 justify-center items-center"
         >
         <Phone size={16} className="mr-1 " />  Call
         </a>
          {/* Enquire Now Button */}
         <button
-        // href="#contact"
+        
           onClick={openModal}
-          className="flex-grow bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
+          className="flex-grow bg-primary text-white text-sm py-2 px-3 w-1/3 rounded shadow-lg  transition duration-300 justify-center items-center"
         >
           Enquire
         </button>
         {/* Download Brochure Button */}
         <button
-          // href="/FFOI Brochure.pdf" 
+         
           onClick={openModal}
-          // download
-          className="flex-grow flex bg-primary text-white text-sm py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
+          
+          className="flex-grow flex bg-primary text-white text-sm w-1/3 py-2 px-3 rounded shadow-lg  transition duration-300 justify-center items-center"
         >
        <ArrowDownToLine size={16} className="mr-1" />   Get Brochure
         </button>
@@ -261,7 +261,7 @@ const EnquiryForm = () => {
                         <textarea
                           name="message"
                           rows={3}
-                          required
+                          
                           value={form.message}
                           onChange={handleChange}
                           placeholder="Enter your Message"

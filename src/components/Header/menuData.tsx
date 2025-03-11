@@ -3,52 +3,64 @@ import { Menu } from "@/types/menu";
 const menuData: Menu[] = [
   {
     id: 1,
-    title: "Why FFOI",
-    path: "/",
+    title: "Why FFOI MBA?",
+    path: "#why-ffoi-mba",
     newTab: false,
   },
   {
     id: 2,
     title: "Program Overview",
-    path: "/",
+    path: "#program-overview",
     newTab: false,
   },
   {
     id: 3,
-    title: "Signature",
-    path: "/",
+    title: "What Sets Us Apart?",
+    path: "#what-sets-us-apart",
     newTab: false,
   },
   {
     id: 4,
     title: "Curriculum",
-    path: "/",
+    path: "#curriculum",
     newTab: false,
   },
   {
     id:5,
-    title:"Masterclass",
-    path: "/",
+    title:"Learning Approach",
+    path: "#learning-approach",
     newTab: false,
   },
   {
     id:6,
     title:"Testimonials",
-    path: "/",
+    path: "#testimonials",
     newTab: false,
   },
   {
     id:7,
-    title:"Hiring Firms",
-    path: "/",
+    title:"Top Hiring Firms",
+    path: "#top-hiring-firms",
     newTab: false,
   },
   {
     id:8,
-    title:"Alumni",
-    path: "/",
+    title:"Career Paths",
+    path: "#career-paths",
     newTab: false,
-  }
+  },
+  {
+    id:9,
+    title:"Enquire Now",
+    path: "#contact",
+    newTab: false,
+  },
+  // {
+  //   id:10,
+  //   title:"Enquire Now",
+  //   path: "/",
+  //   newTab: false,
+  // }
   // {
   //   id: 4,
   //   title: "Pages",

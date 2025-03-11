@@ -65,7 +65,7 @@ const prevSlide = () => {
 // Mobile slider view
 if (isMobile) {
   return (
-    <div className="relative pt-6 m-4">
+    <div id="why-ffoi-mba" className="relative pt-6 m-4">
       <h2
             className="mb-4 wow fadeInUp text-center text-2xl font-bold !leading-tight text-[#333333] sm:text-4xl md:text-4xl  md:text-[45px] lg:text-5xl"
             data-wow-delay=".15s"

@@ -1,187 +1,239 @@
 // components/InquireModal.tsx
 import { useModal } from "@/components/ModalContext";
 import {CircleX} from 'lucide-react'
+import { useState } from "react";
+import axios from "axios";
+import Image from "next/image";
+
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  qualification: string;
+  city: string;
+  message: string;
+}
 const InquireModal = () => {
   const { isOpen, closeModal } = useModal();
+ const [form, setForm] = useState<FormData>({
+    name: "",
+    phone: "",
+    email: "",
+    qualification: "",
+    city: "",
+    message: "",
+  });
+ 
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
+  
+   
+    const handleChange = (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >,
+    ) => {
+      const { name, value } = e.target;
+      setForm((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    };
+  
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setLoading(true);
+      setSubmitError(null);
+  
+      try {
+        // Kylas API submission
+        const response = await axios.post(
+          "https://api.kylas.io/v1/leads/",
+          {
+            firstName: form.name.split(" ")[0],
+            lastName: form.name.split(" ").slice(1).join(" ") || "",
+            emails: [
+              {
+                type: "OFFICE",
+                value: form.email,
+                primary: true,
+              },
+            ],
+            phoneNumbers: [
+              {
+                type: "MOBILE",
+                code: "IN",
+                value: form.phone,
+                dialCode: "+91",
+                primary: true,
+              },
+            ],
+            requirementName: `Qualification: ${form.qualification}\nCity: ${form.city}\n\nMessage: ${form.message}`,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "api-key": process.env.NEXT_PUBLIC_KYLAS_API_KEY,
+            },
+          },
+        );
+  
+        // If API submission is successful
+        setIsSubmitted(true);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error submitting lead:", error);
+        setSubmitError("Failed to submit enquiry. Please try again.");
+        setLoading(false);
+      }
+    };
 
   if (!isOpen) return null; // Don't render if not open
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 pt-3 lg:pt-7">
-      <div className="bg-dark p-4 lg:p-6 rounded-lg w-full lg:w-1/3">
+      <div className="bg-dark p-4 lg:p-6 rounded-lg w-full lg:w-1/2">
       <div className="flex justify-end">
       <button onClick={closeModal} className="mt-2 text-gray-500"><CircleX /></button>
       </div>
-      <h2 className="mb-3 text-2xl font-bold text-primary dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
+      
+             
+              {!isSubmitted ? (
+                
+                <form onSubmit={handleSubmit}>
+                  <h2 className="mb-3 text-2xl font-bold text-primary dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
                 Enquire Now
               </h2>
-             
-        <form>
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full px-4 md:w-full">
-                    <div className="mb-4 lg:mb-6">
-                      {/* <label
-                        htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                         Name
-                      </label> */}
-                      <input
-                        type="text"
-                        placeholder="Name"
-                        className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
-                      />
+                  <div className="-mx-4 flex flex-wrap">
+                    {/* Name */}
+                    <div className="w-full px-4 md:w-1/2">
+                      <div className="mb-3 lg:mb-4">
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Full Name"
+                          required
+                          value={form.name}
+                          onChange={handleChange}
+                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-6">
-                      {/* <label
-                        htmlFor="contact"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                       Phone Number
 
-                      </label> */}
-                      <input
-                        type="email"
-                        placeholder="Phone Number"
-                        className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
-                      />
+                    {/* Phone */}
+                    <div className="w-full px-4 md:w-1/2">
+                      <div className="mb-3 lg:mb-4">
+                        <input
+                          type="text"
+                          name="phone"
+                          placeholder="Phone Number"
+                          required
+                          value={form.phone}
+                          onChange={handleChange}
+                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-6">
-                      {/* <label
-                        htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
+
+                    {/* Email */}
+                    <div className="w-full px-4 md:w-1/2">
+                      <div className="mb-3 lg:mb-4">
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          required
+                          value={form.email}
+                          onChange={handleChange}
+                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Qualification */}
+                    <div className="mb-3 w-full px-4 md:w-1/2 lg:mb-4">
+                      <select
+                        name="qualification"
+                        required
+                        value={form.qualification}
+                        onChange={handleChange}
+                        className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
                       >
-                         Email
-                      </label> */}
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
-                      />
+                        <option value="">Select Your Qualification</option>
+                        <option value="Pursuing Graduation">
+                          Pursuing Graduation
+                        </option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Post Graduate">Post Graduate</option>
+                        <option value="Other">Other</option>
+                      </select>
                     </div>
-                  </div>
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-4 lg:mb-6">
-                      {/* <label
-                        htmlFor="city"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
+
+                    {/* City */}
+                    <div className="md:full w-full px-4">
+                      <div className="mb-3 lg:mb-4">
+                        <input
+                          type="text"
+                          name="city"
+                          required
+                          value={form.city}
+                          onChange={handleChange}
+                          placeholder="City"
+                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Message */}
+                    <div className="w-full px-4">
+                      <div className="mb-4">
+                        <textarea
+                          name="message"
+                          rows={3}
+                          
+                          value={form.message}
+                          onChange={handleChange}
+                          placeholder="Enter your Message"
+                          className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    {/* Error Message */}
+                    {submitError && (
+                      <div className="mb-4 w-full px-4">
+                        <p className="text-sm text-red-500">{submitError}</p>
+                      </div>
+                    )}
+
+                    {/* Submit Button */}
+                    <div className="mb-4 flex w-full items-center justify-center px-4 lg:justify-start">
+                      <button
+                        type="submit"
+                        className="rounded-sm bg-primary px-3 py-2 text-base lg:text-xl font-medium text-white shadow-submit duration-300 hover:bg-primary/90 lg:px-9 lg:py-4"
+                        disabled={loading}
                       >
-                         City
-                      </label> */}
-                      <input
-                        type="text"
-                        placeholder="City"
-                        className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
-                      />
+                        {loading ? "Submitting..." : "Send Enquiry"}
+                      </button>
                     </div>
                   </div>
-                  {/* <div className="mb-4 lg:mb-6 w-full px-4 md:w-1/2">
-                    <select
-                      name="whoAmI"
-                      className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
-                      required
-                    >
-                      <option value="">Qualifications</option>
-                      <option value="Student">Pursuing Graduation</option>
-                      <option value="Professional">Graduate</option>
-                      <option value="Entrepreneur">Post Graduate</option>
-                    </select>
-                  </div> */}
-                  <div className="mb-4 lg:mb-6 w-full px-4 md:w-1/2">
-                    <select
-                      name="state"
-                      className="w-full rounded-sm border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary"
-                      required
-                    >
-                      <option value="">Select State</option>
-                      <option value="Andhra Pradesh">Andhra Pradesh</option>
-                      <option value="Arunachal Pradesh">
-                        Arunachal Pradesh
-                      </option>
-                      <option value="Assam">Assam</option>
-                      <option value="Bihar">Bihar</option>
-                      <option value="Chhattisgarh">Chhattisgarh</option>
-                      <option value="Goa">Goa</option>
-                      <option value="Gujarat">Gujarat</option>
-                      <option value="Haryana">Haryana</option>
-                      <option value="Himachal Pradesh">Himachal Pradesh</option>
-                      <option value="Jharkhand">Jharkhand</option>
-                      <option value="Karnataka">Karnataka</option>
-                      <option value="Kerala">Kerala</option>
-                      <option value="Madhya Pradesh">Madhya Pradesh</option>
-                      <option value="Maharashtra">Maharashtra</option>
-                      <option value="Manipur">Manipur</option>
-                      <option value="Meghalaya">Meghalaya</option>
-                      <option value="Mizoram">Mizoram</option>
-                      <option value="Nagaland">Nagaland</option>
-                      <option value="Odisha">Odisha</option>
-                      <option value="Punjab">Punjab</option>
-                      <option value="Rajasthan">Rajasthan</option>
-                      <option value="Sikkim">Sikkim</option>
-                      <option value="Tamil Nadu">Tamil Nadu</option>
-                      <option value="Telangana">Telangana</option>
-                      <option value="Tripura">Tripura</option>
-                      <option value="Uttar Pradesh">Uttar Pradesh</option>
-                      <option value="Uttarakhand">Uttarakhand</option>
-                      <option value="West Bengal">West Bengal</option>
-                      <option value="Andaman and Nicobar Islands">
-                        Andaman and Nicobar Islands
-                      </option>
-                      <option value="Chandigarh">Chandigarh</option>
-                      <option value="Dadra and Nagar Haveli and Daman and Diu">
-                        Dadra and Nagar Haveli and Daman and Diu
-                      </option>
-                      <option value="Lakshadweep">Lakshadweep</option>
-                      <option value="Delhi">Delhi</option>
-                      <option value="Puducherry">Puducherry</option>
-                      <option value="Ladakh">Ladakh</option>
-                      <option value="Jammu and Kashmir">
-                        Jammu and Kashmir
-                      </option>
-                    </select>
-                  </div>
-                  <div className="mb-4 lg:mb-6 w-full px-4 md:w-1/2">
-                    <select
-                      name="whoAmI"
-                      className="w-full rounded-sm border border border-gray-500 bg-[#2C303B] px-6 py-3 text-base text-body-color outline-none focus:border-primary "
-                      required
-                    >
-                      <option value="">Work exp</option>
-                      <option value="Student">Fresher</option>
-                      <option value="Professional">Less than 1 year</option>
-                      <option value="Entrepreneur">1 to 3 years</option>
-                      <option value="Entrepreneur">3 to 5 years</option>
-                      <option value="Entrepreneur">5 to 10 years</option>
-                      <option value="Entrepreneur">10+ years</option>
-                    </select>
-                  </div>
-                  {/* <div className="w-full px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="message"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Your Message
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={5}
-                        placeholder="Enter your Message"
-                        className="border-stroke w-full resize-none rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      ></textarea>
-                    </div>
-                  </div> */}
-                  <div className="mb-4 w-full px-4">
-                    <button className="rounded-sm bg-primary px-3 py-2 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark lg:px-9 lg:py-4">
-                      Send Enquiry
-                    </button>
-                  </div>
+                </form>
+              ) : (
+                <div className="text-center">
+                  {/* <Image src="/thank-you.png" alt="ThankYou" width={400} height={250} /> */}
+                  <p className="mb-4 text-lg lg:text-2xl font-semibold text-primary">
+                  Thank you! Your enquiry has been submitted successfully.
+                  </p>
+                  <a
+                    href="/FFOI Brochure.pdf"
+                    download
+                    className="inline-block rounded-sm bg-primary px-6 py-3 text-white shadow-submit duration-300 hover:bg-primary/90"
+                  >
+                    Download Brochure
+                  </a>
                 </div>
-              </form>
+              )}
        
       </div>
     </div>

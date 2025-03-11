@@ -101,7 +101,7 @@ const Header = () => {
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20  lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 z-30 w-full rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20  lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
                       ? "visibility top-full opacity-100"
                       : "invisible top-[120%] opacity-0"
@@ -230,11 +230,11 @@ const Header = () => {
                 </Link>
                 <Link
                 href="#contact"
-                  // href="/"
+                 
                   className="hidden  lg:block"
                 >
                   <div className="flex items-center bg-secondary rounded px-6 py-2 text-white hover:bg-secondary/70">
-                  {/* <ArrowDownToLine className="mr-2 text-lg text-white" />{" "} */}
+                  
                  
                   <span>Enquire Now</span>
                   <Send className="ml-2 text-lg text-white" size={20} />

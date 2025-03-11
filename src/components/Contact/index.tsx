@@ -200,7 +200,7 @@ const Contact = () => {
                         <textarea
                           name="message"
                           rows={3}
-                          required
+                          
                           value={form.message}
                           onChange={handleChange}
                           placeholder="Enter your Message"
@@ -220,7 +220,7 @@ const Contact = () => {
                     <div className="mb-4 flex w-full items-center justify-center px-4 lg:justify-start">
                       <button
                         type="submit"
-                        className="rounded-sm bg-primary px-3 py-2 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 lg:px-9 lg:py-4"
+                        className="rounded-sm bg-primary px-3 py-2 text-base lg:text-xl font-medium text-white shadow-submit duration-300 hover:bg-primary/90 lg:px-9 lg:py-4"
                         disabled={loading}
                       >
                         {loading ? "Submitting..." : "Send Enquiry"}

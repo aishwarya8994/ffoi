@@ -89,7 +89,7 @@ const CurriculumSection = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-0 lg:py-16  lg:px-4">
+    <div id="curriculum" className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-0 lg:py-16  lg:px-4">
       <div className='container mx-auto lg:px-4 py-8'>
         <SectionTitle
           title="Built for Excellence "
@@ -291,12 +291,13 @@ const CurriculumSection = () => {
     </div>
 
     <div className="mt-6 lg:mt-0">
-      <Link
+      {/* <Link
         href="#contact"
         className="flex items-center justify-center lg:justify-start mx-auto lg:mx-0 rounded-sm bg-primary w-[180px] lg:w-[290px] text-center px-4 lg:px-16 py-2 lg:py-4 text-base lg:text-xl font-semibold text-white duration-300 ease-in-out hover:bg-black/90"
       >
         Enquire Now <MoveRight className="text-lg text-white ml-3" />
-      </Link>
+      </Link> */}
+      <InquireButton/>
     </div>
   </div>
 </div>
