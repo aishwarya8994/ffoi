@@ -26,6 +26,7 @@ import Leaders from "@/components/Leaders";
 import Alumni from "@/components/Alumni";
 import EnquiryForm from "@/components/EnquiryForm";
 import { ModalProvider } from "@/components/ModalContext";
+import VideoTestimonials from "@/components/VideoTestimonials";
 
 // export const metadata: Metadata = {
 //   title: "Finance Forum of India",

@@ -1,15 +1,16 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Testimonial } from "@/types/testimonial";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {Autoplay , Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import VideoTestimonials from "../VideoTestimonials";
 
 // const testimonialData: Testimonial[] = [
 //   {
@@ -21,7 +22,7 @@ import "swiper/css/pagination";
 //     image: "/images/testimonials/Adwait Sunil.jpg",
 //     star: 5,
 //   },
-  
+
 //   {
 //     id: 2,
 //     name: "Akhtar Shah",
@@ -40,7 +41,7 @@ import "swiper/css/pagination";
 //     image: "/images/testimonials/falak nawab 2.jpg",
 //     star: 5,
 //   },
- 
+
 //   {
 //     id: 4,
 //     name: "Melvin Rodrigues",
@@ -128,8 +129,21 @@ const testimonialData: Testimonial[] = [
 ];
 
 const Testimonials = () => {
-
   const [isMobile, setIsMobile] = useState(false);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      const swiperInstance = swiperRef.current.swiper;
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, []);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -141,23 +155,13 @@ const Testimonials = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
-
-
-
-
-
-
   return (
     <>
-      <section id="testimonials" className=" relative z-10 bg-secondary py-16 md:py-20 lg:py-28">
+      <section
+        id="testimonials"
+        className=" relative z-10 bg-secondary py-16 md:py-20 lg:py-28"
+      >
         <div className="container">
-          {/* <SectionTitle
-          title="What Our Students Say"
-          paragraph="Hear from our students about their experiences, successes, and how we've helped them achieve their goals"
-          center
-        /> */}
-
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-center text-2xl font-bold text-[#fff] md:text-4xl lg:text-5xl">
               What Our Students Say
@@ -168,41 +172,119 @@ const Testimonials = () => {
             </p>
           </div>
 
-          {/* <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-            {testimonialData.map((testimonial) => (
-              <SingleTestimonial
-                key={testimonial.id}
-                testimonial={testimonial}
-              />
-            ))}
-          </div> */}
+          {isMobile ? (
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              // navigation
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 3000, // Time between slides in ms (3s)
+                disableOnInteraction: false, // Keep autoplay running after interaction
+              }}
+              loop={true} // Loop slides continuously
+            >
+              {testimonialData.map((testimonial) => (
+                <SwiperSlide key={testimonial.id}>
+                  <SingleTestimonial testimonial={testimonial} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            // <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            //   {testimonialData.map((testimonial) => (
+            //     <SingleTestimonial
+            //       key={testimonial.id}
+            //       testimonial={testimonial}
+            //     />
+            //   ))}
+            // </div>
+            <div className="flex">
+              <div className="testimonial-slider-container relative md:w-1/2">
+                <Swiper
+                  ref={swiperRef}
+                modules={[Navigation, Autoplay]}
+                  spaceBetween={24}
+                  slidesPerView={1}
+                  // pagination={{ clickable: true }}
+                  navigation={{
+                    prevEl: prevRef.current,
+                    nextEl: nextRef.current,
+                  }}
+                  breakpoints={{
+                    640: {
+                      slidesPerView: 1,
+                      spaceBetween: 20,
+                    },
+                    768: {
+                      slidesPerView: 1,
+                      spaceBetween: 24,
+                    },
+                    1024: {
+                      slidesPerView: 1,
+                      spaceBetween: 24,
+                    },
+                  }}
+                  className="mb-12"
+                >
+                  {testimonialData.map((testimonial) => (
+                    <SwiperSlide key={testimonial.id}>
+                      <SingleTestimonial testimonial={testimonial} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
 
-{isMobile ? (
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          spaceBetween={20}
-          slidesPerView={1}
-          // navigation
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000, // Time between slides in ms (3s)
-            disableOnInteraction: false, // Keep autoplay running after interaction
-          }}
-          loop={true} // Loop slides continuously
-        >
-          {testimonialData.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <SingleTestimonial testimonial={testimonial} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : (
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {testimonialData.map((testimonial) => (
-            <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
-          ))}
-        </div>
-      )}
+                {/* Navigation Arrows */}
+                <div className="mt-8 flex items-center justify-center gap-4">
+                  <button
+                    ref={prevRef}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200  text-primary transition-colors duration-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label="Previous testimonials"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <button
+                    ref={nextRef}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200  text-primary transition-colors duration-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    aria-label="Next testimonials"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className="md:w-1/2">
+                <VideoTestimonials />
+              </div>
+            </div>
+          )}
+          <div className="block md:hidden">
+            <VideoTestimonials />
+          </div>
         </div>
         <div className="absolute right-0 top-5 z-[-1]">
           <svg
